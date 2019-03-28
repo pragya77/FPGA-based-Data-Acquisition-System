@@ -1,5 +1,5 @@
 Assembler report for final_one_adc
-Wed Mar 27 11:07:05 2019
+Thu Mar 28 16:35:53 2019
 Quartus II Version 9.1 Build 222 10/21/2009 SJ Web Edition
 
 
@@ -10,8 +10,8 @@ Quartus II Version 9.1 Build 222 10/21/2009 SJ Web Edition
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/Users/PRAGYA/Desktop/final_one_adc/final_one_adc.sof
-  6. Assembler Device Options: C:/Users/PRAGYA/Desktop/final_one_adc/final_one_adc.pof
+  5. Assembler Device Options: C:/Users/PRAGYA/Desktop/project/final_one_adc/final_one_adc.sof
+  6. Assembler Device Options: C:/Users/PRAGYA/Desktop/project/final_one_adc/final_one_adc.pof
   7. Assembler Messages
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Wed Mar 27 11:07:05 2019 ;
+; Assembler Status      ; Successful - Thu Mar 28 16:35:53 2019 ;
 ; Revision Name         ; final_one_adc                         ;
 ; Top-level Entity Name ; Block1                                ;
 ; Family                ; Cyclone II                            ;
@@ -78,37 +78,37 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------+---------------+
 
 
-+---------------------------------------------------------+
-; Assembler Generated Files                               ;
-+---------------------------------------------------------+
-; File Name                                               ;
-+---------------------------------------------------------+
-; C:/Users/PRAGYA/Desktop/final_one_adc/final_one_adc.sof ;
-; C:/Users/PRAGYA/Desktop/final_one_adc/final_one_adc.pof ;
-+---------------------------------------------------------+
++-----------------------------------------------------------------+
+; Assembler Generated Files                                       ;
++-----------------------------------------------------------------+
+; File Name                                                       ;
++-----------------------------------------------------------------+
+; C:/Users/PRAGYA/Desktop/project/final_one_adc/final_one_adc.sof ;
+; C:/Users/PRAGYA/Desktop/project/final_one_adc/final_one_adc.pof ;
++-----------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/PRAGYA/Desktop/final_one_adc/final_one_adc.sof ;
-+----------------+------------------------------------------------------------------+
-; Option         ; Setting                                                          ;
-+----------------+------------------------------------------------------------------+
-; Device         ; EP2C20F484C7                                                     ;
-; JTAG usercode  ; 0xFFFFFFFF                                                       ;
-; Checksum       ; 0x0038D2CA                                                       ;
-+----------------+------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/PRAGYA/Desktop/project/final_one_adc/final_one_adc.sof ;
++----------------+--------------------------------------------------------------------------+
+; Option         ; Setting                                                                  ;
++----------------+--------------------------------------------------------------------------+
+; Device         ; EP2C20F484C7                                                             ;
+; JTAG usercode  ; 0xFFFFFFFF                                                               ;
+; Checksum       ; 0x0038D2CA                                                               ;
++----------------+--------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/PRAGYA/Desktop/final_one_adc/final_one_adc.pof ;
-+--------------------+--------------------------------------------------------------+
-; Option             ; Setting                                                      ;
-+--------------------+--------------------------------------------------------------+
-; Device             ; EPCS16                                                       ;
-; JTAG usercode      ; 0x00000000                                                   ;
-; Checksum           ; 0x1DABAC85                                                   ;
-; Compression Ratio  ; 2                                                            ;
-+--------------------+--------------------------------------------------------------+
++-------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/PRAGYA/Desktop/project/final_one_adc/final_one_adc.pof ;
++--------------------+----------------------------------------------------------------------+
+; Option             ; Setting                                                              ;
++--------------------+----------------------------------------------------------------------+
+; Device             ; EPCS16                                                               ;
+; JTAG usercode      ; 0x00000000                                                           ;
+; Checksum           ; 0x1DABAC85                                                           ;
+; Compression Ratio  ; 2                                                                    ;
++--------------------+----------------------------------------------------------------------+
 
 
 +--------------------+
@@ -117,14 +117,14 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II Assembler
     Info: Version 9.1 Build 222 10/21/2009 SJ Web Edition
-    Info: Processing started: Wed Mar 27 11:07:01 2019
+    Info: Processing started: Thu Mar 28 16:35:47 2019
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off final_one_adc -c final_one_adc
 Info: Writing out detailed assembly data for power analysis
 Info: Assembler is generating device programming files
 Info: Quartus II Assembler was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 211 megabytes
-    Info: Processing ended: Wed Mar 27 11:07:05 2019
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:04
+    Info: Processing ended: Thu Mar 28 16:35:53 2019
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:05
 
 

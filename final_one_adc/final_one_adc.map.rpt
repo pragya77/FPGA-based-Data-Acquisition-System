@@ -1,5 +1,5 @@
 Analysis & Synthesis report for final_one_adc
-Wed Mar 27 11:06:33 2019
+Thu Mar 28 16:35:10 2019
 Quartus II Version 9.1 Build 222 10/21/2009 SJ Web Edition
 
 
@@ -47,7 +47,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +------------------------------------+-----------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Mar 27 11:06:33 2019   ;
+; Analysis & Synthesis Status        ; Successful - Thu Mar 28 16:35:09 2019   ;
 ; Quartus II Version                 ; 9.1 Build 222 10/21/2009 SJ Web Edition ;
 ; Revision Name                      ; final_one_adc                           ;
 ; Top-level Entity Name              ; Block1                                  ;
@@ -154,14 +154,14 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                          ;
-+----------------------------------+-----------------+------------------------------------+-------------------------------------------------------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                          ;
-+----------------------------------+-----------------+------------------------------------+-------------------------------------------------------+
-; final_one_adc.v                  ; yes             ; User Verilog HDL File              ; C:/Users/PRAGYA/Desktop/final_one_adc/final_one_adc.v ;
-; Block1.bdf                       ; yes             ; User Block Diagram/Schematic File  ; C:/Users/PRAGYA/Desktop/final_one_adc/Block1.bdf      ;
-+----------------------------------+-----------------+------------------------------------+-------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                  ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                  ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------+
+; final_one_adc.v                  ; yes             ; User Verilog HDL File              ; C:/Users/PRAGYA/Desktop/project/final_one_adc/final_one_adc.v ;
+; Block1.bdf                       ; yes             ; User Block Diagram/Schematic File  ; C:/Users/PRAGYA/Desktop/project/final_one_adc/Block1.bdf      ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------+
@@ -348,7 +348,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 222 10/21/2009 SJ Web Edition
-    Info: Processing started: Wed Mar 27 11:06:07 2019
+    Info: Processing started: Thu Mar 28 16:34:31 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off final_one_adc -c final_one_adc
 Info: Found 2 design units, including 2 entities, in source file final_one_adc.v
     Info: Found entity 1: final_one_adc
@@ -368,21 +368,21 @@ Warning (10230): Verilog HDL assignment warning at final_one_adc.v(166): truncat
 Warning (10230): Verilog HDL assignment warning at final_one_adc.v(211): truncated value with size 194 to match size of target (8)
 Warning (10230): Verilog HDL assignment warning at final_one_adc.v(264): truncated value with size 32 to match size of target (20)
 Info: Elaborating entity "BaudTickGen" for hierarchy "final_one_adc:inst|BaudTickGen:tickgen"
-Info: Generated suppressed messages file C:/Users/PRAGYA/Desktop/final_one_adc/final_one_adc.map.smsg
+Info: Generated suppressed messages file C:/Users/PRAGYA/Desktop/project/final_one_adc/final_one_adc.map.smsg
 Info: Implemented 4087 device resources after synthesis - the final resource count might be different
     Info: Implemented 2 input pins
     Info: Implemented 5 output pins
     Info: Implemented 4080 logic cells
 Info: Quartus II Analysis & Synthesis was successful. 0 errors, 10 warnings
     Info: Peak virtual memory: 210 megabytes
-    Info: Processing ended: Wed Mar 27 11:06:33 2019
-    Info: Elapsed time: 00:00:26
-    Info: Total CPU time (on all processors): 00:00:28
+    Info: Processing ended: Thu Mar 28 16:35:10 2019
+    Info: Elapsed time: 00:00:39
+    Info: Total CPU time (on all processors): 00:00:29
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in C:/Users/PRAGYA/Desktop/final_one_adc/final_one_adc.map.smsg.
+The suppressed messages can be found in C:/Users/PRAGYA/Desktop/project/final_one_adc/final_one_adc.map.smsg.
 
 

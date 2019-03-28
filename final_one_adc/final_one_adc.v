@@ -150,7 +150,7 @@ MOSI=1'bx;
 
 end
 txcounter1<=txcounter1+1;
-if(txcounter1==75)begin//8 microseconds
+if(txcounter1==75)begin//20 microseconds
 
 s<=1;
 txcounter1<=0;
@@ -171,7 +171,7 @@ always@(posedge SCK)begin
  
   end
   txcounter<=txcounter+1;
-  if(txcounter==75)begin//8 microseconds
+  if(txcounter==75)begin//20 microseconds
 count1<=0;
 i<=9;
 SS1<=0;
