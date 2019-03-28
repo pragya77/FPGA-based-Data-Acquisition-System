@@ -1,0 +1,388 @@
+Analysis & Synthesis report for final_one_adc
+Wed Mar 27 11:06:33 2019
+Quartus II Version 9.1 Build 222 10/21/2009 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: final_one_adc:inst
+ 13. Parameter Settings for User Entity Instance: final_one_adc:inst|BaudTickGen:tickgen
+ 14. Parameter Settings for User Entity Instance: BaudTickGen:inst1
+ 15. Analysis & Synthesis Messages
+ 16. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                 ;
++------------------------------------+-----------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed Mar 27 11:06:33 2019   ;
+; Quartus II Version                 ; 9.1 Build 222 10/21/2009 SJ Web Edition ;
+; Revision Name                      ; final_one_adc                           ;
+; Top-level Entity Name              ; Block1                                  ;
+; Family                             ; Cyclone II                              ;
+; Total logic elements               ; 4,074                                   ;
+;     Total combinational functions  ; 2,071                                   ;
+;     Dedicated logic registers      ; 2,284                                   ;
+; Total registers                    ; 2284                                    ;
+; Total pins                         ; 7                                       ;
+; Total virtual pins                 ; 0                                       ;
+; Total memory bits                  ; 0                                       ;
+; Embedded Multiplier 9-bit elements ; 0                                       ;
+; Total PLLs                         ; 0                                       ;
++------------------------------------+-----------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C20F484C7       ;                    ;
+; Top-level entity name                                                      ; Block1             ; final_one_adc      ;
+; Family name                                                                ; Cyclone II         ; Stratix II         ;
+; Use Generated Physical Constraints File                                    ; Off                ;                    ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                         ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 100                ; 100                ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                          ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                          ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------+
+; final_one_adc.v                  ; yes             ; User Verilog HDL File              ; C:/Users/PRAGYA/Desktop/final_one_adc/final_one_adc.v ;
+; Block1.bdf                       ; yes             ; User Block Diagram/Schematic File  ; C:/Users/PRAGYA/Desktop/final_one_adc/Block1.bdf      ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                           ;
++---------------------------------------------+-------------------------+
+; Resource                                    ; Usage                   ;
++---------------------------------------------+-------------------------+
+; Estimated Total logic elements              ; 4,074                   ;
+;                                             ;                         ;
+; Total combinational functions               ; 2071                    ;
+; Logic element usage by number of LUT inputs ;                         ;
+;     -- 4 input functions                    ; 1611                    ;
+;     -- 3 input functions                    ; 124                     ;
+;     -- <=2 input functions                  ; 336                     ;
+;                                             ;                         ;
+; Logic elements by mode                      ;                         ;
+;     -- normal mode                          ; 1847                    ;
+;     -- arithmetic mode                      ; 224                     ;
+;                                             ;                         ;
+; Total registers                             ; 2284                    ;
+;     -- Dedicated logic registers            ; 2284                    ;
+;     -- I/O registers                        ; 0                       ;
+;                                             ;                         ;
+; I/O pins                                    ; 7                       ;
+; Maximum fan-out node                        ; final_one_adc:inst|m[2] ;
+; Maximum fan-out                             ; 2161                    ;
+; Total fan-out                               ; 14188                   ;
+; Average fan-out                             ; 3.25                    ;
++---------------------------------------------+-------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                     ;
++-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------+--------------+
+; Compilation Hierarchy Node  ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                            ; Library Name ;
++-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------+--------------+
+; |Block1                     ; 2071 (0)          ; 2284 (0)     ; 0           ; 0            ; 0       ; 0         ; 7    ; 0            ; |Block1                                        ; work         ;
+;    |BaudTickGen:inst1|      ; 32 (32)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|BaudTickGen:inst1                      ;              ;
+;    |final_one_adc:inst|     ; 2039 (2039)       ; 2268 (2267)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|final_one_adc:inst                     ;              ;
+;       |BaudTickGen:tickgen| ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|final_one_adc:inst|BaudTickGen:tickgen ;              ;
++-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                           ;
++------------------------------------------------+---------------------------------------------+
+; Register name                                  ; Reason for Removal                          ;
++------------------------------------------------+---------------------------------------------+
+; final_one_adc:inst|data[0]                     ; Stuck at GND due to stuck port data_in      ;
+; final_one_adc:inst|s[2..31]                    ; Merged with final_one_adc:inst|s[1]         ;
+; final_one_adc:inst|s[1]                        ; Stuck at GND due to stuck port data_in      ;
+; final_one_adc:inst|BaudTickGen:tickgen|Acc[3]  ; Merged with BaudTickGen:inst1|Acc[3]        ;
+; final_one_adc:inst|BaudTickGen:tickgen|Acc[2]  ; Merged with BaudTickGen:inst1|Acc[2]        ;
+; final_one_adc:inst|BaudTickGen:tickgen|Acc[1]  ; Merged with BaudTickGen:inst1|Acc[1]        ;
+; final_one_adc:inst|BaudTickGen:tickgen|Acc[4]  ; Merged with BaudTickGen:inst1|Acc[4]        ;
+; final_one_adc:inst|BaudTickGen:tickgen|Acc[5]  ; Merged with BaudTickGen:inst1|Acc[5]        ;
+; final_one_adc:inst|BaudTickGen:tickgen|Acc[6]  ; Merged with BaudTickGen:inst1|Acc[6]        ;
+; final_one_adc:inst|BaudTickGen:tickgen|Acc[7]  ; Merged with BaudTickGen:inst1|Acc[7]        ;
+; final_one_adc:inst|BaudTickGen:tickgen|Acc[8]  ; Merged with BaudTickGen:inst1|Acc[8]        ;
+; final_one_adc:inst|BaudTickGen:tickgen|Acc[9]  ; Merged with BaudTickGen:inst1|Acc[9]        ;
+; final_one_adc:inst|BaudTickGen:tickgen|Acc[10] ; Merged with BaudTickGen:inst1|Acc[10]       ;
+; final_one_adc:inst|BaudTickGen:tickgen|Acc[11] ; Merged with BaudTickGen:inst1|Acc[11]       ;
+; final_one_adc:inst|BaudTickGen:tickgen|Acc[12] ; Merged with BaudTickGen:inst1|Acc[12]       ;
+; final_one_adc:inst|BaudTickGen:tickgen|Acc[13] ; Merged with BaudTickGen:inst1|Acc[13]       ;
+; final_one_adc:inst|BaudTickGen:tickgen|Acc[14] ; Merged with BaudTickGen:inst1|Acc[14]       ;
+; final_one_adc:inst|BaudTickGen:tickgen|Acc[15] ; Merged with BaudTickGen:inst1|Acc[15]       ;
+; final_one_adc:inst|count1[0]                   ; Merged with final_one_adc:inst|txcounter[0] ;
+; Total Number of Removed Registers = 48         ;                                             ;
++------------------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 2284  ;
+; Number of registers using Synchronous Clear  ; 9     ;
+; Number of registers using Synchronous Load   ; 23    ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 2115  ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; final_one_adc:inst|kk[3]                ; 3       ;
+; final_one_adc:inst|kk[6]                ; 126     ;
+; final_one_adc:inst|kk[5]                ; 6       ;
+; final_one_adc:inst|kk[4]                ; 4       ;
+; final_one_adc:inst|kk[7]                ; 124     ;
+; final_one_adc:inst|kk[1]                ; 76      ;
+; final_one_adc:inst|kk[2]                ; 76      ;
+; final_one_adc:inst|kk[0]                ; 11      ;
+; final_one_adc:inst|kk[31]               ; 2       ;
+; final_one_adc:inst|s[0]                 ; 12      ;
+; final_one_adc:inst|kk[30]               ; 1       ;
+; final_one_adc:inst|kk[29]               ; 1       ;
+; final_one_adc:inst|kk[28]               ; 1       ;
+; final_one_adc:inst|kk[27]               ; 1       ;
+; final_one_adc:inst|kk[26]               ; 1       ;
+; final_one_adc:inst|kk[25]               ; 1       ;
+; final_one_adc:inst|kk[24]               ; 1       ;
+; final_one_adc:inst|kk[23]               ; 1       ;
+; final_one_adc:inst|kk[22]               ; 1       ;
+; final_one_adc:inst|kk[21]               ; 1       ;
+; final_one_adc:inst|kk[20]               ; 1       ;
+; final_one_adc:inst|kk[19]               ; 1       ;
+; final_one_adc:inst|kk[18]               ; 1       ;
+; final_one_adc:inst|kk[17]               ; 1       ;
+; final_one_adc:inst|kk[16]               ; 1       ;
+; final_one_adc:inst|kk[15]               ; 1       ;
+; final_one_adc:inst|kk[14]               ; 1       ;
+; final_one_adc:inst|kk[13]               ; 1       ;
+; final_one_adc:inst|kk[12]               ; 1       ;
+; final_one_adc:inst|kk[11]               ; 1       ;
+; final_one_adc:inst|kk[10]               ; 1       ;
+; final_one_adc:inst|kk[9]                ; 1       ;
+; final_one_adc:inst|kk[8]                ; 1       ;
+; final_one_adc:inst|i[0]                 ; 9       ;
+; final_one_adc:inst|i[3]                 ; 3       ;
+; Total number of inverted registers = 35 ;         ;
++-----------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |Block1|final_one_adc:inst|TxD_shift[5] ;
+; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |Block1|final_one_adc:inst|count2[14]   ;
+; 3:1                ; 30 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; Yes        ; |Block1|final_one_adc:inst|i[29]        ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |Block1|final_one_adc:inst|i[0]         ;
+; 202:1              ; 6 bits    ; 804 LEs       ; 804 LEs              ; 0 LEs                  ; No         ; |Block1|final_one_adc:inst|TxD_data     ;
+; 401:1              ; 2 bits    ; 534 LEs       ; 534 LEs              ; 0 LEs                  ; No         ; |Block1|final_one_adc:inst|TxD_data     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: final_one_adc:inst ;
++----------------+----------+-------------------------------------+
+; Parameter Name ; Value    ; Type                                ;
++----------------+----------+-------------------------------------+
+; ClkFrequency   ; 25000000 ; Signed Integer                      ;
+; Baud           ; 115200   ; Signed Integer                      ;
++----------------+----------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: final_one_adc:inst|BaudTickGen:tickgen ;
++----------------+----------+---------------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                    ;
++----------------+----------+---------------------------------------------------------+
+; ClkFrequency   ; 25000000 ; Signed Integer                                          ;
+; Baud           ; 115200   ; Signed Integer                                          ;
+; Oversampling   ; 1        ; Signed Integer                                          ;
++----------------+----------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BaudTickGen:inst1 ;
++----------------+----------+------------------------------------+
+; Parameter Name ; Value    ; Type                               ;
++----------------+----------+------------------------------------+
+; ClkFrequency   ; 25000000 ; Signed Integer                     ;
+; Baud           ; 115200   ; Signed Integer                     ;
+; Oversampling   ; 1        ; Signed Integer                     ;
++----------------+----------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 9.1 Build 222 10/21/2009 SJ Web Edition
+    Info: Processing started: Wed Mar 27 11:06:07 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off final_one_adc -c final_one_adc
+Info: Found 2 design units, including 2 entities, in source file final_one_adc.v
+    Info: Found entity 1: final_one_adc
+    Info: Found entity 2: BaudTickGen
+Info: Found 1 design units, including 1 entities, in source file block1.bdf
+    Info: Found entity 1: Block1
+Info: Elaborating entity "Block1" for the top level hierarchy
+Info: Elaborating entity "final_one_adc" for hierarchy "final_one_adc:inst"
+Warning (10036): Verilog HDL or VHDL warning at final_one_adc.v(21): object "counter" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at final_one_adc.v(31): object "k" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at final_one_adc.v(32): object "j" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at final_one_adc.v(34): object "count4" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at final_one_adc.v(45): object "z" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at final_one_adc.v(46): object "y" assigned a value but never read
+Warning (10230): Verilog HDL assignment warning at final_one_adc.v(99): truncated value with size 32 to match size of target (3)
+Warning (10230): Verilog HDL assignment warning at final_one_adc.v(166): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at final_one_adc.v(211): truncated value with size 194 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at final_one_adc.v(264): truncated value with size 32 to match size of target (20)
+Info: Elaborating entity "BaudTickGen" for hierarchy "final_one_adc:inst|BaudTickGen:tickgen"
+Info: Generated suppressed messages file C:/Users/PRAGYA/Desktop/final_one_adc/final_one_adc.map.smsg
+Info: Implemented 4087 device resources after synthesis - the final resource count might be different
+    Info: Implemented 2 input pins
+    Info: Implemented 5 output pins
+    Info: Implemented 4080 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 10 warnings
+    Info: Peak virtual memory: 210 megabytes
+    Info: Processing ended: Wed Mar 27 11:06:33 2019
+    Info: Elapsed time: 00:00:26
+    Info: Total CPU time (on all processors): 00:00:28
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/PRAGYA/Desktop/final_one_adc/final_one_adc.map.smsg.
+
+

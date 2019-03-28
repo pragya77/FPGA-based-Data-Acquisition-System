@@ -1,0 +1,47 @@
+|Block1
+SCK <= final:inst.SCK
+MISO => final:inst.MISO
+fpga_clk => final:inst.fpga_clk
+MOSI <= final:inst.MOSI
+SS1 <= final:inst.SS1
+memory1[0] <= final:inst.memory1[0]
+memory1[1] <= final:inst.memory1[1]
+memory1[2] <= final:inst.memory1[2]
+memory1[3] <= final:inst.memory1[3]
+memory1[4] <= final:inst.memory1[4]
+memory1[5] <= final:inst.memory1[5]
+memory1[6] <= final:inst.memory1[6]
+memory1[7] <= final:inst.memory1[7]
+memory1[8] <= final:inst.memory1[8]
+memory1[9] <= final:inst.memory1[9]
+
+
+|Block1|final:inst
+SCK <= m[2].DB_MAX_OUTPUT_PORT_TYPE
+MISO => memory1.DATAB
+MISO => memory1.DATAB
+MISO => memory1.DATAB
+MISO => memory1.DATAB
+MISO => memory1.DATAB
+MISO => memory1.DATAB
+MISO => memory1.DATAB
+MISO => memory1.DATAB
+MISO => memory1.DATAB
+MISO => memory1.DATAB
+MOSI <= MOSI~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SS1 <= SS1~reg0.DB_MAX_OUTPUT_PORT_TYPE
+fpga_clk => m[0].CLK
+fpga_clk => m[1].CLK
+fpga_clk => m[2].CLK
+memory1[0] <= memory1[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+memory1[1] <= memory1[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+memory1[2] <= memory1[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+memory1[3] <= memory1[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+memory1[4] <= memory1[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+memory1[5] <= memory1[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+memory1[6] <= memory1[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+memory1[7] <= memory1[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+memory1[8] <= memory1[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+memory1[9] <= memory1[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

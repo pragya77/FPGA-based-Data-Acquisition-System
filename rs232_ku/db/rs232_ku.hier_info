@@ -1,0 +1,109 @@
+|Block1
+tick <= BaudTickGen:inst.tick
+clk => BaudTickGen:inst.clk
+enable => BaudTickGen:inst.enable
+SCK <= rs232_ku:inst1.SCK
+MISO => rs232_ku:inst1.MISO
+clk2 => rs232_ku:inst1.clk
+TxD_start => rs232_ku:inst1.TxD_start
+MOSI <= rs232_ku:inst1.MOSI
+SS1 <= rs232_ku:inst1.SS1
+TxD <= rs232_ku:inst1.TxD
+TxD_busy <= rs232_ku:inst1.TxD_busy
+
+
+|Block1|BaudTickGen:inst
+clk => Acc[1].CLK
+clk => Acc[2].CLK
+clk => Acc[3].CLK
+clk => Acc[4].CLK
+clk => Acc[5].CLK
+clk => Acc[6].CLK
+clk => Acc[7].CLK
+clk => Acc[8].CLK
+clk => Acc[9].CLK
+clk => Acc[10].CLK
+clk => Acc[11].CLK
+clk => Acc[12].CLK
+clk => Acc[13].CLK
+clk => Acc[14].CLK
+clk => Acc[15].CLK
+clk => Acc[16].CLK
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+tick <= Acc[16].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Block1|rs232_ku:inst1
+SCK <= m[2].DB_MAX_OUTPUT_PORT_TYPE
+MISO => store.DATAB
+MISO => store.DATAB
+MISO => store.DATAB
+MISO => store.DATAB
+MISO => store.DATAB
+MISO => store.DATAB
+MISO => store.DATAB
+MISO => store.DATAB
+MISO => store.DATAB
+MOSI <= MOSI~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SS1 <= SS1~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clk => clk.IN1
+TxD_start => always3.IN1
+TxD_start => TxD_state.OUTPUTSELECT
+TxD_start => TxD_state.OUTPUTSELECT
+TxD_start => TxD_state.OUTPUTSELECT
+TxD_start => TxD_state.OUTPUTSELECT
+TxD <= TxD~reg0.DB_MAX_OUTPUT_PORT_TYPE
+TxD_busy <= TxD_busy.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Block1|rs232_ku:inst1|BaudTickGen:tickgen
+clk => Acc[1].CLK
+clk => Acc[2].CLK
+clk => Acc[3].CLK
+clk => Acc[4].CLK
+clk => Acc[5].CLK
+clk => Acc[6].CLK
+clk => Acc[7].CLK
+clk => Acc[8].CLK
+clk => Acc[9].CLK
+clk => Acc[10].CLK
+clk => Acc[11].CLK
+clk => Acc[12].CLK
+clk => Acc[13].CLK
+clk => Acc[14].CLK
+clk => Acc[15].CLK
+clk => Acc[16].CLK
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+tick <= Acc[16].DB_MAX_OUTPUT_PORT_TYPE
+
+

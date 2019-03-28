@@ -1,0 +1,464 @@
+Classic Timing Analyzer report for final
+Mon Feb 25 10:55:28 2019
+Quartus II Version 9.1 Build 222 10/21/2009 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'fpga_clk'
+  7. tsu
+  8. tco
+  9. th
+ 10. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                        ;
++------------------------------+-------+---------------+----------------------------------+-----------------------+-----------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From                  ; To                    ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+-----------------------+-----------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 1.495 ns                         ; MISO                  ; final:inst|memory1[0] ; --         ; fpga_clk ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 14.161 ns                        ; final:inst|memory1[3] ; memory1[3]            ; fpga_clk   ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; -0.566 ns                        ; MISO                  ; final:inst|memory1[9] ; --         ; fpga_clk ; 0            ;
+; Clock Setup: 'fpga_clk'      ; N/A   ; None          ; 188.64 MHz ( period = 5.301 ns ) ; final:inst|i[5]       ; final:inst|memory1[9] ; fpga_clk   ; fpga_clk ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                       ;                       ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+-----------------------+-----------------------+------------+----------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                                                            ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                                                               ; Setting            ; From ; To ; Entity Name ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                                                          ; EP2C20F484C7       ;      ;    ;             ;
+; Timing Models                                                                                        ; Final              ;      ;    ;             ;
+; Default hold multicycle                                                                              ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                                                            ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                                                               ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                                                       ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                                                     ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                                                                ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                                                              ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                                                     ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                                                 ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                                                        ; Off                ;      ;    ;             ;
+; Minimum Core Junction Temperature                                                                    ; 0                  ;      ;    ;             ;
+; Maximum Core Junction Temperature                                                                    ; 85                 ;      ;    ;             ;
+; Number of source nodes to report per destination node                                                ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                                                                ; 10                 ;      ;    ;             ;
+; Number of paths to report                                                                            ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                                                         ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                                                               ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                                                           ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                                                         ; On                 ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis                                       ; Off                ;      ;    ;             ;
+; Reports worst-case timing paths for each clock domain and analysis                                   ; On                 ;      ;    ;             ;
+; Specifies the maximum number of worst-case timing paths to report for each clock domain and analysis ; 100                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation                                  ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                                                           ; Near End           ;      ;    ;             ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; fpga_clk        ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'fpga_clk'                                                                                                                                                                                                                                  ;
++-----------------------------------------+-----------------------------------------------------+----------------------+-----------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                 ; To                    ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+----------------------+-----------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 188.64 MHz ( period = 5.301 ns )                    ; final:inst|i[5]      ; final:inst|memory1[9] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 5.064 ns                ;
+; N/A                                     ; 188.89 MHz ( period = 5.294 ns )                    ; final:inst|i[5]      ; final:inst|memory1[8] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 5.057 ns                ;
+; N/A                                     ; 189.61 MHz ( period = 5.274 ns )                    ; final:inst|i[8]      ; final:inst|memory1[9] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 5.037 ns                ;
+; N/A                                     ; 189.86 MHz ( period = 5.267 ns )                    ; final:inst|i[8]      ; final:inst|memory1[8] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 5.030 ns                ;
+; N/A                                     ; 192.16 MHz ( period = 5.204 ns )                    ; final:inst|i[0]      ; final:inst|i[31]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.959 ns                ;
+; N/A                                     ; 193.61 MHz ( period = 5.165 ns )                    ; final:inst|i[6]      ; final:inst|memory1[9] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.928 ns                ;
+; N/A                                     ; 193.87 MHz ( period = 5.158 ns )                    ; final:inst|i[6]      ; final:inst|memory1[8] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.921 ns                ;
+; N/A                                     ; 194.82 MHz ( period = 5.133 ns )                    ; final:inst|i[5]      ; final:inst|memory1[4] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.902 ns                ;
+; N/A                                     ; 195.16 MHz ( period = 5.124 ns )                    ; final:inst|i[0]      ; final:inst|i[30]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.879 ns                ;
+; N/A                                     ; 195.85 MHz ( period = 5.106 ns )                    ; final:inst|i[8]      ; final:inst|memory1[4] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.875 ns                ;
+; N/A                                     ; 196.77 MHz ( period = 5.082 ns )                    ; final:inst|i[7]      ; final:inst|memory1[9] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.845 ns                ;
+; N/A                                     ; 197.04 MHz ( period = 5.075 ns )                    ; final:inst|i[7]      ; final:inst|memory1[8] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.838 ns                ;
+; N/A                                     ; 198.26 MHz ( period = 5.044 ns )                    ; final:inst|i[0]      ; final:inst|i[29]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.799 ns                ;
+; N/A                                     ; 198.29 MHz ( period = 5.043 ns )                    ; final:inst|i[5]      ; final:inst|memory1[1] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.807 ns                ;
+; N/A                                     ; 198.33 MHz ( period = 5.042 ns )                    ; final:inst|i[5]      ; final:inst|memory1[3] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.806 ns                ;
+; N/A                                     ; 198.37 MHz ( period = 5.041 ns )                    ; final:inst|i[5]      ; final:inst|memory1[7] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.805 ns                ;
+; N/A                                     ; 198.61 MHz ( period = 5.035 ns )                    ; final:inst|i[5]      ; final:inst|memory1[5] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.799 ns                ;
+; N/A                                     ; 198.65 MHz ( period = 5.034 ns )                    ; final:inst|i[5]      ; final:inst|memory1[6] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.798 ns                ;
+; N/A                                     ; 198.73 MHz ( period = 5.032 ns )                    ; final:inst|i[5]      ; final:inst|memory1[2] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.796 ns                ;
+; N/A                                     ; 199.36 MHz ( period = 5.016 ns )                    ; final:inst|i[8]      ; final:inst|memory1[1] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.780 ns                ;
+; N/A                                     ; 199.40 MHz ( period = 5.015 ns )                    ; final:inst|i[8]      ; final:inst|memory1[3] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.779 ns                ;
+; N/A                                     ; 199.44 MHz ( period = 5.014 ns )                    ; final:inst|i[8]      ; final:inst|memory1[7] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.778 ns                ;
+; N/A                                     ; 199.68 MHz ( period = 5.008 ns )                    ; final:inst|i[8]      ; final:inst|memory1[5] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.772 ns                ;
+; N/A                                     ; 199.72 MHz ( period = 5.007 ns )                    ; final:inst|i[8]      ; final:inst|memory1[6] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.771 ns                ;
+; N/A                                     ; 199.80 MHz ( period = 5.005 ns )                    ; final:inst|i[8]      ; final:inst|memory1[2] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.769 ns                ;
+; N/A                                     ; 200.12 MHz ( period = 4.997 ns )                    ; final:inst|i[6]      ; final:inst|memory1[4] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.766 ns                ;
+; N/A                                     ; 201.45 MHz ( period = 4.964 ns )                    ; final:inst|i[0]      ; final:inst|i[28]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.719 ns                ;
+; N/A                                     ; 201.94 MHz ( period = 4.952 ns )                    ; final:inst|i[3]      ; final:inst|i[31]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.707 ns                ;
+; N/A                                     ; 203.50 MHz ( period = 4.914 ns )                    ; final:inst|i[7]      ; final:inst|memory1[4] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.683 ns                ;
+; N/A                                     ; 203.79 MHz ( period = 4.907 ns )                    ; final:inst|i[6]      ; final:inst|memory1[1] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.671 ns                ;
+; N/A                                     ; 203.83 MHz ( period = 4.906 ns )                    ; final:inst|i[6]      ; final:inst|memory1[3] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.670 ns                ;
+; N/A                                     ; 203.87 MHz ( period = 4.905 ns )                    ; final:inst|i[6]      ; final:inst|memory1[7] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.669 ns                ;
+; N/A                                     ; 204.12 MHz ( period = 4.899 ns )                    ; final:inst|i[6]      ; final:inst|memory1[5] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.663 ns                ;
+; N/A                                     ; 204.16 MHz ( period = 4.898 ns )                    ; final:inst|i[6]      ; final:inst|memory1[6] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.662 ns                ;
+; N/A                                     ; 204.25 MHz ( period = 4.896 ns )                    ; final:inst|i[6]      ; final:inst|memory1[2] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.660 ns                ;
+; N/A                                     ; 204.75 MHz ( period = 4.884 ns )                    ; final:inst|i[0]      ; final:inst|i[27]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.639 ns                ;
+; N/A                                     ; 205.04 MHz ( period = 4.877 ns )                    ; final:inst|count1[1] ; final:inst|i[15]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.640 ns                ;
+; N/A                                     ; 205.04 MHz ( period = 4.877 ns )                    ; final:inst|count1[1] ; final:inst|i[14]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.640 ns                ;
+; N/A                                     ; 205.04 MHz ( period = 4.877 ns )                    ; final:inst|count1[1] ; final:inst|i[13]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.640 ns                ;
+; N/A                                     ; 205.04 MHz ( period = 4.877 ns )                    ; final:inst|count1[1] ; final:inst|i[12]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.640 ns                ;
+; N/A                                     ; 205.04 MHz ( period = 4.877 ns )                    ; final:inst|count1[1] ; final:inst|i[11]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.640 ns                ;
+; N/A                                     ; 205.04 MHz ( period = 4.877 ns )                    ; final:inst|count1[1] ; final:inst|i[10]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.640 ns                ;
+; N/A                                     ; 205.04 MHz ( period = 4.877 ns )                    ; final:inst|count1[1] ; final:inst|i[9]       ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.640 ns                ;
+; N/A                                     ; 205.04 MHz ( period = 4.877 ns )                    ; final:inst|count1[1] ; final:inst|i[8]       ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.640 ns                ;
+; N/A                                     ; 205.04 MHz ( period = 4.877 ns )                    ; final:inst|count1[1] ; final:inst|i[7]       ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.640 ns                ;
+; N/A                                     ; 205.04 MHz ( period = 4.877 ns )                    ; final:inst|count1[1] ; final:inst|i[6]       ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.640 ns                ;
+; N/A                                     ; 205.04 MHz ( period = 4.877 ns )                    ; final:inst|count1[1] ; final:inst|i[5]       ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.640 ns                ;
+; N/A                                     ; 205.04 MHz ( period = 4.877 ns )                    ; final:inst|count1[1] ; final:inst|i[4]       ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.640 ns                ;
+; N/A                                     ; 205.04 MHz ( period = 4.877 ns )                    ; final:inst|count1[1] ; final:inst|i[2]       ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.640 ns                ;
+; N/A                                     ; 205.04 MHz ( period = 4.877 ns )                    ; final:inst|count1[1] ; final:inst|i[1]       ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.640 ns                ;
+; N/A                                     ; 205.25 MHz ( period = 4.872 ns )                    ; final:inst|i[3]      ; final:inst|i[30]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.627 ns                ;
+; N/A                                     ; 207.30 MHz ( period = 4.824 ns )                    ; final:inst|i[7]      ; final:inst|memory1[1] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.588 ns                ;
+; N/A                                     ; 207.34 MHz ( period = 4.823 ns )                    ; final:inst|i[7]      ; final:inst|memory1[3] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.587 ns                ;
+; N/A                                     ; 207.38 MHz ( period = 4.822 ns )                    ; final:inst|i[7]      ; final:inst|memory1[7] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.586 ns                ;
+; N/A                                     ; 207.64 MHz ( period = 4.816 ns )                    ; final:inst|i[7]      ; final:inst|memory1[5] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.580 ns                ;
+; N/A                                     ; 207.64 MHz ( period = 4.816 ns )                    ; final:inst|i[5]      ; final:inst|memory1[0] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.579 ns                ;
+; N/A                                     ; 207.68 MHz ( period = 4.815 ns )                    ; final:inst|i[7]      ; final:inst|memory1[6] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.579 ns                ;
+; N/A                                     ; 207.77 MHz ( period = 4.813 ns )                    ; final:inst|i[7]      ; final:inst|memory1[2] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.577 ns                ;
+; N/A                                     ; 208.16 MHz ( period = 4.804 ns )                    ; final:inst|i[0]      ; final:inst|i[26]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.559 ns                ;
+; N/A                                     ; 208.68 MHz ( period = 4.792 ns )                    ; final:inst|i[3]      ; final:inst|i[29]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.547 ns                ;
+; N/A                                     ; 208.81 MHz ( period = 4.789 ns )                    ; final:inst|i[8]      ; final:inst|memory1[0] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.552 ns                ;
+; N/A                                     ; 209.07 MHz ( period = 4.783 ns )                    ; final:inst|i[24]     ; final:inst|memory1[4] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.556 ns                ;
+; N/A                                     ; 209.51 MHz ( period = 4.773 ns )                    ; final:inst|count1[1] ; final:inst|memory1[1] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.539 ns                ;
+; N/A                                     ; 209.56 MHz ( period = 4.772 ns )                    ; final:inst|count1[1] ; final:inst|memory1[3] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.538 ns                ;
+; N/A                                     ; 209.60 MHz ( period = 4.771 ns )                    ; final:inst|count1[1] ; final:inst|memory1[7] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.537 ns                ;
+; N/A                                     ; 209.86 MHz ( period = 4.765 ns )                    ; final:inst|count1[1] ; final:inst|memory1[5] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.531 ns                ;
+; N/A                                     ; 209.91 MHz ( period = 4.764 ns )                    ; final:inst|i[25]     ; final:inst|memory1[4] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.537 ns                ;
+; N/A                                     ; 211.15 MHz ( period = 4.736 ns )                    ; final:inst|count1[2] ; final:inst|i[15]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.499 ns                ;
+; N/A                                     ; 211.15 MHz ( period = 4.736 ns )                    ; final:inst|count1[2] ; final:inst|i[14]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.499 ns                ;
+; N/A                                     ; 211.15 MHz ( period = 4.736 ns )                    ; final:inst|count1[2] ; final:inst|i[13]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.499 ns                ;
+; N/A                                     ; 211.15 MHz ( period = 4.736 ns )                    ; final:inst|count1[2] ; final:inst|i[12]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.499 ns                ;
+; N/A                                     ; 211.15 MHz ( period = 4.736 ns )                    ; final:inst|count1[2] ; final:inst|i[11]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.499 ns                ;
+; N/A                                     ; 211.15 MHz ( period = 4.736 ns )                    ; final:inst|count1[2] ; final:inst|i[10]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.499 ns                ;
+; N/A                                     ; 211.15 MHz ( period = 4.736 ns )                    ; final:inst|count1[2] ; final:inst|i[9]       ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.499 ns                ;
+; N/A                                     ; 211.15 MHz ( period = 4.736 ns )                    ; final:inst|count1[2] ; final:inst|i[8]       ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.499 ns                ;
+; N/A                                     ; 211.15 MHz ( period = 4.736 ns )                    ; final:inst|count1[2] ; final:inst|i[7]       ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.499 ns                ;
+; N/A                                     ; 211.15 MHz ( period = 4.736 ns )                    ; final:inst|count1[2] ; final:inst|i[6]       ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.499 ns                ;
+; N/A                                     ; 211.15 MHz ( period = 4.736 ns )                    ; final:inst|count1[2] ; final:inst|i[5]       ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.499 ns                ;
+; N/A                                     ; 211.15 MHz ( period = 4.736 ns )                    ; final:inst|count1[2] ; final:inst|i[4]       ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.499 ns                ;
+; N/A                                     ; 211.15 MHz ( period = 4.736 ns )                    ; final:inst|count1[2] ; final:inst|i[2]       ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.499 ns                ;
+; N/A                                     ; 211.15 MHz ( period = 4.736 ns )                    ; final:inst|count1[2] ; final:inst|i[1]       ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.499 ns                ;
+; N/A                                     ; 211.69 MHz ( period = 4.724 ns )                    ; final:inst|i[0]      ; final:inst|i[25]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.479 ns                ;
+; N/A                                     ; 212.09 MHz ( period = 4.715 ns )                    ; final:inst|i[13]     ; final:inst|memory1[9] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.478 ns                ;
+; N/A                                     ; 212.22 MHz ( period = 4.712 ns )                    ; final:inst|i[3]      ; final:inst|i[28]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.467 ns                ;
+; N/A                                     ; 212.40 MHz ( period = 4.708 ns )                    ; final:inst|i[13]     ; final:inst|memory1[8] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.471 ns                ;
+; N/A                                     ; 213.17 MHz ( period = 4.691 ns )                    ; final:inst|i[24]     ; final:inst|memory1[1] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.459 ns                ;
+; N/A                                     ; 213.22 MHz ( period = 4.690 ns )                    ; final:inst|i[24]     ; final:inst|memory1[3] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.458 ns                ;
+; N/A                                     ; 213.27 MHz ( period = 4.689 ns )                    ; final:inst|i[24]     ; final:inst|memory1[7] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.457 ns                ;
+; N/A                                     ; 213.49 MHz ( period = 4.684 ns )                    ; final:inst|i[24]     ; final:inst|memory1[6] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.452 ns                ;
+; N/A                                     ; 213.54 MHz ( period = 4.683 ns )                    ; final:inst|i[24]     ; final:inst|memory1[5] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.451 ns                ;
+; N/A                                     ; 213.58 MHz ( period = 4.682 ns )                    ; final:inst|i[24]     ; final:inst|memory1[2] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.450 ns                ;
+; N/A                                     ; 213.68 MHz ( period = 4.680 ns )                    ; final:inst|i[6]      ; final:inst|memory1[0] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.443 ns                ;
+; N/A                                     ; 214.04 MHz ( period = 4.672 ns )                    ; final:inst|i[25]     ; final:inst|memory1[1] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.440 ns                ;
+; N/A                                     ; 214.09 MHz ( period = 4.671 ns )                    ; final:inst|i[25]     ; final:inst|memory1[3] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.439 ns                ;
+; N/A                                     ; 214.13 MHz ( period = 4.670 ns )                    ; final:inst|i[25]     ; final:inst|memory1[7] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.438 ns                ;
+; N/A                                     ; 214.36 MHz ( period = 4.665 ns )                    ; final:inst|i[25]     ; final:inst|memory1[6] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.433 ns                ;
+; N/A                                     ; 214.41 MHz ( period = 4.664 ns )                    ; final:inst|i[25]     ; final:inst|memory1[5] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.432 ns                ;
+; N/A                                     ; 214.45 MHz ( period = 4.663 ns )                    ; final:inst|i[25]     ; final:inst|memory1[2] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.431 ns                ;
+; N/A                                     ; 215.33 MHz ( period = 4.644 ns )                    ; final:inst|i[0]      ; final:inst|i[24]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.399 ns                ;
+; N/A                                     ; 215.38 MHz ( period = 4.643 ns )                    ; final:inst|i[26]     ; final:inst|memory1[4] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.416 ns                ;
+; N/A                                     ; 215.42 MHz ( period = 4.642 ns )                    ; final:inst|i[15]     ; final:inst|memory1[9] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.405 ns                ;
+; N/A                                     ; 215.47 MHz ( period = 4.641 ns )                    ; final:inst|i[31]     ; final:inst|memory1[4] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.414 ns                ;
+; N/A                                     ; 215.75 MHz ( period = 4.635 ns )                    ; final:inst|i[15]     ; final:inst|memory1[8] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.398 ns                ;
+; N/A                                     ; 215.89 MHz ( period = 4.632 ns )                    ; final:inst|i[3]      ; final:inst|i[27]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.387 ns                ;
+; N/A                                     ; 215.89 MHz ( period = 4.632 ns )                    ; final:inst|count1[2] ; final:inst|memory1[1] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.398 ns                ;
+; N/A                                     ; 215.94 MHz ( period = 4.631 ns )                    ; final:inst|count1[2] ; final:inst|memory1[3] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.397 ns                ;
+; N/A                                     ; 215.98 MHz ( period = 4.630 ns )                    ; final:inst|count1[2] ; final:inst|memory1[7] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.396 ns                ;
+; N/A                                     ; 216.26 MHz ( period = 4.624 ns )                    ; final:inst|count1[2] ; final:inst|memory1[5] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.390 ns                ;
+; N/A                                     ; 217.39 MHz ( period = 4.600 ns )                    ; final:inst|i[28]     ; final:inst|memory1[4] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.373 ns                ;
+; N/A                                     ; 217.53 MHz ( period = 4.597 ns )                    ; final:inst|i[7]      ; final:inst|memory1[0] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.360 ns                ;
+; N/A                                     ; 218.20 MHz ( period = 4.583 ns )                    ; final:inst|i[31]     ; final:inst|memory1[1] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.351 ns                ;
+; N/A                                     ; 218.25 MHz ( period = 4.582 ns )                    ; final:inst|i[31]     ; final:inst|memory1[3] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.350 ns                ;
+; N/A                                     ; 218.29 MHz ( period = 4.581 ns )                    ; final:inst|i[31]     ; final:inst|memory1[7] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.349 ns                ;
+; N/A                                     ; 218.58 MHz ( period = 4.575 ns )                    ; final:inst|i[31]     ; final:inst|memory1[5] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.343 ns                ;
+; N/A                                     ; 218.96 MHz ( period = 4.567 ns )                    ; final:inst|i[11]     ; final:inst|memory1[9] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.330 ns                ;
+; N/A                                     ; 219.30 MHz ( period = 4.560 ns )                    ; final:inst|i[11]     ; final:inst|memory1[8] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.323 ns                ;
+; N/A                                     ; 219.68 MHz ( period = 4.552 ns )                    ; final:inst|i[3]      ; final:inst|i[26]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.307 ns                ;
+; N/A                                     ; 219.73 MHz ( period = 4.551 ns )                    ; final:inst|i[26]     ; final:inst|memory1[1] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.319 ns                ;
+; N/A                                     ; 219.78 MHz ( period = 4.550 ns )                    ; final:inst|i[26]     ; final:inst|memory1[3] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.318 ns                ;
+; N/A                                     ; 219.83 MHz ( period = 4.549 ns )                    ; final:inst|i[26]     ; final:inst|memory1[7] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.317 ns                ;
+; N/A                                     ; 219.93 MHz ( period = 4.547 ns )                    ; final:inst|i[13]     ; final:inst|memory1[4] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.316 ns                ;
+; N/A                                     ; 220.02 MHz ( period = 4.545 ns )                    ; final:inst|i[10]     ; final:inst|memory1[9] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.308 ns                ;
+; N/A                                     ; 220.07 MHz ( period = 4.544 ns )                    ; final:inst|i[26]     ; final:inst|memory1[6] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.312 ns                ;
+; N/A                                     ; 220.12 MHz ( period = 4.543 ns )                    ; final:inst|i[26]     ; final:inst|memory1[5] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.311 ns                ;
+; N/A                                     ; 220.17 MHz ( period = 4.542 ns )                    ; final:inst|i[31]     ; final:inst|memory1[6] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.310 ns                ;
+; N/A                                     ; 220.17 MHz ( period = 4.542 ns )                    ; final:inst|i[26]     ; final:inst|memory1[2] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.310 ns                ;
+; N/A                                     ; 220.17 MHz ( period = 4.542 ns )                    ; final:inst|i[28]     ; final:inst|memory1[1] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.310 ns                ;
+; N/A                                     ; 220.22 MHz ( period = 4.541 ns )                    ; final:inst|count1[1] ; final:inst|i[31]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.300 ns                ;
+; N/A                                     ; 220.22 MHz ( period = 4.541 ns )                    ; final:inst|count1[1] ; final:inst|i[30]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.300 ns                ;
+; N/A                                     ; 220.22 MHz ( period = 4.541 ns )                    ; final:inst|count1[1] ; final:inst|i[29]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.300 ns                ;
+; N/A                                     ; 220.22 MHz ( period = 4.541 ns )                    ; final:inst|count1[1] ; final:inst|i[28]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.300 ns                ;
+; N/A                                     ; 220.22 MHz ( period = 4.541 ns )                    ; final:inst|count1[1] ; final:inst|i[27]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.300 ns                ;
+; N/A                                     ; 220.22 MHz ( period = 4.541 ns )                    ; final:inst|count1[1] ; final:inst|i[26]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.300 ns                ;
+; N/A                                     ; 220.22 MHz ( period = 4.541 ns )                    ; final:inst|count1[1] ; final:inst|i[25]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.300 ns                ;
+; N/A                                     ; 220.22 MHz ( period = 4.541 ns )                    ; final:inst|count1[1] ; final:inst|i[24]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.300 ns                ;
+; N/A                                     ; 220.22 MHz ( period = 4.541 ns )                    ; final:inst|count1[1] ; final:inst|i[23]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.300 ns                ;
+; N/A                                     ; 220.22 MHz ( period = 4.541 ns )                    ; final:inst|count1[1] ; final:inst|i[22]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.300 ns                ;
+; N/A                                     ; 220.22 MHz ( period = 4.541 ns )                    ; final:inst|count1[1] ; final:inst|i[21]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.300 ns                ;
+; N/A                                     ; 220.22 MHz ( period = 4.541 ns )                    ; final:inst|count1[1] ; final:inst|i[20]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.300 ns                ;
+; N/A                                     ; 220.22 MHz ( period = 4.541 ns )                    ; final:inst|count1[1] ; final:inst|i[19]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.300 ns                ;
+; N/A                                     ; 220.22 MHz ( period = 4.541 ns )                    ; final:inst|count1[1] ; final:inst|i[18]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.300 ns                ;
+; N/A                                     ; 220.22 MHz ( period = 4.541 ns )                    ; final:inst|count1[1] ; final:inst|i[17]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.300 ns                ;
+; N/A                                     ; 220.22 MHz ( period = 4.541 ns )                    ; final:inst|count1[1] ; final:inst|i[16]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.300 ns                ;
+; N/A                                     ; 220.22 MHz ( period = 4.541 ns )                    ; final:inst|i[28]     ; final:inst|memory1[3] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.309 ns                ;
+; N/A                                     ; 220.26 MHz ( period = 4.540 ns )                    ; final:inst|count1[0] ; final:inst|i[15]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.299 ns                ;
+; N/A                                     ; 220.26 MHz ( period = 4.540 ns )                    ; final:inst|count1[0] ; final:inst|i[14]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.299 ns                ;
+; N/A                                     ; 220.26 MHz ( period = 4.540 ns )                    ; final:inst|count1[0] ; final:inst|i[13]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.299 ns                ;
+; N/A                                     ; 220.26 MHz ( period = 4.540 ns )                    ; final:inst|count1[0] ; final:inst|i[12]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.299 ns                ;
+; N/A                                     ; 220.26 MHz ( period = 4.540 ns )                    ; final:inst|count1[0] ; final:inst|i[11]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.299 ns                ;
+; N/A                                     ; 220.26 MHz ( period = 4.540 ns )                    ; final:inst|count1[0] ; final:inst|i[10]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.299 ns                ;
+; N/A                                     ; 220.26 MHz ( period = 4.540 ns )                    ; final:inst|count1[0] ; final:inst|i[9]       ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.299 ns                ;
+; N/A                                     ; 220.26 MHz ( period = 4.540 ns )                    ; final:inst|count1[0] ; final:inst|i[8]       ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.299 ns                ;
+; N/A                                     ; 220.26 MHz ( period = 4.540 ns )                    ; final:inst|count1[0] ; final:inst|i[7]       ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.299 ns                ;
+; N/A                                     ; 220.26 MHz ( period = 4.540 ns )                    ; final:inst|count1[0] ; final:inst|i[6]       ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.299 ns                ;
+; N/A                                     ; 220.26 MHz ( period = 4.540 ns )                    ; final:inst|count1[0] ; final:inst|i[5]       ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.299 ns                ;
+; N/A                                     ; 220.26 MHz ( period = 4.540 ns )                    ; final:inst|count1[0] ; final:inst|i[4]       ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.299 ns                ;
+; N/A                                     ; 220.26 MHz ( period = 4.540 ns )                    ; final:inst|count1[0] ; final:inst|i[2]       ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.299 ns                ;
+; N/A                                     ; 220.26 MHz ( period = 4.540 ns )                    ; final:inst|count1[0] ; final:inst|i[1]       ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.299 ns                ;
+; N/A                                     ; 220.26 MHz ( period = 4.540 ns )                    ; final:inst|i[28]     ; final:inst|memory1[7] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.308 ns                ;
+; N/A                                     ; 220.26 MHz ( period = 4.540 ns )                    ; final:inst|i[31]     ; final:inst|memory1[2] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.308 ns                ;
+; N/A                                     ; 220.36 MHz ( period = 4.538 ns )                    ; final:inst|i[10]     ; final:inst|memory1[8] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.301 ns                ;
+; N/A                                     ; 220.56 MHz ( period = 4.534 ns )                    ; final:inst|i[28]     ; final:inst|memory1[5] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.302 ns                ;
+; N/A                                     ; 221.29 MHz ( period = 4.519 ns )                    ; final:inst|count1[1] ; final:inst|memory1[4] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.290 ns                ;
+; N/A                                     ; 222.17 MHz ( period = 4.501 ns )                    ; final:inst|i[28]     ; final:inst|memory1[6] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.269 ns                ;
+; N/A                                     ; 222.27 MHz ( period = 4.499 ns )                    ; final:inst|i[28]     ; final:inst|memory1[2] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.267 ns                ;
+; N/A                                     ; 223.06 MHz ( period = 4.483 ns )                    ; final:inst|i[27]     ; final:inst|memory1[4] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.256 ns                ;
+; N/A                                     ; 223.51 MHz ( period = 4.474 ns )                    ; final:inst|i[15]     ; final:inst|memory1[4] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.243 ns                ;
+; N/A                                     ; 223.61 MHz ( period = 4.472 ns )                    ; final:inst|i[3]      ; final:inst|i[25]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.227 ns                ;
+; N/A                                     ; 223.71 MHz ( period = 4.470 ns )                    ; final:inst|i[0]      ; final:inst|i[23]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.225 ns                ;
+; N/A                                     ; 223.71 MHz ( period = 4.470 ns )                    ; final:inst|i[24]     ; final:inst|memory1[9] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.237 ns                ;
+; N/A                                     ; 223.91 MHz ( period = 4.466 ns )                    ; final:inst|i[24]     ; final:inst|memory1[0] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.233 ns                ;
+; N/A                                     ; 224.06 MHz ( period = 4.463 ns )                    ; final:inst|i[24]     ; final:inst|memory1[8] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.230 ns                ;
+; N/A                                     ; 224.06 MHz ( period = 4.463 ns )                    ; final:inst|i[29]     ; final:inst|memory1[4] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.236 ns                ;
+; N/A                                     ; 224.37 MHz ( period = 4.457 ns )                    ; final:inst|i[13]     ; final:inst|memory1[1] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.221 ns                ;
+; N/A                                     ; 224.42 MHz ( period = 4.456 ns )                    ; final:inst|i[13]     ; final:inst|memory1[3] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.220 ns                ;
+; N/A                                     ; 224.47 MHz ( period = 4.455 ns )                    ; final:inst|i[13]     ; final:inst|memory1[7] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.219 ns                ;
+; N/A                                     ; 224.57 MHz ( period = 4.453 ns )                    ; final:inst|count1[1] ; final:inst|memory1[9] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.218 ns                ;
+; N/A                                     ; 224.67 MHz ( period = 4.451 ns )                    ; final:inst|i[25]     ; final:inst|memory1[9] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.218 ns                ;
+; N/A                                     ; 224.77 MHz ( period = 4.449 ns )                    ; final:inst|i[13]     ; final:inst|memory1[5] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.213 ns                ;
+; N/A                                     ; 224.82 MHz ( period = 4.448 ns )                    ; final:inst|i[13]     ; final:inst|memory1[6] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.212 ns                ;
+; N/A                                     ; 224.87 MHz ( period = 4.447 ns )                    ; final:inst|i[25]     ; final:inst|memory1[0] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.214 ns                ;
+; N/A                                     ; 224.92 MHz ( period = 4.446 ns )                    ; final:inst|count1[1] ; final:inst|memory1[8] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.211 ns                ;
+; N/A                                     ; 224.92 MHz ( period = 4.446 ns )                    ; final:inst|i[13]     ; final:inst|memory1[2] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.210 ns                ;
+; N/A                                     ; 225.02 MHz ( period = 4.444 ns )                    ; final:inst|i[25]     ; final:inst|memory1[8] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.211 ns                ;
+; N/A                                     ; 225.12 MHz ( period = 4.442 ns )                    ; final:inst|i[4]      ; final:inst|memory1[9] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.205 ns                ;
+; N/A                                     ; 225.43 MHz ( period = 4.436 ns )                    ; final:inst|count1[0] ; final:inst|memory1[1] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.198 ns                ;
+; N/A                                     ; 225.48 MHz ( period = 4.435 ns )                    ; final:inst|i[4]      ; final:inst|memory1[8] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.198 ns                ;
+; N/A                                     ; 225.48 MHz ( period = 4.435 ns )                    ; final:inst|count1[0] ; final:inst|memory1[3] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.197 ns                ;
+; N/A                                     ; 225.53 MHz ( period = 4.434 ns )                    ; final:inst|count1[0] ; final:inst|memory1[7] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.196 ns                ;
+; N/A                                     ; 225.84 MHz ( period = 4.428 ns )                    ; final:inst|count1[0] ; final:inst|memory1[5] ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.190 ns                ;
+; N/A                                     ; 226.14 MHz ( period = 4.422 ns )                    ; final:inst|count1[5] ; final:inst|i[12]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.185 ns                ;
+; N/A                                     ; 226.14 MHz ( period = 4.422 ns )                    ; final:inst|count1[5] ; final:inst|i[11]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.185 ns                ;
+; N/A                                     ; 226.14 MHz ( period = 4.422 ns )                    ; final:inst|count1[5] ; final:inst|i[10]      ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.185 ns                ;
+; N/A                                     ; 226.14 MHz ( period = 4.422 ns )                    ; final:inst|count1[5] ; final:inst|i[9]       ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.185 ns                ;
+; N/A                                     ; 226.14 MHz ( period = 4.422 ns )                    ; final:inst|count1[5] ; final:inst|i[8]       ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.185 ns                ;
+; N/A                                     ; 226.14 MHz ( period = 4.422 ns )                    ; final:inst|count1[5] ; final:inst|i[7]       ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.185 ns                ;
+; N/A                                     ; 226.14 MHz ( period = 4.422 ns )                    ; final:inst|count1[5] ; final:inst|i[6]       ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.185 ns                ;
+; N/A                                     ; 226.14 MHz ( period = 4.422 ns )                    ; final:inst|count1[5] ; final:inst|i[5]       ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.185 ns                ;
+; N/A                                     ; 226.14 MHz ( period = 4.422 ns )                    ; final:inst|count1[5] ; final:inst|i[4]       ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.185 ns                ;
+; N/A                                     ; 226.14 MHz ( period = 4.422 ns )                    ; final:inst|count1[5] ; final:inst|i[2]       ; fpga_clk   ; fpga_clk ; None                        ; None                      ; 4.185 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                      ;                       ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+----------------------+-----------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++-----------------------------------------------------------------------------+
+; tsu                                                                         ;
++-------+--------------+------------+------+-----------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From ; To                    ; To Clock ;
++-------+--------------+------------+------+-----------------------+----------+
+; N/A   ; None         ; 1.495 ns   ; MISO ; final:inst|memory1[0] ; fpga_clk ;
+; N/A   ; None         ; 1.148 ns   ; MISO ; final:inst|memory1[4] ; fpga_clk ;
+; N/A   ; None         ; 0.867 ns   ; MISO ; final:inst|memory1[7] ; fpga_clk ;
+; N/A   ; None         ; 0.867 ns   ; MISO ; final:inst|memory1[5] ; fpga_clk ;
+; N/A   ; None         ; 0.866 ns   ; MISO ; final:inst|memory1[6] ; fpga_clk ;
+; N/A   ; None         ; 0.866 ns   ; MISO ; final:inst|memory1[2] ; fpga_clk ;
+; N/A   ; None         ; 0.866 ns   ; MISO ; final:inst|memory1[1] ; fpga_clk ;
+; N/A   ; None         ; 0.864 ns   ; MISO ; final:inst|memory1[3] ; fpga_clk ;
+; N/A   ; None         ; 0.815 ns   ; MISO ; final:inst|memory1[8] ; fpga_clk ;
+; N/A   ; None         ; 0.814 ns   ; MISO ; final:inst|memory1[9] ; fpga_clk ;
++-------+--------------+------------+------+-----------------------+----------+
+
+
++-------------------------------------------------------------------------------------+
+; tco                                                                                 ;
++-------+--------------+------------+-----------------------+------------+------------+
+; Slack ; Required tco ; Actual tco ; From                  ; To         ; From Clock ;
++-------+--------------+------------+-----------------------+------------+------------+
+; N/A   ; None         ; 14.161 ns  ; final:inst|memory1[3] ; memory1[3] ; fpga_clk   ;
+; N/A   ; None         ; 13.454 ns  ; final:inst|memory1[5] ; memory1[5] ; fpga_clk   ;
+; N/A   ; None         ; 13.226 ns  ; final:inst|memory1[6] ; memory1[6] ; fpga_clk   ;
+; N/A   ; None         ; 13.162 ns  ; final:inst|memory1[9] ; memory1[9] ; fpga_clk   ;
+; N/A   ; None         ; 12.964 ns  ; final:inst|memory1[2] ; memory1[2] ; fpga_clk   ;
+; N/A   ; None         ; 12.890 ns  ; final:inst|memory1[8] ; memory1[8] ; fpga_clk   ;
+; N/A   ; None         ; 12.880 ns  ; final:inst|memory1[0] ; memory1[0] ; fpga_clk   ;
+; N/A   ; None         ; 12.624 ns  ; final:inst|memory1[4] ; memory1[4] ; fpga_clk   ;
+; N/A   ; None         ; 12.557 ns  ; final:inst|memory1[1] ; memory1[1] ; fpga_clk   ;
+; N/A   ; None         ; 12.242 ns  ; final:inst|memory1[7] ; memory1[7] ; fpga_clk   ;
+; N/A   ; None         ; 11.357 ns  ; final:inst|SS1        ; SS1        ; fpga_clk   ;
+; N/A   ; None         ; 11.340 ns  ; final:inst|MOSI       ; MOSI       ; fpga_clk   ;
+; N/A   ; None         ; 6.979 ns   ; final:inst|m[2]       ; SCK        ; fpga_clk   ;
++-------+--------------+------------+-----------------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------+
+; th                                                                                ;
++---------------+-------------+-----------+------+-----------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From ; To                    ; To Clock ;
++---------------+-------------+-----------+------+-----------------------+----------+
+; N/A           ; None        ; -0.566 ns ; MISO ; final:inst|memory1[9] ; fpga_clk ;
+; N/A           ; None        ; -0.567 ns ; MISO ; final:inst|memory1[8] ; fpga_clk ;
+; N/A           ; None        ; -0.616 ns ; MISO ; final:inst|memory1[3] ; fpga_clk ;
+; N/A           ; None        ; -0.618 ns ; MISO ; final:inst|memory1[6] ; fpga_clk ;
+; N/A           ; None        ; -0.618 ns ; MISO ; final:inst|memory1[2] ; fpga_clk ;
+; N/A           ; None        ; -0.618 ns ; MISO ; final:inst|memory1[1] ; fpga_clk ;
+; N/A           ; None        ; -0.619 ns ; MISO ; final:inst|memory1[7] ; fpga_clk ;
+; N/A           ; None        ; -0.619 ns ; MISO ; final:inst|memory1[5] ; fpga_clk ;
+; N/A           ; None        ; -0.900 ns ; MISO ; final:inst|memory1[4] ; fpga_clk ;
+; N/A           ; None        ; -1.247 ns ; MISO ; final:inst|memory1[0] ; fpga_clk ;
++---------------+-------------+-----------+------+-----------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.1 Build 222 10/21/2009 SJ Web Edition
+    Info: Processing started: Mon Feb 25 10:55:28 2019
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off final -c final --timing_analysis_only
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "fpga_clk" is an undefined clock
+Warning: Found 1 node(s) in clock paths which may be acting as ripple and/or gated clocks -- node(s) analyzed as buffer(s) resulting in clock skew
+    Info: Detected ripple clock "final:inst|m[2]" as buffer
+Info: Clock "fpga_clk" has Internal fmax of 188.64 MHz between source register "final:inst|i[5]" and destination register "final:inst|memory1[9]" (period= 5.301 ns)
+    Info: + Longest register to register delay is 5.064 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X39_Y24_N11; Fanout = 3; REG Node = 'final:inst|i[5]'
+        Info: 2: + IC(1.218 ns) + CELL(0.450 ns) = 1.668 ns; Loc. = LCCOMB_X43_Y23_N16; Fanout = 1; COMB Node = 'final:inst|Decoder0~1'
+        Info: 3: + IC(1.124 ns) + CELL(0.322 ns) = 3.114 ns; Loc. = LCCOMB_X38_Y23_N8; Fanout = 3; COMB Node = 'final:inst|Decoder0~4'
+        Info: 4: + IC(0.315 ns) + CELL(0.322 ns) = 3.751 ns; Loc. = LCCOMB_X38_Y23_N18; Fanout = 1; COMB Node = 'final:inst|Decoder0~8'
+        Info: 5: + IC(0.541 ns) + CELL(0.178 ns) = 4.470 ns; Loc. = LCCOMB_X37_Y23_N0; Fanout = 2; COMB Node = 'final:inst|Decoder0~10'
+        Info: 6: + IC(0.320 ns) + CELL(0.178 ns) = 4.968 ns; Loc. = LCCOMB_X37_Y23_N18; Fanout = 1; COMB Node = 'final:inst|memory1[9]~0'
+        Info: 7: + IC(0.000 ns) + CELL(0.096 ns) = 5.064 ns; Loc. = LCFF_X37_Y23_N19; Fanout = 2; REG Node = 'final:inst|memory1[9]'
+        Info: Total cell delay = 1.546 ns ( 30.53 % )
+        Info: Total interconnect delay = 3.518 ns ( 69.47 % )
+    Info: - Smallest clock skew is 0.002 ns
+        Info: + Shortest clock path from clock "fpga_clk" to destination register is 6.742 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.006 ns) = 1.006 ns; Loc. = PIN_D12; Fanout = 2; CLK Node = 'fpga_clk'
+            Info: 2: + IC(1.311 ns) + CELL(0.879 ns) = 3.196 ns; Loc. = LCFF_X30_Y25_N21; Fanout = 3; REG Node = 'final:inst|m[2]'
+            Info: 3: + IC(1.952 ns) + CELL(0.000 ns) = 5.148 ns; Loc. = CLKCTRL_G15; Fanout = 64; COMB Node = 'final:inst|m[2]~clkctrl'
+            Info: 4: + IC(0.992 ns) + CELL(0.602 ns) = 6.742 ns; Loc. = LCFF_X37_Y23_N19; Fanout = 2; REG Node = 'final:inst|memory1[9]'
+            Info: Total cell delay = 2.487 ns ( 36.89 % )
+            Info: Total interconnect delay = 4.255 ns ( 63.11 % )
+        Info: - Longest clock path from clock "fpga_clk" to source register is 6.740 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.006 ns) = 1.006 ns; Loc. = PIN_D12; Fanout = 2; CLK Node = 'fpga_clk'
+            Info: 2: + IC(1.311 ns) + CELL(0.879 ns) = 3.196 ns; Loc. = LCFF_X30_Y25_N21; Fanout = 3; REG Node = 'final:inst|m[2]'
+            Info: 3: + IC(1.952 ns) + CELL(0.000 ns) = 5.148 ns; Loc. = CLKCTRL_G15; Fanout = 64; COMB Node = 'final:inst|m[2]~clkctrl'
+            Info: 4: + IC(0.990 ns) + CELL(0.602 ns) = 6.740 ns; Loc. = LCFF_X39_Y24_N11; Fanout = 3; REG Node = 'final:inst|i[5]'
+            Info: Total cell delay = 2.487 ns ( 36.90 % )
+            Info: Total interconnect delay = 4.253 ns ( 63.10 % )
+    Info: + Micro clock to output delay of source is 0.277 ns
+    Info: + Micro setup delay of destination is -0.038 ns
+Info: tsu for register "final:inst|memory1[0]" (data pin = "MISO", clock pin = "fpga_clk") is 1.495 ns
+    Info: + Longest pin to register delay is 8.275 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.863 ns) = 0.863 ns; Loc. = PIN_A13; Fanout = 10; PIN Node = 'MISO'
+        Info: 2: + IC(6.795 ns) + CELL(0.521 ns) = 8.179 ns; Loc. = LCCOMB_X37_Y23_N22; Fanout = 1; COMB Node = 'final:inst|memory1[0]~9'
+        Info: 3: + IC(0.000 ns) + CELL(0.096 ns) = 8.275 ns; Loc. = LCFF_X37_Y23_N23; Fanout = 2; REG Node = 'final:inst|memory1[0]'
+        Info: Total cell delay = 1.480 ns ( 17.89 % )
+        Info: Total interconnect delay = 6.795 ns ( 82.11 % )
+    Info: + Micro setup delay of destination is -0.038 ns
+    Info: - Shortest clock path from clock "fpga_clk" to destination register is 6.742 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.006 ns) = 1.006 ns; Loc. = PIN_D12; Fanout = 2; CLK Node = 'fpga_clk'
+        Info: 2: + IC(1.311 ns) + CELL(0.879 ns) = 3.196 ns; Loc. = LCFF_X30_Y25_N21; Fanout = 3; REG Node = 'final:inst|m[2]'
+        Info: 3: + IC(1.952 ns) + CELL(0.000 ns) = 5.148 ns; Loc. = CLKCTRL_G15; Fanout = 64; COMB Node = 'final:inst|m[2]~clkctrl'
+        Info: 4: + IC(0.992 ns) + CELL(0.602 ns) = 6.742 ns; Loc. = LCFF_X37_Y23_N23; Fanout = 2; REG Node = 'final:inst|memory1[0]'
+        Info: Total cell delay = 2.487 ns ( 36.89 % )
+        Info: Total interconnect delay = 4.255 ns ( 63.11 % )
+Info: tco from clock "fpga_clk" to destination pin "memory1[3]" through register "final:inst|memory1[3]" is 14.161 ns
+    Info: + Longest clock path from clock "fpga_clk" to source register is 6.743 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.006 ns) = 1.006 ns; Loc. = PIN_D12; Fanout = 2; CLK Node = 'fpga_clk'
+        Info: 2: + IC(1.311 ns) + CELL(0.879 ns) = 3.196 ns; Loc. = LCFF_X30_Y25_N21; Fanout = 3; REG Node = 'final:inst|m[2]'
+        Info: 3: + IC(1.952 ns) + CELL(0.000 ns) = 5.148 ns; Loc. = CLKCTRL_G15; Fanout = 64; COMB Node = 'final:inst|m[2]~clkctrl'
+        Info: 4: + IC(0.993 ns) + CELL(0.602 ns) = 6.743 ns; Loc. = LCFF_X38_Y23_N31; Fanout = 2; REG Node = 'final:inst|memory1[3]'
+        Info: Total cell delay = 2.487 ns ( 36.88 % )
+        Info: Total interconnect delay = 4.256 ns ( 63.12 % )
+    Info: + Micro clock to output delay of source is 0.277 ns
+    Info: + Longest register to pin delay is 7.141 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X38_Y23_N31; Fanout = 2; REG Node = 'final:inst|memory1[3]'
+        Info: 2: + IC(4.291 ns) + CELL(2.850 ns) = 7.141 ns; Loc. = PIN_Y19; Fanout = 0; PIN Node = 'memory1[3]'
+        Info: Total cell delay = 2.850 ns ( 39.91 % )
+        Info: Total interconnect delay = 4.291 ns ( 60.09 % )
+Info: th for register "final:inst|memory1[9]" (data pin = "MISO", clock pin = "fpga_clk") is -0.566 ns
+    Info: + Longest clock path from clock "fpga_clk" to destination register is 6.742 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.006 ns) = 1.006 ns; Loc. = PIN_D12; Fanout = 2; CLK Node = 'fpga_clk'
+        Info: 2: + IC(1.311 ns) + CELL(0.879 ns) = 3.196 ns; Loc. = LCFF_X30_Y25_N21; Fanout = 3; REG Node = 'final:inst|m[2]'
+        Info: 3: + IC(1.952 ns) + CELL(0.000 ns) = 5.148 ns; Loc. = CLKCTRL_G15; Fanout = 64; COMB Node = 'final:inst|m[2]~clkctrl'
+        Info: 4: + IC(0.992 ns) + CELL(0.602 ns) = 6.742 ns; Loc. = LCFF_X37_Y23_N19; Fanout = 2; REG Node = 'final:inst|memory1[9]'
+        Info: Total cell delay = 2.487 ns ( 36.89 % )
+        Info: Total interconnect delay = 4.255 ns ( 63.11 % )
+    Info: + Micro hold delay of destination is 0.286 ns
+    Info: - Shortest pin to register delay is 7.594 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.863 ns) = 0.863 ns; Loc. = PIN_A13; Fanout = 10; PIN Node = 'MISO'
+        Info: 2: + IC(6.090 ns) + CELL(0.545 ns) = 7.498 ns; Loc. = LCCOMB_X37_Y23_N18; Fanout = 1; COMB Node = 'final:inst|memory1[9]~0'
+        Info: 3: + IC(0.000 ns) + CELL(0.096 ns) = 7.594 ns; Loc. = LCFF_X37_Y23_N19; Fanout = 2; REG Node = 'final:inst|memory1[9]'
+        Info: Total cell delay = 1.504 ns ( 19.81 % )
+        Info: Total interconnect delay = 6.090 ns ( 80.19 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 155 megabytes
+    Info: Processing ended: Mon Feb 25 10:55:29 2019
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

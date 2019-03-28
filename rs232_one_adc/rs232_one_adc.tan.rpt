@@ -1,0 +1,454 @@
+Classic Timing Analyzer report for rs232_one_adc
+Tue Mar 19 13:06:21 2019
+Quartus II Version 9.1 Build 222 10/21/2009 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'clk'
+  7. tsu
+  8. tco
+  9. th
+ 10. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                        ;
++------------------------------+-------+---------------+----------------------------------+------------------------------+--------------------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From                         ; To                             ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+------------------------------+--------------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 1.086 ns                         ; MISO                         ; rs232_one_adc:inst|memory1[6]  ; --         ; clk      ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 11.940 ns                        ; rs232_one_adc:inst|SS1       ; SS1                            ; clk        ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; -0.451 ns                        ; MISO                         ; rs232_one_adc:inst|memory1[0]  ; --         ; clk      ; 0            ;
+; Clock Setup: 'clk'           ; N/A   ; None          ; 139.47 MHz ( period = 7.170 ns ) ; rs232_one_adc:inst|count1[2] ; rs232_one_adc:inst|TxD_data[0] ; clk        ; clk      ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                              ;                                ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+------------------------------+--------------------------------+------------+----------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                                                            ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                                                               ; Setting            ; From ; To ; Entity Name ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                                                          ; EP2C20F484C7       ;      ;    ;             ;
+; Timing Models                                                                                        ; Final              ;      ;    ;             ;
+; Default hold multicycle                                                                              ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                                                            ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                                                               ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                                                       ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                                                     ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                                                                ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                                                              ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                                                     ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                                                 ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                                                        ; Off                ;      ;    ;             ;
+; Minimum Core Junction Temperature                                                                    ; 0                  ;      ;    ;             ;
+; Maximum Core Junction Temperature                                                                    ; 85                 ;      ;    ;             ;
+; Number of source nodes to report per destination node                                                ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                                                                ; 10                 ;      ;    ;             ;
+; Number of paths to report                                                                            ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                                                         ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                                                               ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                                                           ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                                                         ; On                 ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis                                       ; Off                ;      ;    ;             ;
+; Reports worst-case timing paths for each clock domain and analysis                                   ; On                 ;      ;    ;             ;
+; Specifies the maximum number of worst-case timing paths to report for each clock domain and analysis ; 100                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation                                  ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                                                           ; Near End           ;      ;    ;             ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clk             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clk'                                                                                                                                                                                                                                                          ;
++-----------------------------------------+-----------------------------------------------------+-------------------------------+---------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                          ; To                              ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+-------------------------------+---------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 139.47 MHz ( period = 7.170 ns )                    ; rs232_one_adc:inst|count1[2]  ; rs232_one_adc:inst|TxD_data[0]  ; clk        ; clk      ; None                        ; None                      ; 2.974 ns                ;
+; N/A                                     ; 139.65 MHz ( period = 7.161 ns )                    ; rs232_one_adc:inst|count1[2]  ; rs232_one_adc:inst|TxD_data[1]  ; clk        ; clk      ; None                        ; None                      ; 2.966 ns                ;
+; N/A                                     ; 140.29 MHz ( period = 7.128 ns )                    ; rs232_one_adc:inst|count1[3]  ; rs232_one_adc:inst|TxD_data[0]  ; clk        ; clk      ; None                        ; None                      ; 2.932 ns                ;
+; N/A                                     ; 140.47 MHz ( period = 7.119 ns )                    ; rs232_one_adc:inst|count1[3]  ; rs232_one_adc:inst|TxD_data[1]  ; clk        ; clk      ; None                        ; None                      ; 2.924 ns                ;
+; N/A                                     ; 143.86 MHz ( period = 6.951 ns )                    ; rs232_one_adc:inst|count1[4]  ; rs232_one_adc:inst|TxD_data[0]  ; clk        ; clk      ; None                        ; None                      ; 2.755 ns                ;
+; N/A                                     ; 143.95 MHz ( period = 6.947 ns )                    ; rs232_one_adc:inst|count1[5]  ; rs232_one_adc:inst|TxD_shift[0] ; clk        ; clk      ; None                        ; None                      ; 2.752 ns                ;
+; N/A                                     ; 143.95 MHz ( period = 6.947 ns )                    ; rs232_one_adc:inst|count1[5]  ; rs232_one_adc:inst|TxD_shift[1] ; clk        ; clk      ; None                        ; None                      ; 2.752 ns                ;
+; N/A                                     ; 143.95 MHz ( period = 6.947 ns )                    ; rs232_one_adc:inst|count1[5]  ; rs232_one_adc:inst|TxD_shift[2] ; clk        ; clk      ; None                        ; None                      ; 2.752 ns                ;
+; N/A                                     ; 143.95 MHz ( period = 6.947 ns )                    ; rs232_one_adc:inst|count1[5]  ; rs232_one_adc:inst|TxD_shift[3] ; clk        ; clk      ; None                        ; None                      ; 2.752 ns                ;
+; N/A                                     ; 143.95 MHz ( period = 6.947 ns )                    ; rs232_one_adc:inst|count1[5]  ; rs232_one_adc:inst|TxD_shift[4] ; clk        ; clk      ; None                        ; None                      ; 2.752 ns                ;
+; N/A                                     ; 143.95 MHz ( period = 6.947 ns )                    ; rs232_one_adc:inst|count1[5]  ; rs232_one_adc:inst|TxD_shift[5] ; clk        ; clk      ; None                        ; None                      ; 2.752 ns                ;
+; N/A                                     ; 143.95 MHz ( period = 6.947 ns )                    ; rs232_one_adc:inst|count1[5]  ; rs232_one_adc:inst|TxD_shift[6] ; clk        ; clk      ; None                        ; None                      ; 2.752 ns                ;
+; N/A                                     ; 144.05 MHz ( period = 6.942 ns )                    ; rs232_one_adc:inst|count1[4]  ; rs232_one_adc:inst|TxD_data[1]  ; clk        ; clk      ; None                        ; None                      ; 2.747 ns                ;
+; N/A                                     ; 144.51 MHz ( period = 6.920 ns )                    ; rs232_one_adc:inst|memory1[0] ; rs232_one_adc:inst|TxD_data[0]  ; clk        ; clk      ; None                        ; None                      ; 2.725 ns                ;
+; N/A                                     ; 144.55 MHz ( period = 6.918 ns )                    ; rs232_one_adc:inst|count1[7]  ; rs232_one_adc:inst|TxD_data[0]  ; clk        ; clk      ; None                        ; None                      ; 2.722 ns                ;
+; N/A                                     ; 144.74 MHz ( period = 6.909 ns )                    ; rs232_one_adc:inst|count1[7]  ; rs232_one_adc:inst|TxD_data[1]  ; clk        ; clk      ; None                        ; None                      ; 2.714 ns                ;
+; N/A                                     ; 145.01 MHz ( period = 6.896 ns )                    ; rs232_one_adc:inst|count1[2]  ; rs232_one_adc:inst|TxD_data[2]  ; clk        ; clk      ; None                        ; None                      ; 2.701 ns                ;
+; N/A                                     ; 145.01 MHz ( period = 6.896 ns )                    ; rs232_one_adc:inst|count1[2]  ; rs232_one_adc:inst|TxD_data[3]  ; clk        ; clk      ; None                        ; None                      ; 2.701 ns                ;
+; N/A                                     ; 145.01 MHz ( period = 6.896 ns )                    ; rs232_one_adc:inst|count1[2]  ; rs232_one_adc:inst|TxD_data[4]  ; clk        ; clk      ; None                        ; None                      ; 2.701 ns                ;
+; N/A                                     ; 145.01 MHz ( period = 6.896 ns )                    ; rs232_one_adc:inst|count1[2]  ; rs232_one_adc:inst|TxD_data[5]  ; clk        ; clk      ; None                        ; None                      ; 2.701 ns                ;
+; N/A                                     ; 145.01 MHz ( period = 6.896 ns )                    ; rs232_one_adc:inst|count1[2]  ; rs232_one_adc:inst|TxD_data[6]  ; clk        ; clk      ; None                        ; None                      ; 2.701 ns                ;
+; N/A                                     ; 145.20 MHz ( period = 6.887 ns )                    ; rs232_one_adc:inst|count1[2]  ; rs232_one_adc:inst|TxD_shift[0] ; clk        ; clk      ; None                        ; None                      ; 2.692 ns                ;
+; N/A                                     ; 145.20 MHz ( period = 6.887 ns )                    ; rs232_one_adc:inst|count1[2]  ; rs232_one_adc:inst|TxD_shift[1] ; clk        ; clk      ; None                        ; None                      ; 2.692 ns                ;
+; N/A                                     ; 145.20 MHz ( period = 6.887 ns )                    ; rs232_one_adc:inst|count1[2]  ; rs232_one_adc:inst|TxD_shift[2] ; clk        ; clk      ; None                        ; None                      ; 2.692 ns                ;
+; N/A                                     ; 145.20 MHz ( period = 6.887 ns )                    ; rs232_one_adc:inst|count1[2]  ; rs232_one_adc:inst|TxD_shift[3] ; clk        ; clk      ; None                        ; None                      ; 2.692 ns                ;
+; N/A                                     ; 145.20 MHz ( period = 6.887 ns )                    ; rs232_one_adc:inst|count1[2]  ; rs232_one_adc:inst|TxD_shift[4] ; clk        ; clk      ; None                        ; None                      ; 2.692 ns                ;
+; N/A                                     ; 145.20 MHz ( period = 6.887 ns )                    ; rs232_one_adc:inst|count1[2]  ; rs232_one_adc:inst|TxD_shift[5] ; clk        ; clk      ; None                        ; None                      ; 2.692 ns                ;
+; N/A                                     ; 145.20 MHz ( period = 6.887 ns )                    ; rs232_one_adc:inst|count1[2]  ; rs232_one_adc:inst|TxD_shift[6] ; clk        ; clk      ; None                        ; None                      ; 2.692 ns                ;
+; N/A                                     ; 145.45 MHz ( period = 6.875 ns )                    ; rs232_one_adc:inst|count1[2]  ; rs232_one_adc:inst|TxD_state[3] ; clk        ; clk      ; None                        ; None                      ; 2.681 ns                ;
+; N/A                                     ; 145.45 MHz ( period = 6.875 ns )                    ; rs232_one_adc:inst|count1[2]  ; rs232_one_adc:inst|TxD_state[2] ; clk        ; clk      ; None                        ; None                      ; 2.681 ns                ;
+; N/A                                     ; 145.45 MHz ( period = 6.875 ns )                    ; rs232_one_adc:inst|count1[2]  ; rs232_one_adc:inst|TxD_start    ; clk        ; clk      ; None                        ; None                      ; 2.681 ns                ;
+; N/A                                     ; 145.45 MHz ( period = 6.875 ns )                    ; rs232_one_adc:inst|count1[2]  ; rs232_one_adc:inst|TxD_state[0] ; clk        ; clk      ; None                        ; None                      ; 2.681 ns                ;
+; N/A                                     ; 145.45 MHz ( period = 6.875 ns )                    ; rs232_one_adc:inst|count1[2]  ; rs232_one_adc:inst|TxD_state[1] ; clk        ; clk      ; None                        ; None                      ; 2.681 ns                ;
+; N/A                                     ; 145.45 MHz ( period = 6.875 ns )                    ; rs232_one_adc:inst|count1[2]  ; rs232_one_adc:inst|TxD_shift[7] ; clk        ; clk      ; None                        ; None                      ; 2.681 ns                ;
+; N/A                                     ; 145.90 MHz ( period = 6.854 ns )                    ; rs232_one_adc:inst|count1[3]  ; rs232_one_adc:inst|TxD_data[2]  ; clk        ; clk      ; None                        ; None                      ; 2.659 ns                ;
+; N/A                                     ; 145.90 MHz ( period = 6.854 ns )                    ; rs232_one_adc:inst|count1[3]  ; rs232_one_adc:inst|TxD_data[3]  ; clk        ; clk      ; None                        ; None                      ; 2.659 ns                ;
+; N/A                                     ; 145.90 MHz ( period = 6.854 ns )                    ; rs232_one_adc:inst|count1[3]  ; rs232_one_adc:inst|TxD_data[4]  ; clk        ; clk      ; None                        ; None                      ; 2.659 ns                ;
+; N/A                                     ; 145.90 MHz ( period = 6.854 ns )                    ; rs232_one_adc:inst|count1[3]  ; rs232_one_adc:inst|TxD_data[5]  ; clk        ; clk      ; None                        ; None                      ; 2.659 ns                ;
+; N/A                                     ; 145.90 MHz ( period = 6.854 ns )                    ; rs232_one_adc:inst|count1[3]  ; rs232_one_adc:inst|TxD_data[6]  ; clk        ; clk      ; None                        ; None                      ; 2.659 ns                ;
+; N/A                                     ; 146.09 MHz ( period = 6.845 ns )                    ; rs232_one_adc:inst|count1[3]  ; rs232_one_adc:inst|TxD_shift[0] ; clk        ; clk      ; None                        ; None                      ; 2.650 ns                ;
+; N/A                                     ; 146.09 MHz ( period = 6.845 ns )                    ; rs232_one_adc:inst|count1[3]  ; rs232_one_adc:inst|TxD_shift[1] ; clk        ; clk      ; None                        ; None                      ; 2.650 ns                ;
+; N/A                                     ; 146.09 MHz ( period = 6.845 ns )                    ; rs232_one_adc:inst|count1[3]  ; rs232_one_adc:inst|TxD_shift[2] ; clk        ; clk      ; None                        ; None                      ; 2.650 ns                ;
+; N/A                                     ; 146.09 MHz ( period = 6.845 ns )                    ; rs232_one_adc:inst|count1[3]  ; rs232_one_adc:inst|TxD_shift[3] ; clk        ; clk      ; None                        ; None                      ; 2.650 ns                ;
+; N/A                                     ; 146.09 MHz ( period = 6.845 ns )                    ; rs232_one_adc:inst|count1[3]  ; rs232_one_adc:inst|TxD_shift[4] ; clk        ; clk      ; None                        ; None                      ; 2.650 ns                ;
+; N/A                                     ; 146.09 MHz ( period = 6.845 ns )                    ; rs232_one_adc:inst|count1[3]  ; rs232_one_adc:inst|TxD_shift[5] ; clk        ; clk      ; None                        ; None                      ; 2.650 ns                ;
+; N/A                                     ; 146.09 MHz ( period = 6.845 ns )                    ; rs232_one_adc:inst|count1[3]  ; rs232_one_adc:inst|TxD_shift[6] ; clk        ; clk      ; None                        ; None                      ; 2.650 ns                ;
+; N/A                                     ; 146.35 MHz ( period = 6.833 ns )                    ; rs232_one_adc:inst|count1[3]  ; rs232_one_adc:inst|TxD_state[3] ; clk        ; clk      ; None                        ; None                      ; 2.639 ns                ;
+; N/A                                     ; 146.35 MHz ( period = 6.833 ns )                    ; rs232_one_adc:inst|count1[3]  ; rs232_one_adc:inst|TxD_state[2] ; clk        ; clk      ; None                        ; None                      ; 2.639 ns                ;
+; N/A                                     ; 146.35 MHz ( period = 6.833 ns )                    ; rs232_one_adc:inst|count1[3]  ; rs232_one_adc:inst|TxD_start    ; clk        ; clk      ; None                        ; None                      ; 2.639 ns                ;
+; N/A                                     ; 146.35 MHz ( period = 6.833 ns )                    ; rs232_one_adc:inst|count1[3]  ; rs232_one_adc:inst|TxD_state[0] ; clk        ; clk      ; None                        ; None                      ; 2.639 ns                ;
+; N/A                                     ; 146.35 MHz ( period = 6.833 ns )                    ; rs232_one_adc:inst|count1[3]  ; rs232_one_adc:inst|TxD_state[1] ; clk        ; clk      ; None                        ; None                      ; 2.639 ns                ;
+; N/A                                     ; 146.35 MHz ( period = 6.833 ns )                    ; rs232_one_adc:inst|count1[3]  ; rs232_one_adc:inst|TxD_shift[7] ; clk        ; clk      ; None                        ; None                      ; 2.639 ns                ;
+; N/A                                     ; 146.58 MHz ( period = 6.822 ns )                    ; rs232_one_adc:inst|count1[6]  ; rs232_one_adc:inst|TxD_shift[0] ; clk        ; clk      ; None                        ; None                      ; 2.627 ns                ;
+; N/A                                     ; 146.58 MHz ( period = 6.822 ns )                    ; rs232_one_adc:inst|count1[6]  ; rs232_one_adc:inst|TxD_shift[1] ; clk        ; clk      ; None                        ; None                      ; 2.627 ns                ;
+; N/A                                     ; 146.58 MHz ( period = 6.822 ns )                    ; rs232_one_adc:inst|count1[6]  ; rs232_one_adc:inst|TxD_shift[2] ; clk        ; clk      ; None                        ; None                      ; 2.627 ns                ;
+; N/A                                     ; 146.58 MHz ( period = 6.822 ns )                    ; rs232_one_adc:inst|count1[6]  ; rs232_one_adc:inst|TxD_shift[3] ; clk        ; clk      ; None                        ; None                      ; 2.627 ns                ;
+; N/A                                     ; 146.58 MHz ( period = 6.822 ns )                    ; rs232_one_adc:inst|count1[6]  ; rs232_one_adc:inst|TxD_shift[4] ; clk        ; clk      ; None                        ; None                      ; 2.627 ns                ;
+; N/A                                     ; 146.58 MHz ( period = 6.822 ns )                    ; rs232_one_adc:inst|count1[6]  ; rs232_one_adc:inst|TxD_shift[5] ; clk        ; clk      ; None                        ; None                      ; 2.627 ns                ;
+; N/A                                     ; 146.58 MHz ( period = 6.822 ns )                    ; rs232_one_adc:inst|count1[6]  ; rs232_one_adc:inst|TxD_shift[6] ; clk        ; clk      ; None                        ; None                      ; 2.627 ns                ;
+; N/A                                     ; 147.28 MHz ( period = 6.790 ns )                    ; rs232_one_adc:inst|count1[1]  ; rs232_one_adc:inst|TxD_data[0]  ; clk        ; clk      ; None                        ; None                      ; 2.594 ns                ;
+; N/A                                     ; 147.47 MHz ( period = 6.781 ns )                    ; rs232_one_adc:inst|count1[1]  ; rs232_one_adc:inst|TxD_data[1]  ; clk        ; clk      ; None                        ; None                      ; 2.586 ns                ;
+; N/A                                     ; 149.77 MHz ( period = 6.677 ns )                    ; rs232_one_adc:inst|count1[4]  ; rs232_one_adc:inst|TxD_data[2]  ; clk        ; clk      ; None                        ; None                      ; 2.482 ns                ;
+; N/A                                     ; 149.77 MHz ( period = 6.677 ns )                    ; rs232_one_adc:inst|count1[4]  ; rs232_one_adc:inst|TxD_data[3]  ; clk        ; clk      ; None                        ; None                      ; 2.482 ns                ;
+; N/A                                     ; 149.77 MHz ( period = 6.677 ns )                    ; rs232_one_adc:inst|count1[4]  ; rs232_one_adc:inst|TxD_data[4]  ; clk        ; clk      ; None                        ; None                      ; 2.482 ns                ;
+; N/A                                     ; 149.77 MHz ( period = 6.677 ns )                    ; rs232_one_adc:inst|count1[4]  ; rs232_one_adc:inst|TxD_data[5]  ; clk        ; clk      ; None                        ; None                      ; 2.482 ns                ;
+; N/A                                     ; 149.77 MHz ( period = 6.677 ns )                    ; rs232_one_adc:inst|count1[4]  ; rs232_one_adc:inst|TxD_data[6]  ; clk        ; clk      ; None                        ; None                      ; 2.482 ns                ;
+; N/A                                     ; 149.97 MHz ( period = 6.668 ns )                    ; rs232_one_adc:inst|count1[4]  ; rs232_one_adc:inst|TxD_shift[0] ; clk        ; clk      ; None                        ; None                      ; 2.473 ns                ;
+; N/A                                     ; 149.97 MHz ( period = 6.668 ns )                    ; rs232_one_adc:inst|count1[4]  ; rs232_one_adc:inst|TxD_shift[1] ; clk        ; clk      ; None                        ; None                      ; 2.473 ns                ;
+; N/A                                     ; 149.97 MHz ( period = 6.668 ns )                    ; rs232_one_adc:inst|count1[4]  ; rs232_one_adc:inst|TxD_shift[2] ; clk        ; clk      ; None                        ; None                      ; 2.473 ns                ;
+; N/A                                     ; 149.97 MHz ( period = 6.668 ns )                    ; rs232_one_adc:inst|count1[4]  ; rs232_one_adc:inst|TxD_shift[3] ; clk        ; clk      ; None                        ; None                      ; 2.473 ns                ;
+; N/A                                     ; 149.97 MHz ( period = 6.668 ns )                    ; rs232_one_adc:inst|count1[4]  ; rs232_one_adc:inst|TxD_shift[4] ; clk        ; clk      ; None                        ; None                      ; 2.473 ns                ;
+; N/A                                     ; 149.97 MHz ( period = 6.668 ns )                    ; rs232_one_adc:inst|count1[4]  ; rs232_one_adc:inst|TxD_shift[5] ; clk        ; clk      ; None                        ; None                      ; 2.473 ns                ;
+; N/A                                     ; 149.97 MHz ( period = 6.668 ns )                    ; rs232_one_adc:inst|count1[4]  ; rs232_one_adc:inst|TxD_shift[6] ; clk        ; clk      ; None                        ; None                      ; 2.473 ns                ;
+; N/A                                     ; 150.20 MHz ( period = 6.658 ns )                    ; rs232_one_adc:inst|count1[7]  ; rs232_one_adc:inst|TxD_shift[0] ; clk        ; clk      ; None                        ; None                      ; 2.463 ns                ;
+; N/A                                     ; 150.20 MHz ( period = 6.658 ns )                    ; rs232_one_adc:inst|count1[7]  ; rs232_one_adc:inst|TxD_shift[1] ; clk        ; clk      ; None                        ; None                      ; 2.463 ns                ;
+; N/A                                     ; 150.20 MHz ( period = 6.658 ns )                    ; rs232_one_adc:inst|count1[7]  ; rs232_one_adc:inst|TxD_shift[2] ; clk        ; clk      ; None                        ; None                      ; 2.463 ns                ;
+; N/A                                     ; 150.20 MHz ( period = 6.658 ns )                    ; rs232_one_adc:inst|count1[7]  ; rs232_one_adc:inst|TxD_shift[3] ; clk        ; clk      ; None                        ; None                      ; 2.463 ns                ;
+; N/A                                     ; 150.20 MHz ( period = 6.658 ns )                    ; rs232_one_adc:inst|count1[7]  ; rs232_one_adc:inst|TxD_shift[4] ; clk        ; clk      ; None                        ; None                      ; 2.463 ns                ;
+; N/A                                     ; 150.20 MHz ( period = 6.658 ns )                    ; rs232_one_adc:inst|count1[7]  ; rs232_one_adc:inst|TxD_shift[5] ; clk        ; clk      ; None                        ; None                      ; 2.463 ns                ;
+; N/A                                     ; 150.20 MHz ( period = 6.658 ns )                    ; rs232_one_adc:inst|count1[7]  ; rs232_one_adc:inst|TxD_shift[6] ; clk        ; clk      ; None                        ; None                      ; 2.463 ns                ;
+; N/A                                     ; 150.24 MHz ( period = 6.656 ns )                    ; rs232_one_adc:inst|count1[4]  ; rs232_one_adc:inst|TxD_state[3] ; clk        ; clk      ; None                        ; None                      ; 2.462 ns                ;
+; N/A                                     ; 150.24 MHz ( period = 6.656 ns )                    ; rs232_one_adc:inst|count1[4]  ; rs232_one_adc:inst|TxD_state[2] ; clk        ; clk      ; None                        ; None                      ; 2.462 ns                ;
+; N/A                                     ; 150.24 MHz ( period = 6.656 ns )                    ; rs232_one_adc:inst|count1[4]  ; rs232_one_adc:inst|TxD_start    ; clk        ; clk      ; None                        ; None                      ; 2.462 ns                ;
+; N/A                                     ; 150.24 MHz ( period = 6.656 ns )                    ; rs232_one_adc:inst|count1[4]  ; rs232_one_adc:inst|TxD_state[0] ; clk        ; clk      ; None                        ; None                      ; 2.462 ns                ;
+; N/A                                     ; 150.24 MHz ( period = 6.656 ns )                    ; rs232_one_adc:inst|count1[4]  ; rs232_one_adc:inst|TxD_state[1] ; clk        ; clk      ; None                        ; None                      ; 2.462 ns                ;
+; N/A                                     ; 150.24 MHz ( period = 6.656 ns )                    ; rs232_one_adc:inst|count1[4]  ; rs232_one_adc:inst|TxD_shift[7] ; clk        ; clk      ; None                        ; None                      ; 2.462 ns                ;
+; N/A                                     ; 150.47 MHz ( period = 6.646 ns )                    ; rs232_one_adc:inst|count1[5]  ; rs232_one_adc:inst|TxD_data[0]  ; clk        ; clk      ; None                        ; None                      ; 2.450 ns                ;
+; N/A                                     ; 150.51 MHz ( period = 6.644 ns )                    ; rs232_one_adc:inst|count1[7]  ; rs232_one_adc:inst|TxD_data[2]  ; clk        ; clk      ; None                        ; None                      ; 2.449 ns                ;
+; N/A                                     ; 150.51 MHz ( period = 6.644 ns )                    ; rs232_one_adc:inst|count1[7]  ; rs232_one_adc:inst|TxD_data[3]  ; clk        ; clk      ; None                        ; None                      ; 2.449 ns                ;
+; N/A                                     ; 150.51 MHz ( period = 6.644 ns )                    ; rs232_one_adc:inst|count1[7]  ; rs232_one_adc:inst|TxD_data[4]  ; clk        ; clk      ; None                        ; None                      ; 2.449 ns                ;
+; N/A                                     ; 150.51 MHz ( period = 6.644 ns )                    ; rs232_one_adc:inst|count1[7]  ; rs232_one_adc:inst|TxD_data[5]  ; clk        ; clk      ; None                        ; None                      ; 2.449 ns                ;
+; N/A                                     ; 150.51 MHz ( period = 6.644 ns )                    ; rs232_one_adc:inst|count1[7]  ; rs232_one_adc:inst|TxD_data[6]  ; clk        ; clk      ; None                        ; None                      ; 2.449 ns                ;
+; N/A                                     ; 150.67 MHz ( period = 6.637 ns )                    ; rs232_one_adc:inst|count1[5]  ; rs232_one_adc:inst|TxD_data[1]  ; clk        ; clk      ; None                        ; None                      ; 2.442 ns                ;
+; N/A                                     ; 150.99 MHz ( period = 6.623 ns )                    ; rs232_one_adc:inst|count1[7]  ; rs232_one_adc:inst|TxD_state[3] ; clk        ; clk      ; None                        ; None                      ; 2.429 ns                ;
+; N/A                                     ; 150.99 MHz ( period = 6.623 ns )                    ; rs232_one_adc:inst|count1[7]  ; rs232_one_adc:inst|TxD_state[2] ; clk        ; clk      ; None                        ; None                      ; 2.429 ns                ;
+; N/A                                     ; 150.99 MHz ( period = 6.623 ns )                    ; rs232_one_adc:inst|count1[7]  ; rs232_one_adc:inst|TxD_start    ; clk        ; clk      ; None                        ; None                      ; 2.429 ns                ;
+; N/A                                     ; 150.99 MHz ( period = 6.623 ns )                    ; rs232_one_adc:inst|count1[7]  ; rs232_one_adc:inst|TxD_state[0] ; clk        ; clk      ; None                        ; None                      ; 2.429 ns                ;
+; N/A                                     ; 150.99 MHz ( period = 6.623 ns )                    ; rs232_one_adc:inst|count1[7]  ; rs232_one_adc:inst|TxD_state[1] ; clk        ; clk      ; None                        ; None                      ; 2.429 ns                ;
+; N/A                                     ; 150.99 MHz ( period = 6.623 ns )                    ; rs232_one_adc:inst|count1[7]  ; rs232_one_adc:inst|TxD_shift[7] ; clk        ; clk      ; None                        ; None                      ; 2.429 ns                ;
+; N/A                                     ; 152.11 MHz ( period = 6.574 ns )                    ; rs232_one_adc:inst|memory1[8] ; rs232_one_adc:inst|TxD_data[0]  ; clk        ; clk      ; None                        ; None                      ; 2.379 ns                ;
+; N/A                                     ; 152.95 MHz ( period = 6.538 ns )                    ; rs232_one_adc:inst|memory1[9] ; rs232_one_adc:inst|TxD_data[1]  ; clk        ; clk      ; None                        ; None                      ; 2.344 ns                ;
+; N/A                                     ; 153.47 MHz ( period = 6.516 ns )                    ; rs232_one_adc:inst|count1[1]  ; rs232_one_adc:inst|TxD_data[2]  ; clk        ; clk      ; None                        ; None                      ; 2.321 ns                ;
+; N/A                                     ; 153.47 MHz ( period = 6.516 ns )                    ; rs232_one_adc:inst|count1[1]  ; rs232_one_adc:inst|TxD_data[3]  ; clk        ; clk      ; None                        ; None                      ; 2.321 ns                ;
+; N/A                                     ; 153.47 MHz ( period = 6.516 ns )                    ; rs232_one_adc:inst|count1[1]  ; rs232_one_adc:inst|TxD_data[4]  ; clk        ; clk      ; None                        ; None                      ; 2.321 ns                ;
+; N/A                                     ; 153.47 MHz ( period = 6.516 ns )                    ; rs232_one_adc:inst|count1[1]  ; rs232_one_adc:inst|TxD_data[5]  ; clk        ; clk      ; None                        ; None                      ; 2.321 ns                ;
+; N/A                                     ; 153.47 MHz ( period = 6.516 ns )                    ; rs232_one_adc:inst|count1[1]  ; rs232_one_adc:inst|TxD_data[6]  ; clk        ; clk      ; None                        ; None                      ; 2.321 ns                ;
+; N/A                                     ; 153.68 MHz ( period = 6.507 ns )                    ; rs232_one_adc:inst|count1[1]  ; rs232_one_adc:inst|TxD_shift[0] ; clk        ; clk      ; None                        ; None                      ; 2.312 ns                ;
+; N/A                                     ; 153.68 MHz ( period = 6.507 ns )                    ; rs232_one_adc:inst|count1[1]  ; rs232_one_adc:inst|TxD_shift[1] ; clk        ; clk      ; None                        ; None                      ; 2.312 ns                ;
+; N/A                                     ; 153.68 MHz ( period = 6.507 ns )                    ; rs232_one_adc:inst|count1[1]  ; rs232_one_adc:inst|TxD_shift[2] ; clk        ; clk      ; None                        ; None                      ; 2.312 ns                ;
+; N/A                                     ; 153.68 MHz ( period = 6.507 ns )                    ; rs232_one_adc:inst|count1[1]  ; rs232_one_adc:inst|TxD_shift[3] ; clk        ; clk      ; None                        ; None                      ; 2.312 ns                ;
+; N/A                                     ; 153.68 MHz ( period = 6.507 ns )                    ; rs232_one_adc:inst|count1[1]  ; rs232_one_adc:inst|TxD_shift[4] ; clk        ; clk      ; None                        ; None                      ; 2.312 ns                ;
+; N/A                                     ; 153.68 MHz ( period = 6.507 ns )                    ; rs232_one_adc:inst|count1[1]  ; rs232_one_adc:inst|TxD_shift[5] ; clk        ; clk      ; None                        ; None                      ; 2.312 ns                ;
+; N/A                                     ; 153.68 MHz ( period = 6.507 ns )                    ; rs232_one_adc:inst|count1[1]  ; rs232_one_adc:inst|TxD_shift[6] ; clk        ; clk      ; None                        ; None                      ; 2.312 ns                ;
+; N/A                                     ; 153.96 MHz ( period = 6.495 ns )                    ; rs232_one_adc:inst|count1[1]  ; rs232_one_adc:inst|TxD_state[3] ; clk        ; clk      ; None                        ; None                      ; 2.301 ns                ;
+; N/A                                     ; 153.96 MHz ( period = 6.495 ns )                    ; rs232_one_adc:inst|count1[1]  ; rs232_one_adc:inst|TxD_state[2] ; clk        ; clk      ; None                        ; None                      ; 2.301 ns                ;
+; N/A                                     ; 153.96 MHz ( period = 6.495 ns )                    ; rs232_one_adc:inst|count1[1]  ; rs232_one_adc:inst|TxD_start    ; clk        ; clk      ; None                        ; None                      ; 2.301 ns                ;
+; N/A                                     ; 153.96 MHz ( period = 6.495 ns )                    ; rs232_one_adc:inst|count1[1]  ; rs232_one_adc:inst|TxD_state[0] ; clk        ; clk      ; None                        ; None                      ; 2.301 ns                ;
+; N/A                                     ; 153.96 MHz ( period = 6.495 ns )                    ; rs232_one_adc:inst|count1[1]  ; rs232_one_adc:inst|TxD_state[1] ; clk        ; clk      ; None                        ; None                      ; 2.301 ns                ;
+; N/A                                     ; 153.96 MHz ( period = 6.495 ns )                    ; rs232_one_adc:inst|count1[1]  ; rs232_one_adc:inst|TxD_shift[7] ; clk        ; clk      ; None                        ; None                      ; 2.301 ns                ;
+; N/A                                     ; 155.35 MHz ( period = 6.437 ns )                    ; BaudTickGen:inst1|Acc[1]      ; BaudTickGen:inst1|Acc[16]       ; clk        ; clk      ; None                        ; None                      ; 6.199 ns                ;
+; N/A                                     ; 155.91 MHz ( period = 6.414 ns )                    ; rs232_one_adc:inst|count1[6]  ; rs232_one_adc:inst|TxD_data[0]  ; clk        ; clk      ; None                        ; None                      ; 2.218 ns                ;
+; N/A                                     ; 156.13 MHz ( period = 6.405 ns )                    ; rs232_one_adc:inst|count1[6]  ; rs232_one_adc:inst|TxD_data[1]  ; clk        ; clk      ; None                        ; None                      ; 2.210 ns                ;
+; N/A                                     ; 156.94 MHz ( period = 6.372 ns )                    ; rs232_one_adc:inst|count1[5]  ; rs232_one_adc:inst|TxD_data[2]  ; clk        ; clk      ; None                        ; None                      ; 2.177 ns                ;
+; N/A                                     ; 156.94 MHz ( period = 6.372 ns )                    ; rs232_one_adc:inst|count1[5]  ; rs232_one_adc:inst|TxD_data[3]  ; clk        ; clk      ; None                        ; None                      ; 2.177 ns                ;
+; N/A                                     ; 156.94 MHz ( period = 6.372 ns )                    ; rs232_one_adc:inst|count1[5]  ; rs232_one_adc:inst|TxD_data[4]  ; clk        ; clk      ; None                        ; None                      ; 2.177 ns                ;
+; N/A                                     ; 156.94 MHz ( period = 6.372 ns )                    ; rs232_one_adc:inst|count1[5]  ; rs232_one_adc:inst|TxD_data[5]  ; clk        ; clk      ; None                        ; None                      ; 2.177 ns                ;
+; N/A                                     ; 156.94 MHz ( period = 6.372 ns )                    ; rs232_one_adc:inst|count1[5]  ; rs232_one_adc:inst|TxD_data[6]  ; clk        ; clk      ; None                        ; None                      ; 2.177 ns                ;
+; N/A                                     ; 157.46 MHz ( period = 6.351 ns )                    ; rs232_one_adc:inst|count1[5]  ; rs232_one_adc:inst|TxD_state[3] ; clk        ; clk      ; None                        ; None                      ; 2.157 ns                ;
+; N/A                                     ; 157.46 MHz ( period = 6.351 ns )                    ; rs232_one_adc:inst|count1[5]  ; rs232_one_adc:inst|TxD_state[2] ; clk        ; clk      ; None                        ; None                      ; 2.157 ns                ;
+; N/A                                     ; 157.46 MHz ( period = 6.351 ns )                    ; rs232_one_adc:inst|count1[5]  ; rs232_one_adc:inst|TxD_start    ; clk        ; clk      ; None                        ; None                      ; 2.157 ns                ;
+; N/A                                     ; 157.46 MHz ( period = 6.351 ns )                    ; rs232_one_adc:inst|count1[5]  ; rs232_one_adc:inst|TxD_state[0] ; clk        ; clk      ; None                        ; None                      ; 2.157 ns                ;
+; N/A                                     ; 157.46 MHz ( period = 6.351 ns )                    ; rs232_one_adc:inst|count1[5]  ; rs232_one_adc:inst|TxD_state[1] ; clk        ; clk      ; None                        ; None                      ; 2.157 ns                ;
+; N/A                                     ; 157.46 MHz ( period = 6.351 ns )                    ; rs232_one_adc:inst|count1[5]  ; rs232_one_adc:inst|TxD_shift[7] ; clk        ; clk      ; None                        ; None                      ; 2.157 ns                ;
+; N/A                                     ; 158.05 MHz ( period = 6.327 ns )                    ; BaudTickGen:inst1|Acc[2]      ; BaudTickGen:inst1|Acc[16]       ; clk        ; clk      ; None                        ; None                      ; 6.089 ns                ;
+; N/A                                     ; 158.86 MHz ( period = 6.295 ns )                    ; rs232_one_adc:inst|memory1[1] ; rs232_one_adc:inst|TxD_data[1]  ; clk        ; clk      ; None                        ; None                      ; 2.101 ns                ;
+; N/A                                     ; 159.69 MHz ( period = 6.262 ns )                    ; rs232_one_adc:inst|count1[5]  ; rs232_one_adc:inst|count2[0]    ; clk        ; clk      ; None                        ; None                      ; 2.068 ns                ;
+; N/A                                     ; 159.69 MHz ( period = 6.262 ns )                    ; rs232_one_adc:inst|count1[5]  ; rs232_one_adc:inst|count2[2]    ; clk        ; clk      ; None                        ; None                      ; 2.068 ns                ;
+; N/A                                     ; 159.72 MHz ( period = 6.261 ns )                    ; rs232_one_adc:inst|count1[5]  ; rs232_one_adc:inst|count2[1]    ; clk        ; clk      ; None                        ; None                      ; 2.067 ns                ;
+; N/A                                     ; 160.08 MHz ( period = 6.247 ns )                    ; BaudTickGen:inst1|Acc[3]      ; BaudTickGen:inst1|Acc[16]       ; clk        ; clk      ; None                        ; None                      ; 6.009 ns                ;
+; N/A                                     ; 161.21 MHz ( period = 6.203 ns )                    ; rs232_one_adc:inst|count1[2]  ; rs232_one_adc:inst|count2[0]    ; clk        ; clk      ; None                        ; None                      ; 2.009 ns                ;
+; N/A                                     ; 161.21 MHz ( period = 6.203 ns )                    ; rs232_one_adc:inst|count1[2]  ; rs232_one_adc:inst|count2[2]    ; clk        ; clk      ; None                        ; None                      ; 2.009 ns                ;
+; N/A                                     ; 161.24 MHz ( period = 6.202 ns )                    ; rs232_one_adc:inst|count1[2]  ; rs232_one_adc:inst|count2[1]    ; clk        ; clk      ; None                        ; None                      ; 2.008 ns                ;
+; N/A                                     ; 162.31 MHz ( period = 6.161 ns )                    ; rs232_one_adc:inst|count1[3]  ; rs232_one_adc:inst|count2[0]    ; clk        ; clk      ; None                        ; None                      ; 1.967 ns                ;
+; N/A                                     ; 162.31 MHz ( period = 6.161 ns )                    ; rs232_one_adc:inst|count1[3]  ; rs232_one_adc:inst|count2[2]    ; clk        ; clk      ; None                        ; None                      ; 1.967 ns                ;
+; N/A                                     ; 162.34 MHz ( period = 6.160 ns )                    ; rs232_one_adc:inst|count1[3]  ; rs232_one_adc:inst|count2[1]    ; clk        ; clk      ; None                        ; None                      ; 1.966 ns                ;
+; N/A                                     ; 162.87 MHz ( period = 6.140 ns )                    ; rs232_one_adc:inst|count1[6]  ; rs232_one_adc:inst|TxD_data[2]  ; clk        ; clk      ; None                        ; None                      ; 1.945 ns                ;
+; N/A                                     ; 162.87 MHz ( period = 6.140 ns )                    ; rs232_one_adc:inst|count1[6]  ; rs232_one_adc:inst|TxD_data[3]  ; clk        ; clk      ; None                        ; None                      ; 1.945 ns                ;
+; N/A                                     ; 162.87 MHz ( period = 6.140 ns )                    ; rs232_one_adc:inst|count1[6]  ; rs232_one_adc:inst|TxD_data[4]  ; clk        ; clk      ; None                        ; None                      ; 1.945 ns                ;
+; N/A                                     ; 162.87 MHz ( period = 6.140 ns )                    ; rs232_one_adc:inst|count1[6]  ; rs232_one_adc:inst|TxD_data[5]  ; clk        ; clk      ; None                        ; None                      ; 1.945 ns                ;
+; N/A                                     ; 162.87 MHz ( period = 6.140 ns )                    ; rs232_one_adc:inst|count1[6]  ; rs232_one_adc:inst|TxD_data[6]  ; clk        ; clk      ; None                        ; None                      ; 1.945 ns                ;
+; N/A                                     ; 162.95 MHz ( period = 6.137 ns )                    ; rs232_one_adc:inst|count1[6]  ; rs232_one_adc:inst|count2[0]    ; clk        ; clk      ; None                        ; None                      ; 1.943 ns                ;
+; N/A                                     ; 162.95 MHz ( period = 6.137 ns )                    ; rs232_one_adc:inst|count1[6]  ; rs232_one_adc:inst|count2[2]    ; clk        ; clk      ; None                        ; None                      ; 1.943 ns                ;
+; N/A                                     ; 162.97 MHz ( period = 6.136 ns )                    ; rs232_one_adc:inst|count1[6]  ; rs232_one_adc:inst|count2[1]    ; clk        ; clk      ; None                        ; None                      ; 1.942 ns                ;
+; N/A                                     ; 163.05 MHz ( period = 6.133 ns )                    ; BaudTickGen:inst1|Acc[4]      ; BaudTickGen:inst1|Acc[16]       ; clk        ; clk      ; None                        ; None                      ; 5.895 ns                ;
+; N/A                                     ; 163.43 MHz ( period = 6.119 ns )                    ; rs232_one_adc:inst|count1[6]  ; rs232_one_adc:inst|TxD_state[3] ; clk        ; clk      ; None                        ; None                      ; 1.925 ns                ;
+; N/A                                     ; 163.43 MHz ( period = 6.119 ns )                    ; rs232_one_adc:inst|count1[6]  ; rs232_one_adc:inst|TxD_state[2] ; clk        ; clk      ; None                        ; None                      ; 1.925 ns                ;
+; N/A                                     ; 163.43 MHz ( period = 6.119 ns )                    ; rs232_one_adc:inst|count1[6]  ; rs232_one_adc:inst|TxD_start    ; clk        ; clk      ; None                        ; None                      ; 1.925 ns                ;
+; N/A                                     ; 163.43 MHz ( period = 6.119 ns )                    ; rs232_one_adc:inst|count1[6]  ; rs232_one_adc:inst|TxD_state[0] ; clk        ; clk      ; None                        ; None                      ; 1.925 ns                ;
+; N/A                                     ; 163.43 MHz ( period = 6.119 ns )                    ; rs232_one_adc:inst|count1[6]  ; rs232_one_adc:inst|TxD_state[1] ; clk        ; clk      ; None                        ; None                      ; 1.925 ns                ;
+; N/A                                     ; 163.43 MHz ( period = 6.119 ns )                    ; rs232_one_adc:inst|count1[6]  ; rs232_one_adc:inst|TxD_shift[7] ; clk        ; clk      ; None                        ; None                      ; 1.925 ns                ;
+; N/A                                     ; 163.61 MHz ( period = 6.112 ns )                    ; BaudTickGen:inst1|Acc[5]      ; BaudTickGen:inst1|Acc[16]       ; clk        ; clk      ; None                        ; None                      ; 5.874 ns                ;
+; N/A                                     ; 165.48 MHz ( period = 6.043 ns )                    ; BaudTickGen:inst1|Acc[6]      ; BaudTickGen:inst1|Acc[16]       ; clk        ; clk      ; None                        ; None                      ; 5.805 ns                ;
+; N/A                                     ; 167.11 MHz ( period = 5.984 ns )                    ; rs232_one_adc:inst|count1[4]  ; rs232_one_adc:inst|count2[0]    ; clk        ; clk      ; None                        ; None                      ; 1.790 ns                ;
+; N/A                                     ; 167.11 MHz ( period = 5.984 ns )                    ; rs232_one_adc:inst|count1[4]  ; rs232_one_adc:inst|count2[2]    ; clk        ; clk      ; None                        ; None                      ; 1.790 ns                ;
+; N/A                                     ; 167.14 MHz ( period = 5.983 ns )                    ; rs232_one_adc:inst|count1[4]  ; rs232_one_adc:inst|count2[1]    ; clk        ; clk      ; None                        ; None                      ; 1.789 ns                ;
+; N/A                                     ; 167.42 MHz ( period = 5.973 ns )                    ; rs232_one_adc:inst|count1[7]  ; rs232_one_adc:inst|count2[0]    ; clk        ; clk      ; None                        ; None                      ; 1.779 ns                ;
+; N/A                                     ; 167.42 MHz ( period = 5.973 ns )                    ; rs232_one_adc:inst|count1[7]  ; rs232_one_adc:inst|count2[2]    ; clk        ; clk      ; None                        ; None                      ; 1.779 ns                ;
+; N/A                                     ; 167.45 MHz ( period = 5.972 ns )                    ; rs232_one_adc:inst|count1[7]  ; rs232_one_adc:inst|count2[1]    ; clk        ; clk      ; None                        ; None                      ; 1.778 ns                ;
+; N/A                                     ; 167.67 MHz ( period = 5.964 ns )                    ; BaudTickGen:inst1|Acc[7]      ; BaudTickGen:inst1|Acc[16]       ; clk        ; clk      ; None                        ; None                      ; 5.726 ns                ;
+; N/A                                     ; 168.49 MHz ( period = 5.935 ns )                    ; rs232_one_adc:inst|memory1[6] ; rs232_one_adc:inst|TxD_shift[6] ; clk        ; clk      ; None                        ; None                      ; 1.741 ns                ;
+; N/A                                     ; 170.33 MHz ( period = 5.871 ns )                    ; rs232_one_adc:inst|memory1[5] ; rs232_one_adc:inst|TxD_shift[5] ; clk        ; clk      ; None                        ; None                      ; 1.677 ns                ;
+; N/A                                     ; 171.35 MHz ( period = 5.836 ns )                    ; BaudTickGen:inst1|Acc[8]      ; BaudTickGen:inst1|Acc[16]       ; clk        ; clk      ; None                        ; None                      ; 5.598 ns                ;
+; N/A                                     ; 171.73 MHz ( period = 5.823 ns )                    ; rs232_one_adc:inst|count1[1]  ; rs232_one_adc:inst|count2[0]    ; clk        ; clk      ; None                        ; None                      ; 1.629 ns                ;
+; N/A                                     ; 171.73 MHz ( period = 5.823 ns )                    ; rs232_one_adc:inst|count1[1]  ; rs232_one_adc:inst|count2[2]    ; clk        ; clk      ; None                        ; None                      ; 1.629 ns                ;
+; N/A                                     ; 171.76 MHz ( period = 5.822 ns )                    ; rs232_one_adc:inst|count1[1]  ; rs232_one_adc:inst|count2[1]    ; clk        ; clk      ; None                        ; None                      ; 1.628 ns                ;
+; N/A                                     ; 172.24 MHz ( period = 5.806 ns )                    ; rs232_one_adc:inst|memory1[2] ; rs232_one_adc:inst|TxD_shift[2] ; clk        ; clk      ; None                        ; None                      ; 1.612 ns                ;
+; N/A                                     ; 172.35 MHz ( period = 5.802 ns )                    ; rs232_one_adc:inst|memory1[3] ; rs232_one_adc:inst|TxD_shift[3] ; clk        ; clk      ; None                        ; None                      ; 1.608 ns                ;
+; N/A                                     ; 172.65 MHz ( period = 5.792 ns )                    ; rs232_one_adc:inst|memory1[0] ; rs232_one_adc:inst|TxD_shift[0] ; clk        ; clk      ; None                        ; None                      ; 1.598 ns                ;
+; N/A                                     ; 173.01 MHz ( period = 5.780 ns )                    ; rs232_one_adc:inst|memory1[7] ; rs232_one_adc:inst|TxD_shift[7] ; clk        ; clk      ; None                        ; None                      ; 1.587 ns                ;
+; N/A                                     ; 174.89 MHz ( period = 5.718 ns )                    ; rs232_one_adc:inst|i[27]      ; rs232_one_adc:inst|memory1[1]   ; clk        ; clk      ; None                        ; None                      ; 5.497 ns                ;
+; N/A                                     ; 174.89 MHz ( period = 5.718 ns )                    ; rs232_one_adc:inst|i[27]      ; rs232_one_adc:inst|memory1[2]   ; clk        ; clk      ; None                        ; None                      ; 5.497 ns                ;
+; N/A                                     ; 174.89 MHz ( period = 5.718 ns )                    ; rs232_one_adc:inst|i[27]      ; rs232_one_adc:inst|memory1[6]   ; clk        ; clk      ; None                        ; None                      ; 5.497 ns                ;
+; N/A                                     ; 175.47 MHz ( period = 5.699 ns )                    ; rs232_one_adc:inst|memory1[9] ; rs232_one_adc:inst|TxD_shift[1] ; clk        ; clk      ; None                        ; None                      ; 1.505 ns                ;
+; N/A                                     ; 176.77 MHz ( period = 5.657 ns )                    ; BaudTickGen:inst1|Acc[9]      ; BaudTickGen:inst1|Acc[16]       ; clk        ; clk      ; None                        ; None                      ; 5.419 ns                ;
+; N/A                                     ; 177.84 MHz ( period = 5.623 ns )                    ; rs232_one_adc:inst|i[25]      ; rs232_one_adc:inst|memory1[1]   ; clk        ; clk      ; None                        ; None                      ; 5.402 ns                ;
+; N/A                                     ; 177.84 MHz ( period = 5.623 ns )                    ; rs232_one_adc:inst|i[25]      ; rs232_one_adc:inst|memory1[2]   ; clk        ; clk      ; None                        ; None                      ; 5.402 ns                ;
+; N/A                                     ; 177.84 MHz ( period = 5.623 ns )                    ; rs232_one_adc:inst|i[25]      ; rs232_one_adc:inst|memory1[6]   ; clk        ; clk      ; None                        ; None                      ; 5.402 ns                ;
+; N/A                                     ; 178.44 MHz ( period = 5.604 ns )                    ; rs232_one_adc:inst|i[9]       ; rs232_one_adc:inst|memory1[8]   ; clk        ; clk      ; None                        ; None                      ; 5.378 ns                ;
+; N/A                                     ; 178.44 MHz ( period = 5.604 ns )                    ; rs232_one_adc:inst|i[9]       ; rs232_one_adc:inst|memory1[9]   ; clk        ; clk      ; None                        ; None                      ; 5.378 ns                ;
+; N/A                                     ; 178.95 MHz ( period = 5.588 ns )                    ; BaudTickGen:inst1|Acc[10]     ; BaudTickGen:inst1|Acc[16]       ; clk        ; clk      ; None                        ; None                      ; 5.350 ns                ;
+; N/A                                     ; 179.24 MHz ( period = 5.579 ns )                    ; rs232_one_adc:inst|i[7]       ; rs232_one_adc:inst|memory1[8]   ; clk        ; clk      ; None                        ; None                      ; 5.353 ns                ;
+; N/A                                     ; 179.24 MHz ( period = 5.579 ns )                    ; rs232_one_adc:inst|i[7]       ; rs232_one_adc:inst|memory1[9]   ; clk        ; clk      ; None                        ; None                      ; 5.353 ns                ;
+; N/A                                     ; 179.40 MHz ( period = 5.574 ns )                    ; rs232_one_adc:inst|i[10]      ; rs232_one_adc:inst|memory1[8]   ; clk        ; clk      ; None                        ; None                      ; 5.348 ns                ;
+; N/A                                     ; 179.40 MHz ( period = 5.574 ns )                    ; rs232_one_adc:inst|i[10]      ; rs232_one_adc:inst|memory1[9]   ; clk        ; clk      ; None                        ; None                      ; 5.348 ns                ;
+; N/A                                     ; 179.92 MHz ( period = 5.558 ns )                    ; rs232_one_adc:inst|i[5]       ; rs232_one_adc:inst|memory1[8]   ; clk        ; clk      ; None                        ; None                      ; 5.332 ns                ;
+; N/A                                     ; 179.92 MHz ( period = 5.558 ns )                    ; rs232_one_adc:inst|i[5]       ; rs232_one_adc:inst|memory1[9]   ; clk        ; clk      ; None                        ; None                      ; 5.332 ns                ;
+; N/A                                     ; 179.92 MHz ( period = 5.558 ns )                    ; rs232_one_adc:inst|i[27]      ; rs232_one_adc:inst|memory1[3]   ; clk        ; clk      ; None                        ; None                      ; 5.337 ns                ;
+; N/A                                     ; 179.95 MHz ( period = 5.557 ns )                    ; rs232_one_adc:inst|i[27]      ; rs232_one_adc:inst|memory1[7]   ; clk        ; clk      ; None                        ; None                      ; 5.336 ns                ;
+; N/A                                     ; 180.86 MHz ( period = 5.529 ns )                    ; rs232_one_adc:inst|memory1[4] ; rs232_one_adc:inst|TxD_shift[4] ; clk        ; clk      ; None                        ; None                      ; 1.335 ns                ;
+; N/A                                     ; 182.02 MHz ( period = 5.494 ns )                    ; BaudTickGen:inst1|Acc[11]     ; BaudTickGen:inst1|Acc[16]       ; clk        ; clk      ; None                        ; None                      ; 5.256 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                               ;                                 ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+-------------------------------+---------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++-------------------------------------------------------------------------------------+
+; tsu                                                                                 ;
++-------+--------------+------------+------+-------------------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From ; To                            ; To Clock ;
++-------+--------------+------------+------+-------------------------------+----------+
+; N/A   ; None         ; 1.086 ns   ; MISO ; rs232_one_adc:inst|memory1[6] ; clk      ;
+; N/A   ; None         ; 1.085 ns   ; MISO ; rs232_one_adc:inst|memory1[2] ; clk      ;
+; N/A   ; None         ; 1.085 ns   ; MISO ; rs232_one_adc:inst|memory1[3] ; clk      ;
+; N/A   ; None         ; 1.085 ns   ; MISO ; rs232_one_adc:inst|memory1[7] ; clk      ;
+; N/A   ; None         ; 0.819 ns   ; MISO ; rs232_one_adc:inst|memory1[4] ; clk      ;
+; N/A   ; None         ; 0.818 ns   ; MISO ; rs232_one_adc:inst|memory1[5] ; clk      ;
+; N/A   ; None         ; 0.816 ns   ; MISO ; rs232_one_adc:inst|memory1[9] ; clk      ;
+; N/A   ; None         ; 0.815 ns   ; MISO ; rs232_one_adc:inst|memory1[8] ; clk      ;
+; N/A   ; None         ; 0.733 ns   ; MISO ; rs232_one_adc:inst|memory1[1] ; clk      ;
+; N/A   ; None         ; 0.699 ns   ; MISO ; rs232_one_adc:inst|memory1[0] ; clk      ;
++-------+--------------+------------+------+-------------------------------+----------+
+
+
++-----------------------------------------------------------------------------------------+
+; tco                                                                                     ;
++-------+--------------+------------+---------------------------------+------+------------+
+; Slack ; Required tco ; Actual tco ; From                            ; To   ; From Clock ;
++-------+--------------+------------+---------------------------------+------+------------+
+; N/A   ; None         ; 11.940 ns  ; rs232_one_adc:inst|SS1          ; SS1  ; clk        ;
+; N/A   ; None         ; 11.125 ns  ; rs232_one_adc:inst|MOSI         ; MOSI ; clk        ;
+; N/A   ; None         ; 9.325 ns   ; rs232_one_adc:inst|TxD_state[2] ; TxD  ; clk        ;
+; N/A   ; None         ; 9.129 ns   ; rs232_one_adc:inst|TxD_state[3] ; TxD  ; clk        ;
+; N/A   ; None         ; 8.484 ns   ; rs232_one_adc:inst|TxD_shift[0] ; TxD  ; clk        ;
+; N/A   ; None         ; 7.523 ns   ; BaudTickGen:inst1|Acc[16]       ; tick ; clk        ;
+; N/A   ; None         ; 6.997 ns   ; rs232_one_adc:inst|m[2]         ; SCK  ; clk        ;
++-------+--------------+------------+---------------------------------+------+------------+
+
+
++-------------------------------------------------------------------------------------------+
+; th                                                                                        ;
++---------------+-------------+-----------+------+-------------------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From ; To                            ; To Clock ;
++---------------+-------------+-----------+------+-------------------------------+----------+
+; N/A           ; None        ; -0.451 ns ; MISO ; rs232_one_adc:inst|memory1[0] ; clk      ;
+; N/A           ; None        ; -0.485 ns ; MISO ; rs232_one_adc:inst|memory1[1] ; clk      ;
+; N/A           ; None        ; -0.567 ns ; MISO ; rs232_one_adc:inst|memory1[8] ; clk      ;
+; N/A           ; None        ; -0.568 ns ; MISO ; rs232_one_adc:inst|memory1[9] ; clk      ;
+; N/A           ; None        ; -0.570 ns ; MISO ; rs232_one_adc:inst|memory1[5] ; clk      ;
+; N/A           ; None        ; -0.571 ns ; MISO ; rs232_one_adc:inst|memory1[4] ; clk      ;
+; N/A           ; None        ; -0.837 ns ; MISO ; rs232_one_adc:inst|memory1[2] ; clk      ;
+; N/A           ; None        ; -0.837 ns ; MISO ; rs232_one_adc:inst|memory1[3] ; clk      ;
+; N/A           ; None        ; -0.837 ns ; MISO ; rs232_one_adc:inst|memory1[7] ; clk      ;
+; N/A           ; None        ; -0.838 ns ; MISO ; rs232_one_adc:inst|memory1[6] ; clk      ;
++---------------+-------------+-----------+------+-------------------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.1 Build 222 10/21/2009 SJ Web Edition
+    Info: Processing started: Tue Mar 19 13:06:20 2019
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off rs232_one_adc -c rs232_one_adc --timing_analysis_only
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clk" is an undefined clock
+Warning: Found 1 node(s) in clock paths which may be acting as ripple and/or gated clocks -- node(s) analyzed as buffer(s) resulting in clock skew
+    Info: Detected ripple clock "rs232_one_adc:inst|m[2]" as buffer
+Info: Clock "clk" has Internal fmax of 139.47 MHz between source register "rs232_one_adc:inst|count1[2]" and destination register "rs232_one_adc:inst|TxD_data[0]" (period= 7.17 ns)
+    Info: + Longest register to register delay is 2.974 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X47_Y25_N13; Fanout = 5; REG Node = 'rs232_one_adc:inst|count1[2]'
+        Info: 2: + IC(0.384 ns) + CELL(0.544 ns) = 0.928 ns; Loc. = LCCOMB_X47_Y25_N30; Fanout = 3; COMB Node = 'rs232_one_adc:inst|LessThan5~2'
+        Info: 3: + IC(0.315 ns) + CELL(0.178 ns) = 1.421 ns; Loc. = LCCOMB_X47_Y25_N6; Fanout = 13; COMB Node = 'rs232_one_adc:inst|LessThan5~3'
+        Info: 4: + IC(0.795 ns) + CELL(0.758 ns) = 2.974 ns; Loc. = LCFF_X44_Y25_N27; Fanout = 1; REG Node = 'rs232_one_adc:inst|TxD_data[0]'
+        Info: Total cell delay = 1.480 ns ( 49.76 % )
+        Info: Total interconnect delay = 1.494 ns ( 50.24 % )
+    Info: - Smallest clock skew is -3.957 ns
+        Info: + Shortest clock path from clock "clk" to destination register is 2.842 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.006 ns) = 1.006 ns; Loc. = PIN_D12; Fanout = 2; CLK Node = 'clk'
+            Info: 2: + IC(0.238 ns) + CELL(0.000 ns) = 1.244 ns; Loc. = CLKCTRL_G11; Fanout = 42; COMB Node = 'clk~clkctrl'
+            Info: 3: + IC(0.996 ns) + CELL(0.602 ns) = 2.842 ns; Loc. = LCFF_X44_Y25_N27; Fanout = 1; REG Node = 'rs232_one_adc:inst|TxD_data[0]'
+            Info: Total cell delay = 1.608 ns ( 56.58 % )
+            Info: Total interconnect delay = 1.234 ns ( 43.42 % )
+        Info: - Longest clock path from clock "clk" to source register is 6.799 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.006 ns) = 1.006 ns; Loc. = PIN_D12; Fanout = 2; CLK Node = 'clk'
+            Info: 2: + IC(0.749 ns) + CELL(0.879 ns) = 2.634 ns; Loc. = LCFF_X25_Y25_N9; Fanout = 3; REG Node = 'rs232_one_adc:inst|m[2]'
+            Info: 3: + IC(2.561 ns) + CELL(0.000 ns) = 5.195 ns; Loc. = CLKCTRL_G13; Fanout = 64; COMB Node = 'rs232_one_adc:inst|m[2]~clkctrl'
+            Info: 4: + IC(1.002 ns) + CELL(0.602 ns) = 6.799 ns; Loc. = LCFF_X47_Y25_N13; Fanout = 5; REG Node = 'rs232_one_adc:inst|count1[2]'
+            Info: Total cell delay = 2.487 ns ( 36.58 % )
+            Info: Total interconnect delay = 4.312 ns ( 63.42 % )
+    Info: + Micro clock to output delay of source is 0.277 ns
+    Info: + Micro setup delay of destination is -0.038 ns
+Info: tsu for register "rs232_one_adc:inst|memory1[6]" (data pin = "MISO", clock pin = "clk") is 1.086 ns
+    Info: + Longest pin to register delay is 7.922 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.863 ns) = 0.863 ns; Loc. = PIN_A13; Fanout = 10; PIN Node = 'MISO'
+        Info: 2: + IC(6.418 ns) + CELL(0.545 ns) = 7.826 ns; Loc. = LCCOMB_X44_Y25_N20; Fanout = 1; COMB Node = 'rs232_one_adc:inst|memory1[6]~8'
+        Info: 3: + IC(0.000 ns) + CELL(0.096 ns) = 7.922 ns; Loc. = LCFF_X44_Y25_N21; Fanout = 2; REG Node = 'rs232_one_adc:inst|memory1[6]'
+        Info: Total cell delay = 1.504 ns ( 18.99 % )
+        Info: Total interconnect delay = 6.418 ns ( 81.01 % )
+    Info: + Micro setup delay of destination is -0.038 ns
+    Info: - Shortest clock path from clock "clk" to destination register is 6.798 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.006 ns) = 1.006 ns; Loc. = PIN_D12; Fanout = 2; CLK Node = 'clk'
+        Info: 2: + IC(0.749 ns) + CELL(0.879 ns) = 2.634 ns; Loc. = LCFF_X25_Y25_N9; Fanout = 3; REG Node = 'rs232_one_adc:inst|m[2]'
+        Info: 3: + IC(2.561 ns) + CELL(0.000 ns) = 5.195 ns; Loc. = CLKCTRL_G13; Fanout = 64; COMB Node = 'rs232_one_adc:inst|m[2]~clkctrl'
+        Info: 4: + IC(1.001 ns) + CELL(0.602 ns) = 6.798 ns; Loc. = LCFF_X44_Y25_N21; Fanout = 2; REG Node = 'rs232_one_adc:inst|memory1[6]'
+        Info: Total cell delay = 2.487 ns ( 36.58 % )
+        Info: Total interconnect delay = 4.311 ns ( 63.42 % )
+Info: tco from clock "clk" to destination pin "SS1" through register "rs232_one_adc:inst|SS1" is 11.940 ns
+    Info: + Longest clock path from clock "clk" to source register is 6.798 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.006 ns) = 1.006 ns; Loc. = PIN_D12; Fanout = 2; CLK Node = 'clk'
+        Info: 2: + IC(0.749 ns) + CELL(0.879 ns) = 2.634 ns; Loc. = LCFF_X25_Y25_N9; Fanout = 3; REG Node = 'rs232_one_adc:inst|m[2]'
+        Info: 3: + IC(2.561 ns) + CELL(0.000 ns) = 5.195 ns; Loc. = CLKCTRL_G13; Fanout = 64; COMB Node = 'rs232_one_adc:inst|m[2]~clkctrl'
+        Info: 4: + IC(1.001 ns) + CELL(0.602 ns) = 6.798 ns; Loc. = LCFF_X45_Y25_N17; Fanout = 2; REG Node = 'rs232_one_adc:inst|SS1'
+        Info: Total cell delay = 2.487 ns ( 36.58 % )
+        Info: Total interconnect delay = 4.311 ns ( 63.42 % )
+    Info: + Micro clock to output delay of source is 0.277 ns
+    Info: + Longest register to pin delay is 4.865 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X45_Y25_N17; Fanout = 2; REG Node = 'rs232_one_adc:inst|SS1'
+        Info: 2: + IC(1.889 ns) + CELL(2.976 ns) = 4.865 ns; Loc. = PIN_B14; Fanout = 0; PIN Node = 'SS1'
+        Info: Total cell delay = 2.976 ns ( 61.17 % )
+        Info: Total interconnect delay = 1.889 ns ( 38.83 % )
+Info: th for register "rs232_one_adc:inst|memory1[0]" (data pin = "MISO", clock pin = "clk") is -0.451 ns
+    Info: + Longest clock path from clock "clk" to destination register is 6.798 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.006 ns) = 1.006 ns; Loc. = PIN_D12; Fanout = 2; CLK Node = 'clk'
+        Info: 2: + IC(0.749 ns) + CELL(0.879 ns) = 2.634 ns; Loc. = LCFF_X25_Y25_N9; Fanout = 3; REG Node = 'rs232_one_adc:inst|m[2]'
+        Info: 3: + IC(2.561 ns) + CELL(0.000 ns) = 5.195 ns; Loc. = CLKCTRL_G13; Fanout = 64; COMB Node = 'rs232_one_adc:inst|m[2]~clkctrl'
+        Info: 4: + IC(1.001 ns) + CELL(0.602 ns) = 6.798 ns; Loc. = LCFF_X44_Y25_N1; Fanout = 2; REG Node = 'rs232_one_adc:inst|memory1[0]'
+        Info: Total cell delay = 2.487 ns ( 36.58 % )
+        Info: Total interconnect delay = 4.311 ns ( 63.42 % )
+    Info: + Micro hold delay of destination is 0.286 ns
+    Info: - Shortest pin to register delay is 7.535 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.863 ns) = 0.863 ns; Loc. = PIN_A13; Fanout = 10; PIN Node = 'MISO'
+        Info: 2: + IC(6.398 ns) + CELL(0.178 ns) = 7.439 ns; Loc. = LCCOMB_X44_Y25_N0; Fanout = 1; COMB Node = 'rs232_one_adc:inst|memory1[0]~1'
+        Info: 3: + IC(0.000 ns) + CELL(0.096 ns) = 7.535 ns; Loc. = LCFF_X44_Y25_N1; Fanout = 2; REG Node = 'rs232_one_adc:inst|memory1[0]'
+        Info: Total cell delay = 1.137 ns ( 15.09 % )
+        Info: Total interconnect delay = 6.398 ns ( 84.91 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 156 megabytes
+    Info: Processing ended: Tue Mar 19 13:06:21 2019
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

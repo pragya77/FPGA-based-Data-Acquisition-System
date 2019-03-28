@@ -1,0 +1,16 @@
+Fitter Status : Successful - Sat Mar 16 23:44:42 2019
+Quartus II Version : 9.1 Build 222 10/21/2009 SJ Web Edition
+Revision Name : final_eight_adc
+Top-level Entity Name : Block1
+Family : Cyclone II
+Device : EP2C20F484C7
+Timing Models : Final
+Total logic elements : 1,010 / 18,752 ( 5 % )
+    Total combinational functions : 738 / 18,752 ( 4 % )
+    Dedicated logic registers : 721 / 18,752 ( 4 % )
+Total registers : 721
+Total pins : 35 / 315 ( 11 % )
+Total virtual pins : 0
+Total memory bits : 0 / 239,616 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 52 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )

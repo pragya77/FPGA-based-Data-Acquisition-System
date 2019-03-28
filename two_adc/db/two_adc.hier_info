@@ -1,0 +1,119 @@
+|Block1
+TxD <= two_adc:inst1.TxD
+clk => two_adc:inst1.clk
+clk => BaudTickGen:inst.clk
+MISO => two_adc:inst1.MISO
+MISO1 => two_adc:inst1.MISO1
+SCK <= two_adc:inst1.SCK
+SS1 <= two_adc:inst1.SS1
+MOSI <= two_adc:inst1.MOSI
+SCK1 <= two_adc:inst1.SCK1
+SS2 <= two_adc:inst1.SS2
+MOSI1 <= two_adc:inst1.MOSI1
+tick <= BaudTickGen:inst.tick
+
+
+|Block1|two_adc:inst1
+clk => clk.IN1
+TxD <= TxD.DB_MAX_OUTPUT_PORT_TYPE
+TxD_busy <= TxD_busy.DB_MAX_OUTPUT_PORT_TYPE
+SCK <= m[2].DB_MAX_OUTPUT_PORT_TYPE
+SS1 <= SS1~reg0.DB_MAX_OUTPUT_PORT_TYPE
+MOSI <= MOSI~reg0.DB_MAX_OUTPUT_PORT_TYPE
+MISO => memory1.DATAB
+MISO => memory1.DATAB
+MISO => memory1.DATAB
+MISO => memory1.DATAB
+MISO => memory1.DATAB
+MISO => memory1.DATAB
+MISO => memory1.DATAB
+MISO => memory1.DATAB
+MISO => memory1.DATAB
+MISO => memory1.DATAB
+SCK1 <= m[2].DB_MAX_OUTPUT_PORT_TYPE
+SS2 <= SS2~reg0.DB_MAX_OUTPUT_PORT_TYPE
+MOSI1 <= MOSI1~reg0.DB_MAX_OUTPUT_PORT_TYPE
+MISO1 => memory2.DATAB
+MISO1 => memory2.DATAB
+MISO1 => memory2.DATAB
+MISO1 => memory2.DATAB
+MISO1 => memory2.DATAB
+MISO1 => memory2.DATAB
+MISO1 => memory2.DATAB
+MISO1 => memory2.DATAB
+MISO1 => memory2.DATAB
+MISO1 => memory2.DATAB
+
+
+|Block1|two_adc:inst1|BaudTickGen:tickgen
+clk => Acc[1].CLK
+clk => Acc[2].CLK
+clk => Acc[3].CLK
+clk => Acc[4].CLK
+clk => Acc[5].CLK
+clk => Acc[6].CLK
+clk => Acc[7].CLK
+clk => Acc[8].CLK
+clk => Acc[9].CLK
+clk => Acc[10].CLK
+clk => Acc[11].CLK
+clk => Acc[12].CLK
+clk => Acc[13].CLK
+clk => Acc[14].CLK
+clk => Acc[15].CLK
+clk => Acc[16].CLK
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+tick <= Acc[16].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Block1|BaudTickGen:inst
+clk => Acc[1].CLK
+clk => Acc[2].CLK
+clk => Acc[3].CLK
+clk => Acc[4].CLK
+clk => Acc[5].CLK
+clk => Acc[6].CLK
+clk => Acc[7].CLK
+clk => Acc[8].CLK
+clk => Acc[9].CLK
+clk => Acc[10].CLK
+clk => Acc[11].CLK
+clk => Acc[12].CLK
+clk => Acc[13].CLK
+clk => Acc[14].CLK
+clk => Acc[15].CLK
+clk => Acc[16].CLK
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+tick <= Acc[16].DB_MAX_OUTPUT_PORT_TYPE
+
+

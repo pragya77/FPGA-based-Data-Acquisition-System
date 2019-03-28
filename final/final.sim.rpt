@@ -1,0 +1,998 @@
+Simulator report for final
+Sat Feb 23 09:10:48 2019
+Quartus II Version 9.1 Build 222 10/21/2009 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 305 nodes    ;
+; Simulation Coverage         ;      18.87 % ;
+; Total Number of Transitions ; 920          ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone II   ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                      ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Option                                                                                     ; Setting    ; Default Value ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Simulation mode                                                                            ; Functional ; Timing        ;
+; Start time                                                                                 ; 0 ns       ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF       ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On         ; On            ;
+; Check outputs                                                                              ; Off        ; Off           ;
+; Report simulation coverage                                                                 ; On         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On         ; On            ;
+; Display missing 1-value coverage report                                                    ; On         ; On            ;
+; Display missing 0-value coverage report                                                    ; On         ; On            ;
+; Detect setup and hold time violations                                                      ; Off        ; Off           ;
+; Detect glitches                                                                            ; Off        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off        ; Off           ;
+; Generate Signal Activity File                                                              ; Off        ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; On         ; Off           ;
+; VCD File for PowerPlay Power Analyzer output destination                                   ; final.vcd  ;               ;
+; Group bus channels in simulation results                                                   ; Off        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off        ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto       ; Auto          ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      18.87 % ;
+; Total nodes checked                                 ; 305          ;
+; Total output ports checked                          ; 302          ;
+; Total output ports with complete 1/0-value coverage ; 57           ;
+; Total output ports with no 1/0-value coverage       ; 243          ;
+; Total output ports with no 1-value coverage         ; 244          ;
+; Total output ports with no 0-value coverage         ; 244          ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++--------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                          ;
++---------------------------------+---------------------------------+------------------+
+; Node Name                       ; Output Port Name                ; Output Port Type ;
++---------------------------------+---------------------------------+------------------+
+; |Block1|SCK                     ; |Block1|SCK                     ; pin_out          ;
+; |Block1|fpga_clk                ; |Block1|fpga_clk                ; out              ;
+; |Block1|MOSI                    ; |Block1|MOSI                    ; pin_out          ;
+; |Block1|final:inst|m[1]         ; |Block1|final:inst|m[1]         ; regout           ;
+; |Block1|final:inst|m[2]         ; |Block1|final:inst|m[2]         ; regout           ;
+; |Block1|final:inst|data~12      ; |Block1|final:inst|data~12      ; out              ;
+; |Block1|final:inst|data~13      ; |Block1|final:inst|data~13      ; out              ;
+; |Block1|final:inst|data~14      ; |Block1|final:inst|data~14      ; out              ;
+; |Block1|final:inst|data~15      ; |Block1|final:inst|data~15      ; out              ;
+; |Block1|final:inst|data~16      ; |Block1|final:inst|data~16      ; out              ;
+; |Block1|final:inst|data~17      ; |Block1|final:inst|data~17      ; out              ;
+; |Block1|final:inst|data~18      ; |Block1|final:inst|data~18      ; out              ;
+; |Block1|final:inst|data~19      ; |Block1|final:inst|data~19      ; out              ;
+; |Block1|final:inst|data~20      ; |Block1|final:inst|data~20      ; out              ;
+; |Block1|final:inst|data~21      ; |Block1|final:inst|data~21      ; out              ;
+; |Block1|final:inst|data~22      ; |Block1|final:inst|data~22      ; out              ;
+; |Block1|final:inst|count1[2]    ; |Block1|final:inst|count1[2]    ; regout           ;
+; |Block1|final:inst|count1[1]    ; |Block1|final:inst|count1[1]    ; regout           ;
+; |Block1|final:inst|always2~0    ; |Block1|final:inst|always2~0    ; out0             ;
+; |Block1|final:inst|always2~1    ; |Block1|final:inst|always2~1    ; out0             ;
+; |Block1|final:inst|MOSI         ; |Block1|final:inst|MOSI         ; regout           ;
+; |Block1|final:inst|data[1]      ; |Block1|final:inst|data[1]      ; regout           ;
+; |Block1|final:inst|data[2]      ; |Block1|final:inst|data[2]      ; regout           ;
+; |Block1|final:inst|data[3]      ; |Block1|final:inst|data[3]      ; regout           ;
+; |Block1|final:inst|data[4]      ; |Block1|final:inst|data[4]      ; regout           ;
+; |Block1|final:inst|data[5]      ; |Block1|final:inst|data[5]      ; regout           ;
+; |Block1|final:inst|data[6]      ; |Block1|final:inst|data[6]      ; regout           ;
+; |Block1|final:inst|data[7]      ; |Block1|final:inst|data[7]      ; regout           ;
+; |Block1|final:inst|data[8]      ; |Block1|final:inst|data[8]      ; regout           ;
+; |Block1|final:inst|data[9]      ; |Block1|final:inst|data[9]      ; regout           ;
+; |Block1|final:inst|data[10]     ; |Block1|final:inst|data[10]     ; regout           ;
+; |Block1|final:inst|data[11]     ; |Block1|final:inst|data[11]     ; regout           ;
+; |Block1|final:inst|LessThan0~0  ; |Block1|final:inst|LessThan0~0  ; out0             ;
+; |Block1|final:inst|LessThan0~1  ; |Block1|final:inst|LessThan0~1  ; out0             ;
+; |Block1|final:inst|LessThan0~2  ; |Block1|final:inst|LessThan0~2  ; out0             ;
+; |Block1|final:inst|LessThan0~3  ; |Block1|final:inst|LessThan0~3  ; out0             ;
+; |Block1|final:inst|LessThan0~4  ; |Block1|final:inst|LessThan0~4  ; out0             ;
+; |Block1|final:inst|LessThan0~5  ; |Block1|final:inst|LessThan0~5  ; out0             ;
+; |Block1|final:inst|LessThan0~6  ; |Block1|final:inst|LessThan0~6  ; out0             ;
+; |Block1|final:inst|LessThan0~7  ; |Block1|final:inst|LessThan0~7  ; out0             ;
+; |Block1|final:inst|LessThan0~8  ; |Block1|final:inst|LessThan0~8  ; out0             ;
+; |Block1|final:inst|LessThan0~9  ; |Block1|final:inst|LessThan0~9  ; out0             ;
+; |Block1|final:inst|LessThan0~10 ; |Block1|final:inst|LessThan0~10 ; out0             ;
+; |Block1|final:inst|LessThan1~0  ; |Block1|final:inst|LessThan1~0  ; out0             ;
+; |Block1|final:inst|LessThan1~1  ; |Block1|final:inst|LessThan1~1  ; out0             ;
+; |Block1|final:inst|LessThan1~2  ; |Block1|final:inst|LessThan1~2  ; out0             ;
+; |Block1|final:inst|LessThan1~3  ; |Block1|final:inst|LessThan1~3  ; out0             ;
+; |Block1|final:inst|Add0~0       ; |Block1|final:inst|Add0~0       ; out0             ;
+; |Block1|final:inst|Add0~1       ; |Block1|final:inst|Add0~1       ; out0             ;
+; |Block1|final:inst|Add0~2       ; |Block1|final:inst|Add0~2       ; out0             ;
+; |Block1|final:inst|Add2~0       ; |Block1|final:inst|Add2~0       ; out0             ;
+; |Block1|final:inst|Add2~1       ; |Block1|final:inst|Add2~1       ; out0             ;
+; |Block1|final:inst|Add2~2       ; |Block1|final:inst|Add2~2       ; out0             ;
+; |Block1|final:inst|Add2~3       ; |Block1|final:inst|Add2~3       ; out0             ;
+; |Block1|final:inst|Add2~4       ; |Block1|final:inst|Add2~4       ; out0             ;
+; |Block1|final:inst|Add2~5       ; |Block1|final:inst|Add2~5       ; out0             ;
+; |Block1|final:inst|Add2~6       ; |Block1|final:inst|Add2~6       ; out0             ;
++---------------------------------+---------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++--------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                             ;
++---------------------------------+---------------------------------+------------------+
+; Node Name                       ; Output Port Name                ; Output Port Type ;
++---------------------------------+---------------------------------+------------------+
+; |Block1|MISO                    ; |Block1|MISO                    ; out              ;
+; |Block1|SS1                     ; |Block1|SS1                     ; pin_out          ;
+; |Block1|memory1[9]              ; |Block1|memory1[9]              ; pin_out          ;
+; |Block1|memory1[8]              ; |Block1|memory1[8]              ; pin_out          ;
+; |Block1|memory1[7]              ; |Block1|memory1[7]              ; pin_out          ;
+; |Block1|memory1[6]              ; |Block1|memory1[6]              ; pin_out          ;
+; |Block1|memory1[5]              ; |Block1|memory1[5]              ; pin_out          ;
+; |Block1|memory1[4]              ; |Block1|memory1[4]              ; pin_out          ;
+; |Block1|memory1[3]              ; |Block1|memory1[3]              ; pin_out          ;
+; |Block1|memory1[2]              ; |Block1|memory1[2]              ; pin_out          ;
+; |Block1|memory1[1]              ; |Block1|memory1[1]              ; pin_out          ;
+; |Block1|memory1[0]              ; |Block1|memory1[0]              ; pin_out          ;
+; |Block1|final:inst|i[12]        ; |Block1|final:inst|i[12]        ; regout           ;
+; |Block1|final:inst|i[11]        ; |Block1|final:inst|i[11]        ; regout           ;
+; |Block1|final:inst|i[10]        ; |Block1|final:inst|i[10]        ; regout           ;
+; |Block1|final:inst|i[9]         ; |Block1|final:inst|i[9]         ; regout           ;
+; |Block1|final:inst|i[8]         ; |Block1|final:inst|i[8]         ; regout           ;
+; |Block1|final:inst|i[7]         ; |Block1|final:inst|i[7]         ; regout           ;
+; |Block1|final:inst|i[6]         ; |Block1|final:inst|i[6]         ; regout           ;
+; |Block1|final:inst|i[5]         ; |Block1|final:inst|i[5]         ; regout           ;
+; |Block1|final:inst|i[4]         ; |Block1|final:inst|i[4]         ; regout           ;
+; |Block1|final:inst|i[3]         ; |Block1|final:inst|i[3]         ; regout           ;
+; |Block1|final:inst|i[2]         ; |Block1|final:inst|i[2]         ; regout           ;
+; |Block1|final:inst|i[1]         ; |Block1|final:inst|i[1]         ; regout           ;
+; |Block1|final:inst|count1[7]    ; |Block1|final:inst|count1[7]    ; regout           ;
+; |Block1|final:inst|count1[6]    ; |Block1|final:inst|count1[6]    ; regout           ;
+; |Block1|final:inst|count1[5]    ; |Block1|final:inst|count1[5]    ; regout           ;
+; |Block1|final:inst|count1[4]    ; |Block1|final:inst|count1[4]    ; regout           ;
+; |Block1|final:inst|SS1          ; |Block1|final:inst|SS1          ; regout           ;
+; |Block1|final:inst|memory1~0    ; |Block1|final:inst|memory1~0    ; out0             ;
+; |Block1|final:inst|memory1~1    ; |Block1|final:inst|memory1~1    ; out0             ;
+; |Block1|final:inst|memory1~2    ; |Block1|final:inst|memory1~2    ; out              ;
+; |Block1|final:inst|memory1~3    ; |Block1|final:inst|memory1~3    ; out0             ;
+; |Block1|final:inst|memory1~4    ; |Block1|final:inst|memory1~4    ; out              ;
+; |Block1|final:inst|memory1~5    ; |Block1|final:inst|memory1~5    ; out0             ;
+; |Block1|final:inst|memory1~6    ; |Block1|final:inst|memory1~6    ; out              ;
+; |Block1|final:inst|memory1~7    ; |Block1|final:inst|memory1~7    ; out0             ;
+; |Block1|final:inst|memory1~8    ; |Block1|final:inst|memory1~8    ; out              ;
+; |Block1|final:inst|memory1~9    ; |Block1|final:inst|memory1~9    ; out0             ;
+; |Block1|final:inst|memory1~10   ; |Block1|final:inst|memory1~10   ; out              ;
+; |Block1|final:inst|memory1~11   ; |Block1|final:inst|memory1~11   ; out0             ;
+; |Block1|final:inst|memory1~12   ; |Block1|final:inst|memory1~12   ; out              ;
+; |Block1|final:inst|memory1~13   ; |Block1|final:inst|memory1~13   ; out0             ;
+; |Block1|final:inst|memory1~14   ; |Block1|final:inst|memory1~14   ; out              ;
+; |Block1|final:inst|memory1~15   ; |Block1|final:inst|memory1~15   ; out0             ;
+; |Block1|final:inst|memory1~16   ; |Block1|final:inst|memory1~16   ; out              ;
+; |Block1|final:inst|memory1~17   ; |Block1|final:inst|memory1~17   ; out0             ;
+; |Block1|final:inst|memory1~18   ; |Block1|final:inst|memory1~18   ; out              ;
+; |Block1|final:inst|memory1~19   ; |Block1|final:inst|memory1~19   ; out0             ;
+; |Block1|final:inst|memory1~20   ; |Block1|final:inst|memory1~20   ; out              ;
+; |Block1|final:inst|i[13]        ; |Block1|final:inst|i[13]        ; regout           ;
+; |Block1|final:inst|i[14]        ; |Block1|final:inst|i[14]        ; regout           ;
+; |Block1|final:inst|i[15]        ; |Block1|final:inst|i[15]        ; regout           ;
+; |Block1|final:inst|i[16]        ; |Block1|final:inst|i[16]        ; regout           ;
+; |Block1|final:inst|i[17]        ; |Block1|final:inst|i[17]        ; regout           ;
+; |Block1|final:inst|i[18]        ; |Block1|final:inst|i[18]        ; regout           ;
+; |Block1|final:inst|i[19]        ; |Block1|final:inst|i[19]        ; regout           ;
+; |Block1|final:inst|i[20]        ; |Block1|final:inst|i[20]        ; regout           ;
+; |Block1|final:inst|i[21]        ; |Block1|final:inst|i[21]        ; regout           ;
+; |Block1|final:inst|i[22]        ; |Block1|final:inst|i[22]        ; regout           ;
+; |Block1|final:inst|i[23]        ; |Block1|final:inst|i[23]        ; regout           ;
+; |Block1|final:inst|i[24]        ; |Block1|final:inst|i[24]        ; regout           ;
+; |Block1|final:inst|i[25]        ; |Block1|final:inst|i[25]        ; regout           ;
+; |Block1|final:inst|i[26]        ; |Block1|final:inst|i[26]        ; regout           ;
+; |Block1|final:inst|i[27]        ; |Block1|final:inst|i[27]        ; regout           ;
+; |Block1|final:inst|i[28]        ; |Block1|final:inst|i[28]        ; regout           ;
+; |Block1|final:inst|i[29]        ; |Block1|final:inst|i[29]        ; regout           ;
+; |Block1|final:inst|i[30]        ; |Block1|final:inst|i[30]        ; regout           ;
+; |Block1|final:inst|i[31]        ; |Block1|final:inst|i[31]        ; regout           ;
+; |Block1|final:inst|memory1[0]   ; |Block1|final:inst|memory1[0]   ; regout           ;
+; |Block1|final:inst|memory1[1]   ; |Block1|final:inst|memory1[1]   ; regout           ;
+; |Block1|final:inst|memory1[2]   ; |Block1|final:inst|memory1[2]   ; regout           ;
+; |Block1|final:inst|memory1[3]   ; |Block1|final:inst|memory1[3]   ; regout           ;
+; |Block1|final:inst|memory1[4]   ; |Block1|final:inst|memory1[4]   ; regout           ;
+; |Block1|final:inst|memory1[5]   ; |Block1|final:inst|memory1[5]   ; regout           ;
+; |Block1|final:inst|memory1[6]   ; |Block1|final:inst|memory1[6]   ; regout           ;
+; |Block1|final:inst|memory1[7]   ; |Block1|final:inst|memory1[7]   ; regout           ;
+; |Block1|final:inst|memory1[8]   ; |Block1|final:inst|memory1[8]   ; regout           ;
+; |Block1|final:inst|memory1[9]   ; |Block1|final:inst|memory1[9]   ; regout           ;
+; |Block1|final:inst|s[0]         ; |Block1|final:inst|s[0]         ; regout           ;
+; |Block1|final:inst|Decoder0~0   ; |Block1|final:inst|Decoder0~0   ; out0             ;
+; |Block1|final:inst|Decoder0~1   ; |Block1|final:inst|Decoder0~1   ; out0             ;
+; |Block1|final:inst|Decoder0~2   ; |Block1|final:inst|Decoder0~2   ; out0             ;
+; |Block1|final:inst|Decoder0~3   ; |Block1|final:inst|Decoder0~3   ; out0             ;
+; |Block1|final:inst|Decoder0~4   ; |Block1|final:inst|Decoder0~4   ; out0             ;
+; |Block1|final:inst|Decoder0~5   ; |Block1|final:inst|Decoder0~5   ; out0             ;
+; |Block1|final:inst|Decoder0~6   ; |Block1|final:inst|Decoder0~6   ; out0             ;
+; |Block1|final:inst|Decoder0~7   ; |Block1|final:inst|Decoder0~7   ; out0             ;
+; |Block1|final:inst|Decoder0~8   ; |Block1|final:inst|Decoder0~8   ; out0             ;
+; |Block1|final:inst|Decoder0~9   ; |Block1|final:inst|Decoder0~9   ; out0             ;
+; |Block1|final:inst|LessThan1~4  ; |Block1|final:inst|LessThan1~4  ; out0             ;
+; |Block1|final:inst|LessThan1~5  ; |Block1|final:inst|LessThan1~5  ; out0             ;
+; |Block1|final:inst|LessThan1~6  ; |Block1|final:inst|LessThan1~6  ; out0             ;
+; |Block1|final:inst|LessThan1~7  ; |Block1|final:inst|LessThan1~7  ; out0             ;
+; |Block1|final:inst|LessThan1~8  ; |Block1|final:inst|LessThan1~8  ; out0             ;
+; |Block1|final:inst|LessThan3~0  ; |Block1|final:inst|LessThan3~0  ; out0             ;
+; |Block1|final:inst|LessThan3~1  ; |Block1|final:inst|LessThan3~1  ; out0             ;
+; |Block1|final:inst|LessThan3~2  ; |Block1|final:inst|LessThan3~2  ; out0             ;
+; |Block1|final:inst|LessThan3~3  ; |Block1|final:inst|LessThan3~3  ; out0             ;
+; |Block1|final:inst|LessThan3~4  ; |Block1|final:inst|LessThan3~4  ; out0             ;
+; |Block1|final:inst|LessThan3~5  ; |Block1|final:inst|LessThan3~5  ; out0             ;
+; |Block1|final:inst|LessThan3~6  ; |Block1|final:inst|LessThan3~6  ; out0             ;
+; |Block1|final:inst|LessThan3~7  ; |Block1|final:inst|LessThan3~7  ; out0             ;
+; |Block1|final:inst|LessThan3~8  ; |Block1|final:inst|LessThan3~8  ; out0             ;
+; |Block1|final:inst|LessThan3~9  ; |Block1|final:inst|LessThan3~9  ; out0             ;
+; |Block1|final:inst|LessThan3~10 ; |Block1|final:inst|LessThan3~10 ; out0             ;
+; |Block1|final:inst|LessThan3~11 ; |Block1|final:inst|LessThan3~11 ; out0             ;
+; |Block1|final:inst|LessThan3~12 ; |Block1|final:inst|LessThan3~12 ; out0             ;
+; |Block1|final:inst|LessThan3~13 ; |Block1|final:inst|LessThan3~13 ; out0             ;
+; |Block1|final:inst|LessThan3~14 ; |Block1|final:inst|LessThan3~14 ; out0             ;
+; |Block1|final:inst|LessThan3~15 ; |Block1|final:inst|LessThan3~15 ; out0             ;
+; |Block1|final:inst|LessThan3~16 ; |Block1|final:inst|LessThan3~16 ; out0             ;
+; |Block1|final:inst|LessThan3~17 ; |Block1|final:inst|LessThan3~17 ; out0             ;
+; |Block1|final:inst|LessThan3~18 ; |Block1|final:inst|LessThan3~18 ; out0             ;
+; |Block1|final:inst|LessThan3~19 ; |Block1|final:inst|LessThan3~19 ; out0             ;
+; |Block1|final:inst|LessThan3~20 ; |Block1|final:inst|LessThan3~20 ; out0             ;
+; |Block1|final:inst|LessThan3~21 ; |Block1|final:inst|LessThan3~21 ; out0             ;
+; |Block1|final:inst|LessThan3~22 ; |Block1|final:inst|LessThan3~22 ; out0             ;
+; |Block1|final:inst|LessThan3~23 ; |Block1|final:inst|LessThan3~23 ; out0             ;
+; |Block1|final:inst|LessThan3~24 ; |Block1|final:inst|LessThan3~24 ; out0             ;
+; |Block1|final:inst|LessThan3~25 ; |Block1|final:inst|LessThan3~25 ; out0             ;
+; |Block1|final:inst|LessThan3~26 ; |Block1|final:inst|LessThan3~26 ; out0             ;
+; |Block1|final:inst|LessThan3~27 ; |Block1|final:inst|LessThan3~27 ; out0             ;
+; |Block1|final:inst|LessThan3~28 ; |Block1|final:inst|LessThan3~28 ; out0             ;
+; |Block1|final:inst|LessThan3~29 ; |Block1|final:inst|LessThan3~29 ; out0             ;
+; |Block1|final:inst|LessThan3~30 ; |Block1|final:inst|LessThan3~30 ; out0             ;
+; |Block1|final:inst|LessThan3~31 ; |Block1|final:inst|LessThan3~31 ; out0             ;
+; |Block1|final:inst|LessThan3~32 ; |Block1|final:inst|LessThan3~32 ; out0             ;
+; |Block1|final:inst|LessThan3~33 ; |Block1|final:inst|LessThan3~33 ; out0             ;
+; |Block1|final:inst|LessThan3~34 ; |Block1|final:inst|LessThan3~34 ; out0             ;
+; |Block1|final:inst|LessThan3~35 ; |Block1|final:inst|LessThan3~35 ; out0             ;
+; |Block1|final:inst|LessThan3~36 ; |Block1|final:inst|LessThan3~36 ; out0             ;
+; |Block1|final:inst|LessThan3~37 ; |Block1|final:inst|LessThan3~37 ; out0             ;
+; |Block1|final:inst|LessThan3~38 ; |Block1|final:inst|LessThan3~38 ; out0             ;
+; |Block1|final:inst|LessThan3~39 ; |Block1|final:inst|LessThan3~39 ; out0             ;
+; |Block1|final:inst|LessThan3~40 ; |Block1|final:inst|LessThan3~40 ; out0             ;
+; |Block1|final:inst|LessThan3~41 ; |Block1|final:inst|LessThan3~41 ; out0             ;
+; |Block1|final:inst|LessThan3~42 ; |Block1|final:inst|LessThan3~42 ; out0             ;
+; |Block1|final:inst|LessThan3~43 ; |Block1|final:inst|LessThan3~43 ; out0             ;
+; |Block1|final:inst|LessThan3~44 ; |Block1|final:inst|LessThan3~44 ; out0             ;
+; |Block1|final:inst|LessThan3~45 ; |Block1|final:inst|LessThan3~45 ; out0             ;
+; |Block1|final:inst|LessThan3~46 ; |Block1|final:inst|LessThan3~46 ; out0             ;
+; |Block1|final:inst|LessThan3~47 ; |Block1|final:inst|LessThan3~47 ; out0             ;
+; |Block1|final:inst|LessThan3~48 ; |Block1|final:inst|LessThan3~48 ; out0             ;
+; |Block1|final:inst|LessThan3~49 ; |Block1|final:inst|LessThan3~49 ; out0             ;
+; |Block1|final:inst|LessThan3~50 ; |Block1|final:inst|LessThan3~50 ; out0             ;
+; |Block1|final:inst|Add1~0       ; |Block1|final:inst|Add1~0       ; out0             ;
+; |Block1|final:inst|Add1~1       ; |Block1|final:inst|Add1~1       ; out0             ;
+; |Block1|final:inst|Add1~2       ; |Block1|final:inst|Add1~2       ; out0             ;
+; |Block1|final:inst|Add1~3       ; |Block1|final:inst|Add1~3       ; out0             ;
+; |Block1|final:inst|Add1~4       ; |Block1|final:inst|Add1~4       ; out0             ;
+; |Block1|final:inst|Add1~5       ; |Block1|final:inst|Add1~5       ; out0             ;
+; |Block1|final:inst|Add1~6       ; |Block1|final:inst|Add1~6       ; out0             ;
+; |Block1|final:inst|Add1~7       ; |Block1|final:inst|Add1~7       ; out0             ;
+; |Block1|final:inst|Add1~8       ; |Block1|final:inst|Add1~8       ; out0             ;
+; |Block1|final:inst|Add1~9       ; |Block1|final:inst|Add1~9       ; out0             ;
+; |Block1|final:inst|Add1~10      ; |Block1|final:inst|Add1~10      ; out0             ;
+; |Block1|final:inst|Add1~11      ; |Block1|final:inst|Add1~11      ; out0             ;
+; |Block1|final:inst|Add1~12      ; |Block1|final:inst|Add1~12      ; out0             ;
+; |Block1|final:inst|Add1~13      ; |Block1|final:inst|Add1~13      ; out0             ;
+; |Block1|final:inst|Add1~14      ; |Block1|final:inst|Add1~14      ; out0             ;
+; |Block1|final:inst|Add1~15      ; |Block1|final:inst|Add1~15      ; out0             ;
+; |Block1|final:inst|Add1~16      ; |Block1|final:inst|Add1~16      ; out0             ;
+; |Block1|final:inst|Add1~17      ; |Block1|final:inst|Add1~17      ; out0             ;
+; |Block1|final:inst|Add1~18      ; |Block1|final:inst|Add1~18      ; out0             ;
+; |Block1|final:inst|Add1~19      ; |Block1|final:inst|Add1~19      ; out0             ;
+; |Block1|final:inst|Add1~20      ; |Block1|final:inst|Add1~20      ; out0             ;
+; |Block1|final:inst|Add1~21      ; |Block1|final:inst|Add1~21      ; out0             ;
+; |Block1|final:inst|Add1~22      ; |Block1|final:inst|Add1~22      ; out0             ;
+; |Block1|final:inst|Add1~23      ; |Block1|final:inst|Add1~23      ; out0             ;
+; |Block1|final:inst|Add1~24      ; |Block1|final:inst|Add1~24      ; out0             ;
+; |Block1|final:inst|Add1~25      ; |Block1|final:inst|Add1~25      ; out0             ;
+; |Block1|final:inst|Add1~26      ; |Block1|final:inst|Add1~26      ; out0             ;
+; |Block1|final:inst|Add1~27      ; |Block1|final:inst|Add1~27      ; out0             ;
+; |Block1|final:inst|Add1~28      ; |Block1|final:inst|Add1~28      ; out0             ;
+; |Block1|final:inst|Add1~29      ; |Block1|final:inst|Add1~29      ; out0             ;
+; |Block1|final:inst|Add1~30      ; |Block1|final:inst|Add1~30      ; out0             ;
+; |Block1|final:inst|Add1~31      ; |Block1|final:inst|Add1~31      ; out0             ;
+; |Block1|final:inst|Add1~32      ; |Block1|final:inst|Add1~32      ; out0             ;
+; |Block1|final:inst|Add1~33      ; |Block1|final:inst|Add1~33      ; out0             ;
+; |Block1|final:inst|Add1~34      ; |Block1|final:inst|Add1~34      ; out0             ;
+; |Block1|final:inst|Add1~35      ; |Block1|final:inst|Add1~35      ; out0             ;
+; |Block1|final:inst|Add1~36      ; |Block1|final:inst|Add1~36      ; out0             ;
+; |Block1|final:inst|Add1~37      ; |Block1|final:inst|Add1~37      ; out0             ;
+; |Block1|final:inst|Add1~38      ; |Block1|final:inst|Add1~38      ; out0             ;
+; |Block1|final:inst|Add1~39      ; |Block1|final:inst|Add1~39      ; out0             ;
+; |Block1|final:inst|Add1~40      ; |Block1|final:inst|Add1~40      ; out0             ;
+; |Block1|final:inst|Add1~41      ; |Block1|final:inst|Add1~41      ; out0             ;
+; |Block1|final:inst|Add1~42      ; |Block1|final:inst|Add1~42      ; out0             ;
+; |Block1|final:inst|Add1~43      ; |Block1|final:inst|Add1~43      ; out0             ;
+; |Block1|final:inst|Add1~44      ; |Block1|final:inst|Add1~44      ; out0             ;
+; |Block1|final:inst|Add1~45      ; |Block1|final:inst|Add1~45      ; out0             ;
+; |Block1|final:inst|Add1~46      ; |Block1|final:inst|Add1~46      ; out0             ;
+; |Block1|final:inst|Add1~47      ; |Block1|final:inst|Add1~47      ; out0             ;
+; |Block1|final:inst|Add1~48      ; |Block1|final:inst|Add1~48      ; out0             ;
+; |Block1|final:inst|Add1~49      ; |Block1|final:inst|Add1~49      ; out0             ;
+; |Block1|final:inst|Add1~50      ; |Block1|final:inst|Add1~50      ; out0             ;
+; |Block1|final:inst|Add1~51      ; |Block1|final:inst|Add1~51      ; out0             ;
+; |Block1|final:inst|Add1~52      ; |Block1|final:inst|Add1~52      ; out0             ;
+; |Block1|final:inst|Add1~53      ; |Block1|final:inst|Add1~53      ; out0             ;
+; |Block1|final:inst|Add1~54      ; |Block1|final:inst|Add1~54      ; out0             ;
+; |Block1|final:inst|Add1~55      ; |Block1|final:inst|Add1~55      ; out0             ;
+; |Block1|final:inst|Add1~56      ; |Block1|final:inst|Add1~56      ; out0             ;
+; |Block1|final:inst|Add1~57      ; |Block1|final:inst|Add1~57      ; out0             ;
+; |Block1|final:inst|Add1~58      ; |Block1|final:inst|Add1~58      ; out0             ;
+; |Block1|final:inst|Add1~59      ; |Block1|final:inst|Add1~59      ; out0             ;
+; |Block1|final:inst|Add1~60      ; |Block1|final:inst|Add1~60      ; out0             ;
+; |Block1|final:inst|Add1~61      ; |Block1|final:inst|Add1~61      ; out0             ;
+; |Block1|final:inst|Add1~62      ; |Block1|final:inst|Add1~62      ; out0             ;
+; |Block1|final:inst|Add1~63      ; |Block1|final:inst|Add1~63      ; out0             ;
+; |Block1|final:inst|Add1~64      ; |Block1|final:inst|Add1~64      ; out0             ;
+; |Block1|final:inst|Add1~65      ; |Block1|final:inst|Add1~65      ; out0             ;
+; |Block1|final:inst|Add1~66      ; |Block1|final:inst|Add1~66      ; out0             ;
+; |Block1|final:inst|Add1~67      ; |Block1|final:inst|Add1~67      ; out0             ;
+; |Block1|final:inst|Add1~68      ; |Block1|final:inst|Add1~68      ; out0             ;
+; |Block1|final:inst|Add1~69      ; |Block1|final:inst|Add1~69      ; out0             ;
+; |Block1|final:inst|Add1~70      ; |Block1|final:inst|Add1~70      ; out0             ;
+; |Block1|final:inst|Add1~71      ; |Block1|final:inst|Add1~71      ; out0             ;
+; |Block1|final:inst|Add1~72      ; |Block1|final:inst|Add1~72      ; out0             ;
+; |Block1|final:inst|Add1~73      ; |Block1|final:inst|Add1~73      ; out0             ;
+; |Block1|final:inst|Add1~74      ; |Block1|final:inst|Add1~74      ; out0             ;
+; |Block1|final:inst|Add1~75      ; |Block1|final:inst|Add1~75      ; out0             ;
+; |Block1|final:inst|Add1~76      ; |Block1|final:inst|Add1~76      ; out0             ;
+; |Block1|final:inst|Add1~77      ; |Block1|final:inst|Add1~77      ; out0             ;
+; |Block1|final:inst|Add1~78      ; |Block1|final:inst|Add1~78      ; out0             ;
+; |Block1|final:inst|Add1~79      ; |Block1|final:inst|Add1~79      ; out0             ;
+; |Block1|final:inst|Add1~80      ; |Block1|final:inst|Add1~80      ; out0             ;
+; |Block1|final:inst|Add1~81      ; |Block1|final:inst|Add1~81      ; out0             ;
+; |Block1|final:inst|Add1~82      ; |Block1|final:inst|Add1~82      ; out0             ;
+; |Block1|final:inst|Add1~83      ; |Block1|final:inst|Add1~83      ; out0             ;
+; |Block1|final:inst|Add1~84      ; |Block1|final:inst|Add1~84      ; out0             ;
+; |Block1|final:inst|Add1~85      ; |Block1|final:inst|Add1~85      ; out0             ;
+; |Block1|final:inst|Add1~86      ; |Block1|final:inst|Add1~86      ; out0             ;
+; |Block1|final:inst|Add1~87      ; |Block1|final:inst|Add1~87      ; out0             ;
+; |Block1|final:inst|Add1~88      ; |Block1|final:inst|Add1~88      ; out0             ;
+; |Block1|final:inst|Add1~89      ; |Block1|final:inst|Add1~89      ; out0             ;
+; |Block1|final:inst|Add1~90      ; |Block1|final:inst|Add1~90      ; out0             ;
+; |Block1|final:inst|Add2~7       ; |Block1|final:inst|Add2~7       ; out0             ;
+; |Block1|final:inst|Add2~8       ; |Block1|final:inst|Add2~8       ; out0             ;
+; |Block1|final:inst|Add2~9       ; |Block1|final:inst|Add2~9       ; out0             ;
+; |Block1|final:inst|Add2~10      ; |Block1|final:inst|Add2~10      ; out0             ;
+; |Block1|final:inst|Add2~11      ; |Block1|final:inst|Add2~11      ; out0             ;
+; |Block1|final:inst|Add2~12      ; |Block1|final:inst|Add2~12      ; out0             ;
+; |Block1|final:inst|Equal3~0     ; |Block1|final:inst|Equal3~0     ; out0             ;
++---------------------------------+---------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++--------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                             ;
++---------------------------------+---------------------------------+------------------+
+; Node Name                       ; Output Port Name                ; Output Port Type ;
++---------------------------------+---------------------------------+------------------+
+; |Block1|MISO                    ; |Block1|MISO                    ; out              ;
+; |Block1|SS1                     ; |Block1|SS1                     ; pin_out          ;
+; |Block1|memory1[9]              ; |Block1|memory1[9]              ; pin_out          ;
+; |Block1|memory1[8]              ; |Block1|memory1[8]              ; pin_out          ;
+; |Block1|memory1[7]              ; |Block1|memory1[7]              ; pin_out          ;
+; |Block1|memory1[6]              ; |Block1|memory1[6]              ; pin_out          ;
+; |Block1|memory1[5]              ; |Block1|memory1[5]              ; pin_out          ;
+; |Block1|memory1[4]              ; |Block1|memory1[4]              ; pin_out          ;
+; |Block1|memory1[3]              ; |Block1|memory1[3]              ; pin_out          ;
+; |Block1|memory1[2]              ; |Block1|memory1[2]              ; pin_out          ;
+; |Block1|memory1[1]              ; |Block1|memory1[1]              ; pin_out          ;
+; |Block1|memory1[0]              ; |Block1|memory1[0]              ; pin_out          ;
+; |Block1|final:inst|i[12]        ; |Block1|final:inst|i[12]        ; regout           ;
+; |Block1|final:inst|i[11]        ; |Block1|final:inst|i[11]        ; regout           ;
+; |Block1|final:inst|i[10]        ; |Block1|final:inst|i[10]        ; regout           ;
+; |Block1|final:inst|i[9]         ; |Block1|final:inst|i[9]         ; regout           ;
+; |Block1|final:inst|i[8]         ; |Block1|final:inst|i[8]         ; regout           ;
+; |Block1|final:inst|i[7]         ; |Block1|final:inst|i[7]         ; regout           ;
+; |Block1|final:inst|i[6]         ; |Block1|final:inst|i[6]         ; regout           ;
+; |Block1|final:inst|i[5]         ; |Block1|final:inst|i[5]         ; regout           ;
+; |Block1|final:inst|i[4]         ; |Block1|final:inst|i[4]         ; regout           ;
+; |Block1|final:inst|i[3]         ; |Block1|final:inst|i[3]         ; regout           ;
+; |Block1|final:inst|i[2]         ; |Block1|final:inst|i[2]         ; regout           ;
+; |Block1|final:inst|i[1]         ; |Block1|final:inst|i[1]         ; regout           ;
+; |Block1|final:inst|count1[7]    ; |Block1|final:inst|count1[7]    ; regout           ;
+; |Block1|final:inst|count1[6]    ; |Block1|final:inst|count1[6]    ; regout           ;
+; |Block1|final:inst|count1[5]    ; |Block1|final:inst|count1[5]    ; regout           ;
+; |Block1|final:inst|count1[4]    ; |Block1|final:inst|count1[4]    ; regout           ;
+; |Block1|final:inst|count1[3]    ; |Block1|final:inst|count1[3]    ; regout           ;
+; |Block1|final:inst|SS1          ; |Block1|final:inst|SS1          ; regout           ;
+; |Block1|final:inst|memory1~0    ; |Block1|final:inst|memory1~0    ; out0             ;
+; |Block1|final:inst|memory1~1    ; |Block1|final:inst|memory1~1    ; out0             ;
+; |Block1|final:inst|memory1~2    ; |Block1|final:inst|memory1~2    ; out              ;
+; |Block1|final:inst|memory1~3    ; |Block1|final:inst|memory1~3    ; out0             ;
+; |Block1|final:inst|memory1~4    ; |Block1|final:inst|memory1~4    ; out              ;
+; |Block1|final:inst|memory1~5    ; |Block1|final:inst|memory1~5    ; out0             ;
+; |Block1|final:inst|memory1~6    ; |Block1|final:inst|memory1~6    ; out              ;
+; |Block1|final:inst|memory1~7    ; |Block1|final:inst|memory1~7    ; out0             ;
+; |Block1|final:inst|memory1~8    ; |Block1|final:inst|memory1~8    ; out              ;
+; |Block1|final:inst|memory1~9    ; |Block1|final:inst|memory1~9    ; out0             ;
+; |Block1|final:inst|memory1~10   ; |Block1|final:inst|memory1~10   ; out              ;
+; |Block1|final:inst|memory1~11   ; |Block1|final:inst|memory1~11   ; out0             ;
+; |Block1|final:inst|memory1~12   ; |Block1|final:inst|memory1~12   ; out              ;
+; |Block1|final:inst|memory1~13   ; |Block1|final:inst|memory1~13   ; out0             ;
+; |Block1|final:inst|memory1~14   ; |Block1|final:inst|memory1~14   ; out              ;
+; |Block1|final:inst|memory1~15   ; |Block1|final:inst|memory1~15   ; out0             ;
+; |Block1|final:inst|memory1~16   ; |Block1|final:inst|memory1~16   ; out              ;
+; |Block1|final:inst|memory1~17   ; |Block1|final:inst|memory1~17   ; out0             ;
+; |Block1|final:inst|memory1~18   ; |Block1|final:inst|memory1~18   ; out              ;
+; |Block1|final:inst|memory1~19   ; |Block1|final:inst|memory1~19   ; out0             ;
+; |Block1|final:inst|memory1~20   ; |Block1|final:inst|memory1~20   ; out              ;
+; |Block1|final:inst|i[13]        ; |Block1|final:inst|i[13]        ; regout           ;
+; |Block1|final:inst|i[14]        ; |Block1|final:inst|i[14]        ; regout           ;
+; |Block1|final:inst|i[15]        ; |Block1|final:inst|i[15]        ; regout           ;
+; |Block1|final:inst|i[16]        ; |Block1|final:inst|i[16]        ; regout           ;
+; |Block1|final:inst|i[17]        ; |Block1|final:inst|i[17]        ; regout           ;
+; |Block1|final:inst|i[18]        ; |Block1|final:inst|i[18]        ; regout           ;
+; |Block1|final:inst|i[19]        ; |Block1|final:inst|i[19]        ; regout           ;
+; |Block1|final:inst|i[20]        ; |Block1|final:inst|i[20]        ; regout           ;
+; |Block1|final:inst|i[21]        ; |Block1|final:inst|i[21]        ; regout           ;
+; |Block1|final:inst|i[22]        ; |Block1|final:inst|i[22]        ; regout           ;
+; |Block1|final:inst|i[23]        ; |Block1|final:inst|i[23]        ; regout           ;
+; |Block1|final:inst|i[24]        ; |Block1|final:inst|i[24]        ; regout           ;
+; |Block1|final:inst|i[25]        ; |Block1|final:inst|i[25]        ; regout           ;
+; |Block1|final:inst|i[26]        ; |Block1|final:inst|i[26]        ; regout           ;
+; |Block1|final:inst|i[27]        ; |Block1|final:inst|i[27]        ; regout           ;
+; |Block1|final:inst|i[28]        ; |Block1|final:inst|i[28]        ; regout           ;
+; |Block1|final:inst|i[29]        ; |Block1|final:inst|i[29]        ; regout           ;
+; |Block1|final:inst|i[30]        ; |Block1|final:inst|i[30]        ; regout           ;
+; |Block1|final:inst|i[31]        ; |Block1|final:inst|i[31]        ; regout           ;
+; |Block1|final:inst|memory1[0]   ; |Block1|final:inst|memory1[0]   ; regout           ;
+; |Block1|final:inst|memory1[1]   ; |Block1|final:inst|memory1[1]   ; regout           ;
+; |Block1|final:inst|memory1[2]   ; |Block1|final:inst|memory1[2]   ; regout           ;
+; |Block1|final:inst|memory1[3]   ; |Block1|final:inst|memory1[3]   ; regout           ;
+; |Block1|final:inst|memory1[4]   ; |Block1|final:inst|memory1[4]   ; regout           ;
+; |Block1|final:inst|memory1[5]   ; |Block1|final:inst|memory1[5]   ; regout           ;
+; |Block1|final:inst|memory1[6]   ; |Block1|final:inst|memory1[6]   ; regout           ;
+; |Block1|final:inst|memory1[7]   ; |Block1|final:inst|memory1[7]   ; regout           ;
+; |Block1|final:inst|memory1[8]   ; |Block1|final:inst|memory1[8]   ; regout           ;
+; |Block1|final:inst|memory1[9]   ; |Block1|final:inst|memory1[9]   ; regout           ;
+; |Block1|final:inst|Decoder0~0   ; |Block1|final:inst|Decoder0~0   ; out0             ;
+; |Block1|final:inst|Decoder0~1   ; |Block1|final:inst|Decoder0~1   ; out0             ;
+; |Block1|final:inst|Decoder0~2   ; |Block1|final:inst|Decoder0~2   ; out0             ;
+; |Block1|final:inst|Decoder0~3   ; |Block1|final:inst|Decoder0~3   ; out0             ;
+; |Block1|final:inst|Decoder0~4   ; |Block1|final:inst|Decoder0~4   ; out0             ;
+; |Block1|final:inst|Decoder0~5   ; |Block1|final:inst|Decoder0~5   ; out0             ;
+; |Block1|final:inst|Decoder0~6   ; |Block1|final:inst|Decoder0~6   ; out0             ;
+; |Block1|final:inst|Decoder0~7   ; |Block1|final:inst|Decoder0~7   ; out0             ;
+; |Block1|final:inst|Decoder0~8   ; |Block1|final:inst|Decoder0~8   ; out0             ;
+; |Block1|final:inst|Decoder0~9   ; |Block1|final:inst|Decoder0~9   ; out0             ;
+; |Block1|final:inst|LessThan1~4  ; |Block1|final:inst|LessThan1~4  ; out0             ;
+; |Block1|final:inst|LessThan1~5  ; |Block1|final:inst|LessThan1~5  ; out0             ;
+; |Block1|final:inst|LessThan1~6  ; |Block1|final:inst|LessThan1~6  ; out0             ;
+; |Block1|final:inst|LessThan1~7  ; |Block1|final:inst|LessThan1~7  ; out0             ;
+; |Block1|final:inst|LessThan1~8  ; |Block1|final:inst|LessThan1~8  ; out0             ;
+; |Block1|final:inst|LessThan3~0  ; |Block1|final:inst|LessThan3~0  ; out0             ;
+; |Block1|final:inst|LessThan3~1  ; |Block1|final:inst|LessThan3~1  ; out0             ;
+; |Block1|final:inst|LessThan3~2  ; |Block1|final:inst|LessThan3~2  ; out0             ;
+; |Block1|final:inst|LessThan3~3  ; |Block1|final:inst|LessThan3~3  ; out0             ;
+; |Block1|final:inst|LessThan3~4  ; |Block1|final:inst|LessThan3~4  ; out0             ;
+; |Block1|final:inst|LessThan3~5  ; |Block1|final:inst|LessThan3~5  ; out0             ;
+; |Block1|final:inst|LessThan3~6  ; |Block1|final:inst|LessThan3~6  ; out0             ;
+; |Block1|final:inst|LessThan3~7  ; |Block1|final:inst|LessThan3~7  ; out0             ;
+; |Block1|final:inst|LessThan3~8  ; |Block1|final:inst|LessThan3~8  ; out0             ;
+; |Block1|final:inst|LessThan3~9  ; |Block1|final:inst|LessThan3~9  ; out0             ;
+; |Block1|final:inst|LessThan3~10 ; |Block1|final:inst|LessThan3~10 ; out0             ;
+; |Block1|final:inst|LessThan3~11 ; |Block1|final:inst|LessThan3~11 ; out0             ;
+; |Block1|final:inst|LessThan3~12 ; |Block1|final:inst|LessThan3~12 ; out0             ;
+; |Block1|final:inst|LessThan3~13 ; |Block1|final:inst|LessThan3~13 ; out0             ;
+; |Block1|final:inst|LessThan3~14 ; |Block1|final:inst|LessThan3~14 ; out0             ;
+; |Block1|final:inst|LessThan3~15 ; |Block1|final:inst|LessThan3~15 ; out0             ;
+; |Block1|final:inst|LessThan3~16 ; |Block1|final:inst|LessThan3~16 ; out0             ;
+; |Block1|final:inst|LessThan3~17 ; |Block1|final:inst|LessThan3~17 ; out0             ;
+; |Block1|final:inst|LessThan3~18 ; |Block1|final:inst|LessThan3~18 ; out0             ;
+; |Block1|final:inst|LessThan3~19 ; |Block1|final:inst|LessThan3~19 ; out0             ;
+; |Block1|final:inst|LessThan3~20 ; |Block1|final:inst|LessThan3~20 ; out0             ;
+; |Block1|final:inst|LessThan3~21 ; |Block1|final:inst|LessThan3~21 ; out0             ;
+; |Block1|final:inst|LessThan3~22 ; |Block1|final:inst|LessThan3~22 ; out0             ;
+; |Block1|final:inst|LessThan3~23 ; |Block1|final:inst|LessThan3~23 ; out0             ;
+; |Block1|final:inst|LessThan3~24 ; |Block1|final:inst|LessThan3~24 ; out0             ;
+; |Block1|final:inst|LessThan3~25 ; |Block1|final:inst|LessThan3~25 ; out0             ;
+; |Block1|final:inst|LessThan3~26 ; |Block1|final:inst|LessThan3~26 ; out0             ;
+; |Block1|final:inst|LessThan3~27 ; |Block1|final:inst|LessThan3~27 ; out0             ;
+; |Block1|final:inst|LessThan3~28 ; |Block1|final:inst|LessThan3~28 ; out0             ;
+; |Block1|final:inst|LessThan3~29 ; |Block1|final:inst|LessThan3~29 ; out0             ;
+; |Block1|final:inst|LessThan3~30 ; |Block1|final:inst|LessThan3~30 ; out0             ;
+; |Block1|final:inst|LessThan3~31 ; |Block1|final:inst|LessThan3~31 ; out0             ;
+; |Block1|final:inst|LessThan3~32 ; |Block1|final:inst|LessThan3~32 ; out0             ;
+; |Block1|final:inst|LessThan3~33 ; |Block1|final:inst|LessThan3~33 ; out0             ;
+; |Block1|final:inst|LessThan3~34 ; |Block1|final:inst|LessThan3~34 ; out0             ;
+; |Block1|final:inst|LessThan3~35 ; |Block1|final:inst|LessThan3~35 ; out0             ;
+; |Block1|final:inst|LessThan3~36 ; |Block1|final:inst|LessThan3~36 ; out0             ;
+; |Block1|final:inst|LessThan3~37 ; |Block1|final:inst|LessThan3~37 ; out0             ;
+; |Block1|final:inst|LessThan3~38 ; |Block1|final:inst|LessThan3~38 ; out0             ;
+; |Block1|final:inst|LessThan3~39 ; |Block1|final:inst|LessThan3~39 ; out0             ;
+; |Block1|final:inst|LessThan3~40 ; |Block1|final:inst|LessThan3~40 ; out0             ;
+; |Block1|final:inst|LessThan3~41 ; |Block1|final:inst|LessThan3~41 ; out0             ;
+; |Block1|final:inst|LessThan3~42 ; |Block1|final:inst|LessThan3~42 ; out0             ;
+; |Block1|final:inst|LessThan3~43 ; |Block1|final:inst|LessThan3~43 ; out0             ;
+; |Block1|final:inst|LessThan3~44 ; |Block1|final:inst|LessThan3~44 ; out0             ;
+; |Block1|final:inst|LessThan3~45 ; |Block1|final:inst|LessThan3~45 ; out0             ;
+; |Block1|final:inst|LessThan3~46 ; |Block1|final:inst|LessThan3~46 ; out0             ;
+; |Block1|final:inst|LessThan3~47 ; |Block1|final:inst|LessThan3~47 ; out0             ;
+; |Block1|final:inst|LessThan3~48 ; |Block1|final:inst|LessThan3~48 ; out0             ;
+; |Block1|final:inst|LessThan3~49 ; |Block1|final:inst|LessThan3~49 ; out0             ;
+; |Block1|final:inst|LessThan3~50 ; |Block1|final:inst|LessThan3~50 ; out0             ;
+; |Block1|final:inst|Add1~0       ; |Block1|final:inst|Add1~0       ; out0             ;
+; |Block1|final:inst|Add1~1       ; |Block1|final:inst|Add1~1       ; out0             ;
+; |Block1|final:inst|Add1~2       ; |Block1|final:inst|Add1~2       ; out0             ;
+; |Block1|final:inst|Add1~3       ; |Block1|final:inst|Add1~3       ; out0             ;
+; |Block1|final:inst|Add1~4       ; |Block1|final:inst|Add1~4       ; out0             ;
+; |Block1|final:inst|Add1~5       ; |Block1|final:inst|Add1~5       ; out0             ;
+; |Block1|final:inst|Add1~6       ; |Block1|final:inst|Add1~6       ; out0             ;
+; |Block1|final:inst|Add1~7       ; |Block1|final:inst|Add1~7       ; out0             ;
+; |Block1|final:inst|Add1~8       ; |Block1|final:inst|Add1~8       ; out0             ;
+; |Block1|final:inst|Add1~9       ; |Block1|final:inst|Add1~9       ; out0             ;
+; |Block1|final:inst|Add1~10      ; |Block1|final:inst|Add1~10      ; out0             ;
+; |Block1|final:inst|Add1~11      ; |Block1|final:inst|Add1~11      ; out0             ;
+; |Block1|final:inst|Add1~12      ; |Block1|final:inst|Add1~12      ; out0             ;
+; |Block1|final:inst|Add1~13      ; |Block1|final:inst|Add1~13      ; out0             ;
+; |Block1|final:inst|Add1~14      ; |Block1|final:inst|Add1~14      ; out0             ;
+; |Block1|final:inst|Add1~15      ; |Block1|final:inst|Add1~15      ; out0             ;
+; |Block1|final:inst|Add1~16      ; |Block1|final:inst|Add1~16      ; out0             ;
+; |Block1|final:inst|Add1~17      ; |Block1|final:inst|Add1~17      ; out0             ;
+; |Block1|final:inst|Add1~18      ; |Block1|final:inst|Add1~18      ; out0             ;
+; |Block1|final:inst|Add1~19      ; |Block1|final:inst|Add1~19      ; out0             ;
+; |Block1|final:inst|Add1~20      ; |Block1|final:inst|Add1~20      ; out0             ;
+; |Block1|final:inst|Add1~21      ; |Block1|final:inst|Add1~21      ; out0             ;
+; |Block1|final:inst|Add1~22      ; |Block1|final:inst|Add1~22      ; out0             ;
+; |Block1|final:inst|Add1~23      ; |Block1|final:inst|Add1~23      ; out0             ;
+; |Block1|final:inst|Add1~24      ; |Block1|final:inst|Add1~24      ; out0             ;
+; |Block1|final:inst|Add1~25      ; |Block1|final:inst|Add1~25      ; out0             ;
+; |Block1|final:inst|Add1~26      ; |Block1|final:inst|Add1~26      ; out0             ;
+; |Block1|final:inst|Add1~27      ; |Block1|final:inst|Add1~27      ; out0             ;
+; |Block1|final:inst|Add1~28      ; |Block1|final:inst|Add1~28      ; out0             ;
+; |Block1|final:inst|Add1~29      ; |Block1|final:inst|Add1~29      ; out0             ;
+; |Block1|final:inst|Add1~30      ; |Block1|final:inst|Add1~30      ; out0             ;
+; |Block1|final:inst|Add1~31      ; |Block1|final:inst|Add1~31      ; out0             ;
+; |Block1|final:inst|Add1~32      ; |Block1|final:inst|Add1~32      ; out0             ;
+; |Block1|final:inst|Add1~33      ; |Block1|final:inst|Add1~33      ; out0             ;
+; |Block1|final:inst|Add1~34      ; |Block1|final:inst|Add1~34      ; out0             ;
+; |Block1|final:inst|Add1~35      ; |Block1|final:inst|Add1~35      ; out0             ;
+; |Block1|final:inst|Add1~36      ; |Block1|final:inst|Add1~36      ; out0             ;
+; |Block1|final:inst|Add1~37      ; |Block1|final:inst|Add1~37      ; out0             ;
+; |Block1|final:inst|Add1~38      ; |Block1|final:inst|Add1~38      ; out0             ;
+; |Block1|final:inst|Add1~39      ; |Block1|final:inst|Add1~39      ; out0             ;
+; |Block1|final:inst|Add1~40      ; |Block1|final:inst|Add1~40      ; out0             ;
+; |Block1|final:inst|Add1~41      ; |Block1|final:inst|Add1~41      ; out0             ;
+; |Block1|final:inst|Add1~42      ; |Block1|final:inst|Add1~42      ; out0             ;
+; |Block1|final:inst|Add1~43      ; |Block1|final:inst|Add1~43      ; out0             ;
+; |Block1|final:inst|Add1~44      ; |Block1|final:inst|Add1~44      ; out0             ;
+; |Block1|final:inst|Add1~45      ; |Block1|final:inst|Add1~45      ; out0             ;
+; |Block1|final:inst|Add1~46      ; |Block1|final:inst|Add1~46      ; out0             ;
+; |Block1|final:inst|Add1~47      ; |Block1|final:inst|Add1~47      ; out0             ;
+; |Block1|final:inst|Add1~48      ; |Block1|final:inst|Add1~48      ; out0             ;
+; |Block1|final:inst|Add1~49      ; |Block1|final:inst|Add1~49      ; out0             ;
+; |Block1|final:inst|Add1~50      ; |Block1|final:inst|Add1~50      ; out0             ;
+; |Block1|final:inst|Add1~51      ; |Block1|final:inst|Add1~51      ; out0             ;
+; |Block1|final:inst|Add1~52      ; |Block1|final:inst|Add1~52      ; out0             ;
+; |Block1|final:inst|Add1~53      ; |Block1|final:inst|Add1~53      ; out0             ;
+; |Block1|final:inst|Add1~54      ; |Block1|final:inst|Add1~54      ; out0             ;
+; |Block1|final:inst|Add1~55      ; |Block1|final:inst|Add1~55      ; out0             ;
+; |Block1|final:inst|Add1~56      ; |Block1|final:inst|Add1~56      ; out0             ;
+; |Block1|final:inst|Add1~57      ; |Block1|final:inst|Add1~57      ; out0             ;
+; |Block1|final:inst|Add1~58      ; |Block1|final:inst|Add1~58      ; out0             ;
+; |Block1|final:inst|Add1~59      ; |Block1|final:inst|Add1~59      ; out0             ;
+; |Block1|final:inst|Add1~60      ; |Block1|final:inst|Add1~60      ; out0             ;
+; |Block1|final:inst|Add1~61      ; |Block1|final:inst|Add1~61      ; out0             ;
+; |Block1|final:inst|Add1~62      ; |Block1|final:inst|Add1~62      ; out0             ;
+; |Block1|final:inst|Add1~63      ; |Block1|final:inst|Add1~63      ; out0             ;
+; |Block1|final:inst|Add1~64      ; |Block1|final:inst|Add1~64      ; out0             ;
+; |Block1|final:inst|Add1~65      ; |Block1|final:inst|Add1~65      ; out0             ;
+; |Block1|final:inst|Add1~66      ; |Block1|final:inst|Add1~66      ; out0             ;
+; |Block1|final:inst|Add1~67      ; |Block1|final:inst|Add1~67      ; out0             ;
+; |Block1|final:inst|Add1~68      ; |Block1|final:inst|Add1~68      ; out0             ;
+; |Block1|final:inst|Add1~69      ; |Block1|final:inst|Add1~69      ; out0             ;
+; |Block1|final:inst|Add1~70      ; |Block1|final:inst|Add1~70      ; out0             ;
+; |Block1|final:inst|Add1~71      ; |Block1|final:inst|Add1~71      ; out0             ;
+; |Block1|final:inst|Add1~72      ; |Block1|final:inst|Add1~72      ; out0             ;
+; |Block1|final:inst|Add1~73      ; |Block1|final:inst|Add1~73      ; out0             ;
+; |Block1|final:inst|Add1~74      ; |Block1|final:inst|Add1~74      ; out0             ;
+; |Block1|final:inst|Add1~75      ; |Block1|final:inst|Add1~75      ; out0             ;
+; |Block1|final:inst|Add1~76      ; |Block1|final:inst|Add1~76      ; out0             ;
+; |Block1|final:inst|Add1~77      ; |Block1|final:inst|Add1~77      ; out0             ;
+; |Block1|final:inst|Add1~78      ; |Block1|final:inst|Add1~78      ; out0             ;
+; |Block1|final:inst|Add1~79      ; |Block1|final:inst|Add1~79      ; out0             ;
+; |Block1|final:inst|Add1~80      ; |Block1|final:inst|Add1~80      ; out0             ;
+; |Block1|final:inst|Add1~81      ; |Block1|final:inst|Add1~81      ; out0             ;
+; |Block1|final:inst|Add1~82      ; |Block1|final:inst|Add1~82      ; out0             ;
+; |Block1|final:inst|Add1~83      ; |Block1|final:inst|Add1~83      ; out0             ;
+; |Block1|final:inst|Add1~84      ; |Block1|final:inst|Add1~84      ; out0             ;
+; |Block1|final:inst|Add1~85      ; |Block1|final:inst|Add1~85      ; out0             ;
+; |Block1|final:inst|Add1~86      ; |Block1|final:inst|Add1~86      ; out0             ;
+; |Block1|final:inst|Add1~87      ; |Block1|final:inst|Add1~87      ; out0             ;
+; |Block1|final:inst|Add1~88      ; |Block1|final:inst|Add1~88      ; out0             ;
+; |Block1|final:inst|Add1~89      ; |Block1|final:inst|Add1~89      ; out0             ;
+; |Block1|final:inst|Add1~90      ; |Block1|final:inst|Add1~90      ; out0             ;
+; |Block1|final:inst|Add2~7       ; |Block1|final:inst|Add2~7       ; out0             ;
+; |Block1|final:inst|Add2~8       ; |Block1|final:inst|Add2~8       ; out0             ;
+; |Block1|final:inst|Add2~9       ; |Block1|final:inst|Add2~9       ; out0             ;
+; |Block1|final:inst|Add2~10      ; |Block1|final:inst|Add2~10      ; out0             ;
+; |Block1|final:inst|Add2~11      ; |Block1|final:inst|Add2~11      ; out0             ;
+; |Block1|final:inst|Add2~12      ; |Block1|final:inst|Add2~12      ; out0             ;
+; |Block1|final:inst|Equal3~0     ; |Block1|final:inst|Equal3~0     ; out0             ;
++---------------------------------+---------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 9.1 Build 222 10/21/2009 SJ Web Edition
+    Info: Processing started: Sat Feb 23 09:10:48 2019
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off final -c final
+Info: Using vector source file "C:/Users/PRAGYA/Desktop/final/final.vwf"
+Warning: Cannot find channels in vector source file for the following output ports - channels are required for VCD file generation for PowerPlay Power Analyzer
+    Warning: Output port: "|Block1|final:inst|i[12]"
+    Warning: Output port: "|Block1|final:inst|i[11]"
+    Warning: Output port: "|Block1|final:inst|i[10]"
+    Warning: Output port: "|Block1|final:inst|i[9]"
+    Warning: Output port: "|Block1|final:inst|i[8]"
+    Warning: Output port: "|Block1|final:inst|m[0]"
+    Warning: Output port: "|Block1|final:inst|m[1]"
+    Warning: Output port: "|Block1|final:inst|m[2]"
+    Warning: Output port: "|Block1|final:inst|data~12"
+    Warning: Output port: "|Block1|final:inst|data~13"
+    Warning: Output port: "|Block1|final:inst|data~14"
+    Warning: Output port: "|Block1|final:inst|data~15"
+    Warning: Output port: "|Block1|final:inst|data~16"
+    Warning: Output port: "|Block1|final:inst|data~17"
+    Warning: Output port: "|Block1|final:inst|data~18"
+    Warning: Output port: "|Block1|final:inst|data~19"
+    Warning: Output port: "|Block1|final:inst|data~20"
+    Warning: Output port: "|Block1|final:inst|data~21"
+    Warning: Output port: "|Block1|final:inst|data~22"
+    Warning: Output port: "|Block1|final:inst|i[7]"
+    Warning: Output port: "|Block1|final:inst|i[6]"
+    Warning: Output port: "|Block1|final:inst|i[5]"
+    Warning: Output port: "|Block1|final:inst|i[4]"
+    Warning: Output port: "|Block1|final:inst|i[3]"
+    Warning: Output port: "|Block1|final:inst|i[2]"
+    Warning: Output port: "|Block1|final:inst|i[1]"
+    Warning: Output port: "|Block1|final:inst|i[0]"
+    Warning: Output port: "|Block1|final:inst|count1[7]"
+    Warning: Output port: "|Block1|final:inst|count1[6]"
+    Warning: Output port: "|Block1|final:inst|count1[5]"
+    Warning: Output port: "|Block1|final:inst|count1[4]"
+    Warning: Output port: "|Block1|final:inst|count1[3]"
+    Warning: Output port: "|Block1|final:inst|count1[2]"
+    Warning: Output port: "|Block1|final:inst|count1[1]"
+    Warning: Output port: "|Block1|final:inst|count1[0]"
+    Warning: Output port: "|Block1|final:inst|SS1"
+    Warning: Output port: "|Block1|final:inst|always2~0"
+    Warning: Output port: "|Block1|final:inst|always2~1"
+    Warning: Output port: "|Block1|final:inst|memory1~0"
+    Warning: Output port: "|Block1|final:inst|memory1~1"
+    Warning: Output port: "|Block1|final:inst|memory1~2"
+    Warning: Output port: "|Block1|final:inst|memory1~3"
+    Warning: Output port: "|Block1|final:inst|memory1~4"
+    Warning: Output port: "|Block1|final:inst|memory1~5"
+    Warning: Output port: "|Block1|final:inst|memory1~6"
+    Warning: Output port: "|Block1|final:inst|memory1~7"
+    Warning: Output port: "|Block1|final:inst|memory1~8"
+    Warning: Output port: "|Block1|final:inst|memory1~9"
+    Warning: Output port: "|Block1|final:inst|memory1~10"
+    Warning: Output port: "|Block1|final:inst|memory1~11"
+    Warning: Output port: "|Block1|final:inst|memory1~12"
+    Warning: Output port: "|Block1|final:inst|memory1~13"
+    Warning: Output port: "|Block1|final:inst|memory1~14"
+    Warning: Output port: "|Block1|final:inst|memory1~15"
+    Warning: Output port: "|Block1|final:inst|memory1~16"
+    Warning: Output port: "|Block1|final:inst|memory1~17"
+    Warning: Output port: "|Block1|final:inst|memory1~18"
+    Warning: Output port: "|Block1|final:inst|memory1~19"
+    Warning: Output port: "|Block1|final:inst|memory1~20"
+    Warning: Output port: "|Block1|final:inst|MOSI"
+    Warning: Output port: "|Block1|final:inst|i[13]"
+    Warning: Output port: "|Block1|final:inst|i[14]"
+    Warning: Output port: "|Block1|final:inst|i[15]"
+    Warning: Output port: "|Block1|final:inst|i[16]"
+    Warning: Output port: "|Block1|final:inst|i[17]"
+    Warning: Output port: "|Block1|final:inst|i[18]"
+    Warning: Output port: "|Block1|final:inst|i[19]"
+    Warning: Output port: "|Block1|final:inst|i[20]"
+    Warning: Output port: "|Block1|final:inst|i[21]"
+    Warning: Output port: "|Block1|final:inst|i[22]"
+    Warning: Output port: "|Block1|final:inst|i[23]"
+    Warning: Output port: "|Block1|final:inst|i[24]"
+    Warning: Output port: "|Block1|final:inst|i[25]"
+    Warning: Output port: "|Block1|final:inst|i[26]"
+    Warning: Output port: "|Block1|final:inst|i[27]"
+    Warning: Output port: "|Block1|final:inst|i[28]"
+    Warning: Output port: "|Block1|final:inst|i[29]"
+    Warning: Output port: "|Block1|final:inst|i[30]"
+    Warning: Output port: "|Block1|final:inst|i[31]"
+    Warning: Output port: "|Block1|final:inst|memory1[0]"
+    Warning: Output port: "|Block1|final:inst|memory1[1]"
+    Warning: Output port: "|Block1|final:inst|memory1[2]"
+    Warning: Output port: "|Block1|final:inst|memory1[3]"
+    Warning: Output port: "|Block1|final:inst|memory1[4]"
+    Warning: Output port: "|Block1|final:inst|memory1[5]"
+    Warning: Output port: "|Block1|final:inst|memory1[6]"
+    Warning: Output port: "|Block1|final:inst|memory1[7]"
+    Warning: Output port: "|Block1|final:inst|memory1[8]"
+    Warning: Output port: "|Block1|final:inst|memory1[9]"
+    Warning: Output port: "|Block1|final:inst|s[0]"
+    Warning: Output port: "|Block1|final:inst|data[1]"
+    Warning: Output port: "|Block1|final:inst|data[2]"
+    Warning: Output port: "|Block1|final:inst|data[3]"
+    Warning: Output port: "|Block1|final:inst|data[4]"
+    Warning: Output port: "|Block1|final:inst|data[5]"
+    Warning: Output port: "|Block1|final:inst|data[6]"
+    Warning: Output port: "|Block1|final:inst|data[7]"
+    Warning: Output port: "|Block1|final:inst|data[8]"
+    Warning: Output port: "|Block1|final:inst|data[9]"
+    Warning: Output port: "|Block1|final:inst|data[10]"
+    Warning: Output port: "|Block1|final:inst|data[11]"
+    Warning: Output port: "|Block1|final:inst|Decoder0~0"
+    Warning: Output port: "|Block1|final:inst|Decoder0~1"
+    Warning: Output port: "|Block1|final:inst|Decoder0~2"
+    Warning: Output port: "|Block1|final:inst|Decoder0~3"
+    Warning: Output port: "|Block1|final:inst|Decoder0~4"
+    Warning: Output port: "|Block1|final:inst|Decoder0~5"
+    Warning: Output port: "|Block1|final:inst|Decoder0~6"
+    Warning: Output port: "|Block1|final:inst|Decoder0~7"
+    Warning: Output port: "|Block1|final:inst|Decoder0~8"
+    Warning: Output port: "|Block1|final:inst|Decoder0~9"
+    Warning: Output port: "|Block1|final:inst|LessThan0~0"
+    Warning: Output port: "|Block1|final:inst|LessThan0~1"
+    Warning: Output port: "|Block1|final:inst|LessThan0~2"
+    Warning: Output port: "|Block1|final:inst|LessThan0~3"
+    Warning: Output port: "|Block1|final:inst|LessThan0~4"
+    Warning: Output port: "|Block1|final:inst|LessThan0~5"
+    Warning: Output port: "|Block1|final:inst|LessThan0~6"
+    Warning: Output port: "|Block1|final:inst|LessThan0~7"
+    Warning: Output port: "|Block1|final:inst|LessThan0~8"
+    Warning: Output port: "|Block1|final:inst|LessThan0~9"
+    Warning: Output port: "|Block1|final:inst|LessThan0~10"
+    Warning: Output port: "|Block1|final:inst|LessThan1~0"
+    Warning: Output port: "|Block1|final:inst|LessThan1~1"
+    Warning: Output port: "|Block1|final:inst|LessThan1~2"
+    Warning: Output port: "|Block1|final:inst|LessThan1~3"
+    Warning: Output port: "|Block1|final:inst|LessThan1~4"
+    Warning: Output port: "|Block1|final:inst|LessThan1~5"
+    Warning: Output port: "|Block1|final:inst|LessThan1~6"
+    Warning: Output port: "|Block1|final:inst|LessThan1~7"
+    Warning: Output port: "|Block1|final:inst|LessThan1~8"
+    Warning: Output port: "|Block1|final:inst|LessThan3~0"
+    Warning: Output port: "|Block1|final:inst|LessThan3~1"
+    Warning: Output port: "|Block1|final:inst|LessThan3~2"
+    Warning: Output port: "|Block1|final:inst|LessThan3~3"
+    Warning: Output port: "|Block1|final:inst|LessThan3~4"
+    Warning: Output port: "|Block1|final:inst|LessThan3~5"
+    Warning: Output port: "|Block1|final:inst|LessThan3~6"
+    Warning: Output port: "|Block1|final:inst|LessThan3~7"
+    Warning: Output port: "|Block1|final:inst|LessThan3~8"
+    Warning: Output port: "|Block1|final:inst|LessThan3~9"
+    Warning: Output port: "|Block1|final:inst|LessThan3~10"
+    Warning: Output port: "|Block1|final:inst|LessThan3~11"
+    Warning: Output port: "|Block1|final:inst|LessThan3~12"
+    Warning: Output port: "|Block1|final:inst|LessThan3~13"
+    Warning: Output port: "|Block1|final:inst|LessThan3~14"
+    Warning: Output port: "|Block1|final:inst|LessThan3~15"
+    Warning: Output port: "|Block1|final:inst|LessThan3~16"
+    Warning: Output port: "|Block1|final:inst|LessThan3~17"
+    Warning: Output port: "|Block1|final:inst|LessThan3~18"
+    Warning: Output port: "|Block1|final:inst|LessThan3~19"
+    Warning: Output port: "|Block1|final:inst|LessThan3~20"
+    Warning: Output port: "|Block1|final:inst|LessThan3~21"
+    Warning: Output port: "|Block1|final:inst|LessThan3~22"
+    Warning: Output port: "|Block1|final:inst|LessThan3~23"
+    Warning: Output port: "|Block1|final:inst|LessThan3~24"
+    Warning: Output port: "|Block1|final:inst|LessThan3~25"
+    Warning: Output port: "|Block1|final:inst|LessThan3~26"
+    Warning: Output port: "|Block1|final:inst|LessThan3~27"
+    Warning: Output port: "|Block1|final:inst|LessThan3~28"
+    Warning: Output port: "|Block1|final:inst|LessThan3~29"
+    Warning: Output port: "|Block1|final:inst|LessThan3~30"
+    Warning: Output port: "|Block1|final:inst|LessThan3~31"
+    Warning: Output port: "|Block1|final:inst|LessThan3~32"
+    Warning: Output port: "|Block1|final:inst|LessThan3~33"
+    Warning: Output port: "|Block1|final:inst|LessThan3~34"
+    Warning: Output port: "|Block1|final:inst|LessThan3~35"
+    Warning: Output port: "|Block1|final:inst|LessThan3~36"
+    Warning: Output port: "|Block1|final:inst|LessThan3~37"
+    Warning: Output port: "|Block1|final:inst|LessThan3~38"
+    Warning: Output port: "|Block1|final:inst|LessThan3~39"
+    Warning: Output port: "|Block1|final:inst|LessThan3~40"
+    Warning: Output port: "|Block1|final:inst|LessThan3~41"
+    Warning: Output port: "|Block1|final:inst|LessThan3~42"
+    Warning: Output port: "|Block1|final:inst|LessThan3~43"
+    Warning: Output port: "|Block1|final:inst|LessThan3~44"
+    Warning: Output port: "|Block1|final:inst|LessThan3~45"
+    Warning: Output port: "|Block1|final:inst|LessThan3~46"
+    Warning: Output port: "|Block1|final:inst|LessThan3~47"
+    Warning: Output port: "|Block1|final:inst|LessThan3~48"
+    Warning: Output port: "|Block1|final:inst|LessThan3~49"
+    Warning: Output port: "|Block1|final:inst|LessThan3~50"
+    Warning: Output port: "|Block1|final:inst|Add0~0"
+    Warning: Output port: "|Block1|final:inst|Add0~1"
+    Warning: Output port: "|Block1|final:inst|Add0~2"
+    Warning: Output port: "|Block1|final:inst|Add1~0"
+    Warning: Output port: "|Block1|final:inst|Add1~1"
+    Warning: Output port: "|Block1|final:inst|Add1~2"
+    Warning: Output port: "|Block1|final:inst|Add1~3"
+    Warning: Output port: "|Block1|final:inst|Add1~4"
+    Warning: Output port: "|Block1|final:inst|Add1~5"
+    Warning: Output port: "|Block1|final:inst|Add1~6"
+    Warning: Output port: "|Block1|final:inst|Add1~7"
+    Warning: Output port: "|Block1|final:inst|Add1~8"
+    Warning: Output port: "|Block1|final:inst|Add1~9"
+    Warning: Output port: "|Block1|final:inst|Add1~10"
+    Warning: Output port: "|Block1|final:inst|Add1~11"
+    Warning: Output port: "|Block1|final:inst|Add1~12"
+    Warning: Output port: "|Block1|final:inst|Add1~13"
+    Warning: Output port: "|Block1|final:inst|Add1~14"
+    Warning: Output port: "|Block1|final:inst|Add1~15"
+    Warning: Output port: "|Block1|final:inst|Add1~16"
+    Warning: Output port: "|Block1|final:inst|Add1~17"
+    Warning: Output port: "|Block1|final:inst|Add1~18"
+    Warning: Output port: "|Block1|final:inst|Add1~19"
+    Warning: Output port: "|Block1|final:inst|Add1~20"
+    Warning: Output port: "|Block1|final:inst|Add1~21"
+    Warning: Output port: "|Block1|final:inst|Add1~22"
+    Warning: Output port: "|Block1|final:inst|Add1~23"
+    Warning: Output port: "|Block1|final:inst|Add1~24"
+    Warning: Output port: "|Block1|final:inst|Add1~25"
+    Warning: Output port: "|Block1|final:inst|Add1~26"
+    Warning: Output port: "|Block1|final:inst|Add1~27"
+    Warning: Output port: "|Block1|final:inst|Add1~28"
+    Warning: Output port: "|Block1|final:inst|Add1~29"
+    Warning: Output port: "|Block1|final:inst|Add1~30"
+    Warning: Output port: "|Block1|final:inst|Add1~31"
+    Warning: Output port: "|Block1|final:inst|Add1~32"
+    Warning: Output port: "|Block1|final:inst|Add1~33"
+    Warning: Output port: "|Block1|final:inst|Add1~34"
+    Warning: Output port: "|Block1|final:inst|Add1~35"
+    Warning: Output port: "|Block1|final:inst|Add1~36"
+    Warning: Output port: "|Block1|final:inst|Add1~37"
+    Warning: Output port: "|Block1|final:inst|Add1~38"
+    Warning: Output port: "|Block1|final:inst|Add1~39"
+    Warning: Output port: "|Block1|final:inst|Add1~40"
+    Warning: Output port: "|Block1|final:inst|Add1~41"
+    Warning: Output port: "|Block1|final:inst|Add1~42"
+    Warning: Output port: "|Block1|final:inst|Add1~43"
+    Warning: Output port: "|Block1|final:inst|Add1~44"
+    Warning: Output port: "|Block1|final:inst|Add1~45"
+    Warning: Output port: "|Block1|final:inst|Add1~46"
+    Warning: Output port: "|Block1|final:inst|Add1~47"
+    Warning: Output port: "|Block1|final:inst|Add1~48"
+    Warning: Output port: "|Block1|final:inst|Add1~49"
+    Warning: Output port: "|Block1|final:inst|Add1~50"
+    Warning: Output port: "|Block1|final:inst|Add1~51"
+    Warning: Output port: "|Block1|final:inst|Add1~52"
+    Warning: Output port: "|Block1|final:inst|Add1~53"
+    Warning: Output port: "|Block1|final:inst|Add1~54"
+    Warning: Output port: "|Block1|final:inst|Add1~55"
+    Warning: Output port: "|Block1|final:inst|Add1~56"
+    Warning: Output port: "|Block1|final:inst|Add1~57"
+    Warning: Output port: "|Block1|final:inst|Add1~58"
+    Warning: Output port: "|Block1|final:inst|Add1~59"
+    Warning: Output port: "|Block1|final:inst|Add1~60"
+    Warning: Output port: "|Block1|final:inst|Add1~61"
+    Warning: Output port: "|Block1|final:inst|Add1~62"
+    Warning: Output port: "|Block1|final:inst|Add1~63"
+    Warning: Output port: "|Block1|final:inst|Add1~64"
+    Warning: Output port: "|Block1|final:inst|Add1~65"
+    Warning: Output port: "|Block1|final:inst|Add1~66"
+    Warning: Output port: "|Block1|final:inst|Add1~67"
+    Warning: Output port: "|Block1|final:inst|Add1~68"
+    Warning: Output port: "|Block1|final:inst|Add1~69"
+    Warning: Output port: "|Block1|final:inst|Add1~70"
+    Warning: Output port: "|Block1|final:inst|Add1~71"
+    Warning: Output port: "|Block1|final:inst|Add1~72"
+    Warning: Output port: "|Block1|final:inst|Add1~73"
+    Warning: Output port: "|Block1|final:inst|Add1~74"
+    Warning: Output port: "|Block1|final:inst|Add1~75"
+    Warning: Output port: "|Block1|final:inst|Add1~76"
+    Warning: Output port: "|Block1|final:inst|Add1~77"
+    Warning: Output port: "|Block1|final:inst|Add1~78"
+    Warning: Output port: "|Block1|final:inst|Add1~79"
+    Warning: Output port: "|Block1|final:inst|Add1~80"
+    Warning: Output port: "|Block1|final:inst|Add1~81"
+    Warning: Output port: "|Block1|final:inst|Add1~82"
+    Warning: Output port: "|Block1|final:inst|Add1~83"
+    Warning: Output port: "|Block1|final:inst|Add1~84"
+    Warning: Output port: "|Block1|final:inst|Add1~85"
+    Warning: Output port: "|Block1|final:inst|Add1~86"
+    Warning: Output port: "|Block1|final:inst|Add1~87"
+    Warning: Output port: "|Block1|final:inst|Add1~88"
+    Warning: Output port: "|Block1|final:inst|Add1~89"
+    Warning: Output port: "|Block1|final:inst|Add1~90"
+    Warning: Output port: "|Block1|final:inst|Add2~0"
+    Warning: Output port: "|Block1|final:inst|Add2~1"
+    Warning: Output port: "|Block1|final:inst|Add2~2"
+    Warning: Output port: "|Block1|final:inst|Add2~3"
+    Warning: Output port: "|Block1|final:inst|Add2~4"
+    Warning: Output port: "|Block1|final:inst|Add2~5"
+    Warning: Output port: "|Block1|final:inst|Add2~6"
+    Warning: Output port: "|Block1|final:inst|Add2~7"
+    Warning: Output port: "|Block1|final:inst|Add2~8"
+    Warning: Output port: "|Block1|final:inst|Add2~9"
+    Warning: Output port: "|Block1|final:inst|Add2~10"
+    Warning: Output port: "|Block1|final:inst|Add2~11"
+    Warning: Output port: "|Block1|final:inst|Add2~12"
+    Warning: Output port: "|Block1|final:inst|Equal3~0"
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      18.87 %
+Info: Number of transitions in simulation is 920
+Info: Created VCD File C:/Users/PRAGYA/Desktop/final/final.vcd
+Info: Quartus II Simulator was successful. 0 errors, 291 warnings
+    Info: Peak virtual memory: 135 megabytes
+    Info: Processing ended: Sat Feb 23 09:10:50 2019
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+

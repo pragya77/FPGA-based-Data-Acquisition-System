@@ -1,0 +1,134 @@
+module final(SCK,MISO,MOSI,SS1,fpga_clk,memory1);
+input fpga_clk;
+//output SCK;
+//input SCK;
+
+output SCK;
+//reg SCK = 1'b0;
+output reg SS1=0;
+
+output reg MOSI;
+reg [11:0]data;
+reg [2:0] m;
+reg [27:0] counter=0;
+input MISO;
+reg [9:0] code [0:4];
+reg [9:0] voltage [0:4];
+reg [9:0] power [0:4];
+reg [2:0] d=001;
+integer s=1;
+reg [9:0]p;
+reg [7:0]count1=0;
+integer i=9;
+integer k=9;
+integer j=4;
+//reg [9:0] store;
+output reg [9:0] memory1;
+//reg [9:0] memory;
+//output reg memory1;
+initial begin
+SS1=0;
+m=0;
+voltage[0]=10'd5;
+voltage[1]=10'd4;
+voltage[2]=10'd3;
+voltage[3]=10'd2;
+voltage[4]=10'd1;
+code[0]=10'b1111111111;
+code[1]=10'b1100110011;
+code[2]=10'b1001100110;
+code[3]=10'b0110011001;
+code[4]=10'b0011001100;
+power[0]=10'd45;
+power[1]=10'd50;
+power[2]=10'd75;
+power[3]=10'd80;
+power[4]=10'd20;
+end
+always @(posedge fpga_clk)begin
+m<=m+1;
+end
+assign SCK=m[2];
+
+//always@(posedge fpga_clk)
+//begin
+  //          counter <= counter + 1;
+    //        if ( counter == 25000000)
+      //          begin
+        //            counter <= 0;
+          //          SCK <= ~SCK;
+            //    end
+        //end
+        
+always@(negedge SCK)
+begin
+if(s==1)begin
+if(d==000)begin
+data=12'b000000011000;
+end
+else if(d==001)begin
+data=12'b000000011001;
+end
+else if(d==010)begin
+data=12'b000000011010;
+end
+
+else if(d==011)begin
+data=12'b000000011011;
+end
+else if(d==100)begin
+data=12'b000000011100;
+end
+else if(d==101)begin
+data=12'b000000011101;
+end
+else if(d==110)begin
+data=12'b000000011110;
+end
+else if(d==111)begin
+data=12'b000000011111;
+end
+
+
+s=0;
+end
+MOSI = data[11];
+data = data<<1;
+if(count1>=13)begin
+MOSI=1'bx;
+end
+end
+
+always@(posedge SCK)begin
+  if(count1>14 && count1<25 && i>-1)begin
+ memory1[i]<=MISO;// data to be compared with table 
+  i<=i-1;
+  end
+  count1<=count1+1;
+  if(count1==25)begin
+  //memory=store;
+   SS1<=1;
+  end
+ // if(count1>25 && count1<36)begin
+//memory1=memory[0];
+//memory=memory>>1;
+//end
+  //count1<=count1+1;
+end
+
+//always @(posedge SCK)
+//begin
+  //if(count1>24 && j<5 && j>-1)begin
+  //if(code[j]==memory1)begin
+//p<=power[j];
+//end
+//j<=j-1;
+//end
+//end
+
+endmodule
+
+
+
+
+

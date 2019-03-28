@@ -1,0 +1,311 @@
+module rs232_one_adc(
+	input clk,
+	//input TxD_start,
+	output TxD,
+	output TxD_busy,
+	output SCK,
+	output reg SS1=0,
+    output reg MOSI,
+    input MISO,
+	output SCK1,
+	output reg SS2=0,
+    output reg MOSI1,
+    input MISO1
+);
+reg TxD_start;
+reg [11:0]data;
+reg [11:0]data1;
+integer s1=1;
+reg [2:0] m;
+integer g=0;
+//reg TxD_start=1;
+reg [27:0] counter=0;
+reg [9:0] code [0:4];
+reg [9:0] voltage [0:4];
+reg [9:0] power [0:4];
+reg [2:0] d=001;
+reg [2:0] d1=001;
+integer s=1;
+reg [9:0]p;
+reg [7:0] TxD_data;
+reg [7:0] TxD_data1;
+reg [7:0]count1=0;
+reg [7:0]count3=0;
+integer i=9;
+integer i1=9;
+integer k=9;
+integer j=4;
+reg [2:0]count2;
+reg [1:0]count4=0;
+reg [9:0] memory1;
+reg [9:0] memory2;
+// Assert TxD_start for (at least) one clock cycle to start transmission of TxD_data
+// TxD_data is latched so that it doesn't have to stay valid while it is being sent
+
+//reg [7:0] TxD_data;
+//reg [3:0] count;
+integer z=1;
+integer y=1;
+
+
+parameter ClkFrequency = 25000000;	// 25MHz
+parameter Baud = 115200;
+
+generate
+	if(ClkFrequency<Baud*8 && (ClkFrequency % Baud!=0)) ASSERTION_ERROR PARAMETER_OUT_OF_RANGE("Frequency incompatible with requested Baud rate");
+endgenerate
+
+////////////////////////////////
+`ifdef SIMULATION
+wire BitTick = 1'b1;  // output one bit per clock cycle
+`else
+wire BitTick;
+BaudTickGen #(ClkFrequency, Baud) tickgen(.clk(clk), .enable(TxD_busy), .tick(BitTick));
+`endif
+
+reg [3:0] TxD_state = 0;
+wire TxD_ready = (TxD_state==0);
+assign TxD_busy = ~TxD_ready;
+
+reg [7:0] TxD_shift = 0;
+
+/*always @(posedge clk & count==0)
+begin
+	TxD_data<=8'b01010101;
+	count<=4'd10;
+end*/
+initial begin
+SS1=0;
+SS2=0;
+m=0;
+count2=0;
+TxD_start=1;
+//voltage[0]=10'd5;
+//voltage[1]=10'd4;
+//voltage[2]=10'd3;
+//voltage[3]=10'd2;
+//voltage[4]=10'd1;
+//code[0]=10'b1111111111;
+//code[1]=10'b1100110011;
+//code[2]=10'b1001100110;
+//code[3]=10'b0110011001;
+//code[4]=10'b0011001100;
+//power[0]=10'd45;
+//power[1]=10'd50;
+//power[2]=10'd75;
+//power[3]=10'd80;
+//power[4]=10'd20;
+end
+
+always @(posedge clk)begin
+m<=m+1;
+end
+assign SCK=m[2];
+assign SCK1=m[2];
+
+always@(negedge SCK)
+begin
+if(s==1)begin
+if(d==000)begin
+data=12'b000000011000;
+end
+else if(d==001)begin
+data=12'b000000011001;
+end
+else if(d==010)begin
+data=12'b000000011010;
+end
+
+else if(d==011)begin
+data=12'b000000011011;
+end
+else if(d==100)begin
+data=12'b000000011100;
+end
+else if(d==101)begin
+data=12'b000000011101;
+end
+else if(d==110)begin
+data=12'b000000011110;
+end
+else if(d==111)begin
+data=12'b000000011111;
+end
+
+
+s=0;
+end
+MOSI = data[11];
+data = data<<1;
+if(count1>=13)begin
+MOSI=1'bx;
+end
+end
+
+always@(negedge SCK1)
+begin
+if(s1==1)begin
+if(d1==000)begin
+data1=12'b000000011000;
+end
+else if(d1==001)begin
+data1=12'b000000011001;
+end
+else if(d1==010)begin
+data1=12'b000000011010;
+end
+
+else if(d1==011)begin
+data1=12'b000000011011;
+end
+else if(d1==100)begin
+data1=12'b000000011100;
+end
+else if(d1==101)begin
+data1=12'b000000011101;
+end
+else if(d1==110)begin
+data1=12'b000000011110;
+end
+else if(d1==111)begin
+data1=12'b000000011111;
+end
+
+
+s1=0;
+end
+MOSI1 = data1[11];
+data1 = data1<<1;
+if(count3>=13)begin
+MOSI1=1'bx;
+end
+end
+
+always@(posedge SCK)begin
+  if(count1>14 && count1<25 && i>-1)begin
+ memory1[i]<=MISO;// data to be compared with table 
+  i<=i-1;
+  end
+  count1<=count1+1;
+  if(count1==25)begin
+   SS1<=1;
+  end
+end
+
+always@(posedge SCK1)begin
+  if(count3>14 && count3<25 && i1>-1)begin
+ memory2[i1]<=MISO1;// data to be compared with table 
+  i1<=i1-1;
+  end
+  count3<=count3+1;
+  if(count3==25)begin
+   SS2<=1;
+  end
+end
+
+always @(posedge clk)
+begin
+
+//if(count1>25 && count1<199)begin
+if(count1>25)begin
+   if(count2==0)begin
+   //if((count2==0 && z==1))begin
+   TxD_data={memory1[7],memory1[6],memory1[5],memory1[4],memory1[3],memory1[2],memory1[1],memory1[0]};
+   
+   //z=0;
+  end 
+  
+ if(count2==1)begin
+//else if((count2==1 && y==1))begin
+  TxD_data={g,g,g,g,g,g,memory1[9],memory1[8]};
+  //y=0;
+  end
+  if(count2==2)begin
+   //if((count2==0 && z==1))begin
+   TxD_data={memory2[7],memory2[6],memory2[5],memory2[4],memory2[3],memory2[2],memory2[1],memory2[0]};
+   
+   //z=0;
+  end 
+   if(count2==3)begin
+//else if((count2==1 && y==1))begin
+  TxD_data={g,g,g,g,g,g,memory2[9],memory2[8]};
+  //y=0;
+  end
+  
+  if(count2>3)begin
+		TxD_start=0;
+		end
+  
+	if(TxD_ready & TxD_start)
+		TxD_shift <= TxD_data;
+	
+	else
+	if(TxD_state[3] & BitTick)
+		TxD_shift <= (TxD_shift >> 1);
+
+	case(TxD_state)
+		4'b0000: if(TxD_start) begin
+		          TxD_state <= 4'b0100;
+		          end
+		4'b0100: if(BitTick)begin
+		         TxD_state <= 4'b1000;  // start bit
+		         end
+		4'b1000: if(BitTick) begin
+		         TxD_state <= 4'b1001;  // bit 0
+		         end
+		4'b1001: if(BitTick)begin
+		 TxD_state <= 4'b1010;  // bit 1
+		 end
+		4'b1010: if(BitTick)begin
+		 TxD_state <= 4'b1011;  // bit 2
+		 end
+		4'b1011: if(BitTick)begin 
+		TxD_state <= 4'b1100;  // bit 3
+		end
+		4'b1100: if(BitTick)begin
+		 TxD_state <= 4'b1101;  // bit 4
+		 end
+		4'b1101: if(BitTick)begin TxD_state <= 4'b1110;  // bit 5
+		end
+		4'b1110: if(BitTick)begin
+		 TxD_state <= 4'b1111;  // bit 6
+		 end
+		4'b1111: if(BitTick)begin
+		 TxD_state <= 4'b0010;  // bit 7
+		  
+		end
+		4'b0010: if(BitTick)begin
+		 TxD_state <= 4'b0011;  // stop1
+		 end
+		4'b0011: if(BitTick) begin
+		        
+		         TxD_state <= 4'b0000;  // stop2
+		         count2<=count2+1;
+		         
+		         end
+		default: if(BitTick) TxD_state <= 4'b0000;
+	endcase
+end
+end
+
+assign TxD = (TxD_state<4) | (TxD_state[3] & TxD_shift[0]);  // put together the start, data and stop bits
+
+endmodule 
+
+module BaudTickGen(
+	input clk, enable,
+	output tick  // generate a tick at the specified baud rate * oversampling
+);
+parameter ClkFrequency = 25000000;
+parameter Baud = 115200;
+parameter Oversampling = 1;
+
+function integer log2(input integer v); begin log2=0; while(v>>log2) log2=log2+1; end endfunction
+localparam AccWidth = log2(ClkFrequency/Baud)+8;  // +/- 2% max timing error over a byte
+reg [AccWidth:0] Acc = 0;
+localparam ShiftLimiter = log2(Baud*Oversampling >> (31-AccWidth));  // this makes sure Inc calculation doesn't overflow
+localparam Inc = ((Baud*Oversampling << (AccWidth-ShiftLimiter))+(ClkFrequency>>(ShiftLimiter+1)))/(ClkFrequency>>ShiftLimiter);
+always @(posedge clk) if(enable) Acc <= Acc[AccWidth-1:0] + Inc[AccWidth:0]; else Acc <= Inc[AccWidth:0];
+assign tick = Acc[AccWidth];
+endmodule 
+

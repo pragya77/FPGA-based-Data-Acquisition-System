@@ -1,0 +1,3 @@
+Warning (10268): Verilog HDL information at final_eight_adc.v(168): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at final_eight_adc.v(291): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at final_eight_adc.v(341): always construct contains both blocking and non-blocking assignments

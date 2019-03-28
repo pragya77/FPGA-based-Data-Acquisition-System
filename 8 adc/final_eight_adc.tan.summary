@@ -1,0 +1,56 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 2.812 ns
+From           : MISO7
+To             : final_eight_adc:inst1|memory8[6]
+From Clock     : --
+To Clock       : clk2
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 13.411 ns
+From           : final_eight_adc:inst1|SS8
+To             : SS7
+From Clock     : clk2
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : -1.435 ns
+From           : MISO6
+To             : final_eight_adc:inst1|memory7[3]
+From Clock     : --
+To Clock       : clk2
+Failed Paths   : 0
+
+Type           : Clock Setup: 'clk2'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 50.52 MHz ( period = 19.793 ns )
+From           : final_eight_adc:inst1|txcounter2[20]
+To             : final_eight_adc:inst1|TxD_data[1]
+From Clock     : clk2
+To Clock       : clk2
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

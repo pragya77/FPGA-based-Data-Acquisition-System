@@ -1,0 +1,230 @@
+Quartus II
+Version 9.1 Build 222 10/21/2009 SJ Web Edition
+11
+980
+OFF
+OFF
+OFF
+ON
+ON
+ON
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+final_one_adc
+# storage
+db|final_one_adc.(0).cnf
+db|final_one_adc.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+final_one_adc.v
+6edb952743616937fe2054d9625476b7
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+ClkFrequency
+27000000
+PARAMETER_SIGNED_DEC
+USR
+Baud
+115200
+PARAMETER_SIGNED_DEC
+USR
+}
+# macro_sequence
+
+# end
+# entity
+BaudTickGen
+# storage
+db|final_one_adc.(1).cnf
+db|final_one_adc.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+final_one_adc.v
+6edb952743616937fe2054d9625476b7
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+ClkFrequency
+27000000
+PARAMETER_SIGNED_DEC
+USR
+Baud
+115200
+PARAMETER_SIGNED_DEC
+USR
+Oversampling
+1
+PARAMETER_SIGNED_DEC
+DEF
+}
+# macro_sequence
+
+# end
+# entity
+Block1
+# storage
+db|final_one_adc.(2).cnf
+db|final_one_adc.(2).cnf
+# case_insensitive
+# source_file
+block1.bdf
+7314b8c2278dd933cefaa17ebc5571
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# entity
+final_one_adc
+# storage
+db|final_one_adc.(3).cnf
+db|final_one_adc.(3).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+final_one_adc.v
+6edb952743616937fe2054d9625476b7
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+ClkFrequency
+25000000
+PARAMETER_SIGNED_DEC
+USR
+Baud
+115200
+PARAMETER_SIGNED_DEC
+USR
+}
+# hierarchies {
+final_one_adc:inst
+}
+# macro_sequence
+
+# end
+# entity
+BaudTickGen
+# storage
+db|final_one_adc.(4).cnf
+db|final_one_adc.(4).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+final_one_adc.v
+6edb952743616937fe2054d9625476b7
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+ClkFrequency
+25000000
+PARAMETER_SIGNED_DEC
+USR
+Baud
+115200
+PARAMETER_SIGNED_DEC
+USR
+Oversampling
+1
+PARAMETER_SIGNED_DEC
+DEF
+}
+# hierarchies {
+final_one_adc:inst|BaudTickGen:tickgen
+BaudTickGen:inst1
+}
+# macro_sequence
+
+# end
+# complete
+

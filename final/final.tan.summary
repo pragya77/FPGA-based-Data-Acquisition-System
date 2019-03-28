@@ -1,0 +1,56 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 1.495 ns
+From           : MISO
+To             : final:inst|memory1[0]
+From Clock     : --
+To Clock       : fpga_clk
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 14.161 ns
+From           : final:inst|memory1[3]
+To             : memory1[3]
+From Clock     : fpga_clk
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : -0.566 ns
+From           : MISO
+To             : final:inst|memory1[9]
+From Clock     : --
+To Clock       : fpga_clk
+Failed Paths   : 0
+
+Type           : Clock Setup: 'fpga_clk'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 188.64 MHz ( period = 5.301 ns )
+From           : final:inst|i[5]
+To             : final:inst|memory1[9]
+From Clock     : fpga_clk
+To Clock       : fpga_clk
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

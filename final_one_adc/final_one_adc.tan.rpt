@@ -1,0 +1,465 @@
+Classic Timing Analyzer report for final_one_adc
+Wed Mar 27 11:07:10 2019
+Quartus II Version 9.1 Build 222 10/21/2009 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'clk'
+  7. tsu
+  8. tco
+  9. th
+ 10. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                             ;
++------------------------------+-------+---------------+----------------------------------+-----------------------------------+--------------------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From                              ; To                             ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+-----------------------------------+--------------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 2.767 ns                         ; MISO                              ; final_one_adc:inst|memory1[9]  ; --         ; clk      ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 11.048 ns                        ; final_one_adc:inst|MOSI           ; MOSI                           ; clk        ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; -1.859 ns                        ; MISO                              ; final_one_adc:inst|memory1[2]  ; --         ; clk      ; 0            ;
+; Clock Setup: 'clk'           ; N/A   ; None          ; 73.78 MHz ( period = 13.554 ns ) ; final_one_adc:inst|store1[128][0] ; final_one_adc:inst|TxD_data[0] ; clk        ; clk      ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                                   ;                                ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+-----------------------------------+--------------------------------+------------+----------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                                                            ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                                                               ; Setting            ; From ; To ; Entity Name ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                                                          ; EP2C20F484C7       ;      ;    ;             ;
+; Timing Models                                                                                        ; Final              ;      ;    ;             ;
+; Default hold multicycle                                                                              ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                                                            ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                                                               ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                                                       ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                                                     ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                                                                ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                                                              ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                                                     ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                                                 ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                                                        ; Off                ;      ;    ;             ;
+; Minimum Core Junction Temperature                                                                    ; 0                  ;      ;    ;             ;
+; Maximum Core Junction Temperature                                                                    ; 85                 ;      ;    ;             ;
+; Number of source nodes to report per destination node                                                ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                                                                ; 10                 ;      ;    ;             ;
+; Number of paths to report                                                                            ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                                                         ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                                                               ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                                                           ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                                                         ; On                 ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis                                       ; Off                ;      ;    ;             ;
+; Reports worst-case timing paths for each clock domain and analysis                                   ; On                 ;      ;    ;             ;
+; Specifies the maximum number of worst-case timing paths to report for each clock domain and analysis ; 100                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation                                  ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                                                           ; Near End           ;      ;    ;             ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clk             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clk'                                                                                                                                                                                                                                                              ;
++-----------------------------------------+-----------------------------------------------------+-----------------------------------+---------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                              ; To                              ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+-----------------------------------+---------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 73.78 MHz ( period = 13.554 ns )                    ; final_one_adc:inst|store1[128][0] ; final_one_adc:inst|TxD_data[0]  ; clk        ; clk      ; None                        ; None                      ; 11.084 ns               ;
+; N/A                                     ; 74.20 MHz ( period = 13.477 ns )                    ; final_one_adc:inst|store1[70][5]  ; final_one_adc:inst|TxD_shift[5] ; clk        ; clk      ; None                        ; None                      ; 11.002 ns               ;
+; N/A                                     ; 74.32 MHz ( period = 13.455 ns )                    ; final_one_adc:inst|store1[128][8] ; final_one_adc:inst|TxD_data[0]  ; clk        ; clk      ; None                        ; None                      ; 10.985 ns               ;
+; N/A                                     ; 74.88 MHz ( period = 13.355 ns )                    ; final_one_adc:inst|store1[70][1]  ; final_one_adc:inst|TxD_data[1]  ; clk        ; clk      ; None                        ; None                      ; 10.885 ns               ;
+; N/A                                     ; 74.92 MHz ( period = 13.348 ns )                    ; final_one_adc:inst|store1[130][1] ; final_one_adc:inst|TxD_data[1]  ; clk        ; clk      ; None                        ; None                      ; 10.879 ns               ;
+; N/A                                     ; 75.08 MHz ( period = 13.319 ns )                    ; final_one_adc:inst|store1[131][6] ; final_one_adc:inst|TxD_data[6]  ; clk        ; clk      ; None                        ; None                      ; 10.843 ns               ;
+; N/A                                     ; 75.11 MHz ( period = 13.314 ns )                    ; final_one_adc:inst|store1[131][6] ; final_one_adc:inst|TxD_shift[6] ; clk        ; clk      ; None                        ; None                      ; 10.838 ns               ;
+; N/A                                     ; 75.38 MHz ( period = 13.266 ns )                    ; final_one_adc:inst|store1[128][7] ; final_one_adc:inst|TxD_shift[7] ; clk        ; clk      ; None                        ; None                      ; 10.789 ns               ;
+; N/A                                     ; 75.52 MHz ( period = 13.242 ns )                    ; final_one_adc:inst|store1[130][9] ; final_one_adc:inst|TxD_data[1]  ; clk        ; clk      ; None                        ; None                      ; 10.773 ns               ;
+; N/A                                     ; 75.53 MHz ( period = 13.240 ns )                    ; final_one_adc:inst|store1[67][6]  ; final_one_adc:inst|TxD_data[6]  ; clk        ; clk      ; None                        ; None                      ; 10.765 ns               ;
+; N/A                                     ; 75.56 MHz ( period = 13.235 ns )                    ; final_one_adc:inst|store1[67][6]  ; final_one_adc:inst|TxD_shift[6] ; clk        ; clk      ; None                        ; None                      ; 10.760 ns               ;
+; N/A                                     ; 75.60 MHz ( period = 13.228 ns )                    ; final_one_adc:inst|store1[131][7] ; final_one_adc:inst|TxD_shift[7] ; clk        ; clk      ; None                        ; None                      ; 10.751 ns               ;
+; N/A                                     ; 75.60 MHz ( period = 13.227 ns )                    ; final_one_adc:inst|store1[68][0]  ; final_one_adc:inst|TxD_data[0]  ; clk        ; clk      ; None                        ; None                      ; 10.758 ns               ;
+; N/A                                     ; 75.63 MHz ( period = 13.223 ns )                    ; final_one_adc:inst|store1[128][1] ; final_one_adc:inst|TxD_data[1]  ; clk        ; clk      ; None                        ; None                      ; 10.753 ns               ;
+; N/A                                     ; 75.67 MHz ( period = 13.215 ns )                    ; final_one_adc:inst|store1[134][7] ; final_one_adc:inst|TxD_shift[7] ; clk        ; clk      ; None                        ; None                      ; 10.738 ns               ;
+; N/A                                     ; 75.68 MHz ( period = 13.214 ns )                    ; final_one_adc:inst|store1[188][1] ; final_one_adc:inst|TxD_data[1]  ; clk        ; clk      ; None                        ; None                      ; 10.754 ns               ;
+; N/A                                     ; 75.73 MHz ( period = 13.205 ns )                    ; final_one_adc:inst|store1[130][0] ; final_one_adc:inst|TxD_data[0]  ; clk        ; clk      ; None                        ; None                      ; 10.736 ns               ;
+; N/A                                     ; 75.86 MHz ( period = 13.183 ns )                    ; final_one_adc:inst|kk[5]          ; final_one_adc:inst|TxD_shift[3] ; clk        ; clk      ; None                        ; None                      ; 12.948 ns               ;
+; N/A                                     ; 76.14 MHz ( period = 13.134 ns )                    ; final_one_adc:inst|store1[70][0]  ; final_one_adc:inst|TxD_data[0]  ; clk        ; clk      ; None                        ; None                      ; 10.664 ns               ;
+; N/A                                     ; 76.16 MHz ( period = 13.131 ns )                    ; final_one_adc:inst|store1[67][7]  ; final_one_adc:inst|TxD_shift[7] ; clk        ; clk      ; None                        ; None                      ; 10.655 ns               ;
+; N/A                                     ; 76.18 MHz ( period = 13.126 ns )                    ; final_one_adc:inst|store1[64][7]  ; final_one_adc:inst|TxD_shift[7] ; clk        ; clk      ; None                        ; None                      ; 10.648 ns               ;
+; N/A                                     ; 76.19 MHz ( period = 13.125 ns )                    ; final_one_adc:inst|store1[134][5] ; final_one_adc:inst|TxD_shift[5] ; clk        ; clk      ; None                        ; None                      ; 10.651 ns               ;
+; N/A                                     ; 76.23 MHz ( period = 13.118 ns )                    ; final_one_adc:inst|store1[66][0]  ; final_one_adc:inst|TxD_data[0]  ; clk        ; clk      ; None                        ; None                      ; 10.650 ns               ;
+; N/A                                     ; 76.25 MHz ( period = 13.115 ns )                    ; final_one_adc:inst|kk[5]          ; final_one_adc:inst|TxD_data[0]  ; clk        ; clk      ; None                        ; None                      ; 12.881 ns               ;
+; N/A                                     ; 76.25 MHz ( period = 13.114 ns )                    ; final_one_adc:inst|store1[68][2]  ; final_one_adc:inst|TxD_shift[2] ; clk        ; clk      ; None                        ; None                      ; 10.644 ns               ;
+; N/A                                     ; 76.27 MHz ( period = 13.112 ns )                    ; final_one_adc:inst|store1[68][2]  ; final_one_adc:inst|TxD_data[2]  ; clk        ; clk      ; None                        ; None                      ; 10.642 ns               ;
+; N/A                                     ; 76.27 MHz ( period = 13.112 ns )                    ; final_one_adc:inst|store1[130][7] ; final_one_adc:inst|TxD_shift[7] ; clk        ; clk      ; None                        ; None                      ; 10.635 ns               ;
+; N/A                                     ; 76.29 MHz ( period = 13.108 ns )                    ; final_one_adc:inst|kk[7]          ; final_one_adc:inst|TxD_shift[3] ; clk        ; clk      ; None                        ; None                      ; 12.873 ns               ;
+; N/A                                     ; 76.47 MHz ( period = 13.077 ns )                    ; final_one_adc:inst|store1[66][7]  ; final_one_adc:inst|TxD_shift[7] ; clk        ; clk      ; None                        ; None                      ; 10.601 ns               ;
+; N/A                                     ; 76.57 MHz ( period = 13.060 ns )                    ; final_one_adc:inst|store1[131][5] ; final_one_adc:inst|TxD_shift[5] ; clk        ; clk      ; None                        ; None                      ; 10.587 ns               ;
+; N/A                                     ; 76.61 MHz ( period = 13.053 ns )                    ; final_one_adc:inst|store1[68][9]  ; final_one_adc:inst|TxD_data[1]  ; clk        ; clk      ; None                        ; None                      ; 10.584 ns               ;
+; N/A                                     ; 76.61 MHz ( period = 13.053 ns )                    ; final_one_adc:inst|store1[134][1] ; final_one_adc:inst|TxD_data[1]  ; clk        ; clk      ; None                        ; None                      ; 10.584 ns               ;
+; N/A                                     ; 76.63 MHz ( period = 13.050 ns )                    ; final_one_adc:inst|store1[68][1]  ; final_one_adc:inst|TxD_data[1]  ; clk        ; clk      ; None                        ; None                      ; 10.581 ns               ;
+; N/A                                     ; 76.66 MHz ( period = 13.045 ns )                    ; final_one_adc:inst|store1[64][8]  ; final_one_adc:inst|TxD_data[0]  ; clk        ; clk      ; None                        ; None                      ; 10.576 ns               ;
+; N/A                                     ; 76.80 MHz ( period = 13.021 ns )                    ; final_one_adc:inst|store1[70][7]  ; final_one_adc:inst|TxD_shift[7] ; clk        ; clk      ; None                        ; None                      ; 10.543 ns               ;
+; N/A                                     ; 76.85 MHz ( period = 13.013 ns )                    ; final_one_adc:inst|store1[69][1]  ; final_one_adc:inst|TxD_data[1]  ; clk        ; clk      ; None                        ; None                      ; 10.546 ns               ;
+; N/A                                     ; 77.01 MHz ( period = 12.986 ns )                    ; final_one_adc:inst|kk[6]          ; final_one_adc:inst|TxD_data[1]  ; clk        ; clk      ; None                        ; None                      ; 12.752 ns               ;
+; N/A                                     ; 77.07 MHz ( period = 12.975 ns )                    ; final_one_adc:inst|store1[131][1] ; final_one_adc:inst|TxD_data[1]  ; clk        ; clk      ; None                        ; None                      ; 10.507 ns               ;
+; N/A                                     ; 77.14 MHz ( period = 12.964 ns )                    ; final_one_adc:inst|kk[6]          ; final_one_adc:inst|TxD_shift[3] ; clk        ; clk      ; None                        ; None                      ; 12.729 ns               ;
+; N/A                                     ; 77.22 MHz ( period = 12.950 ns )                    ; final_one_adc:inst|store1[134][0] ; final_one_adc:inst|TxD_data[0]  ; clk        ; clk      ; None                        ; None                      ; 10.481 ns               ;
+; N/A                                     ; 77.23 MHz ( period = 12.949 ns )                    ; final_one_adc:inst|kk[5]          ; final_one_adc:inst|TxD_shift[5] ; clk        ; clk      ; None                        ; None                      ; 12.710 ns               ;
+; N/A                                     ; 77.24 MHz ( period = 12.947 ns )                    ; final_one_adc:inst|store1[178][0] ; final_one_adc:inst|TxD_data[0]  ; clk        ; clk      ; None                        ; None                      ; 10.472 ns               ;
+; N/A                                     ; 77.32 MHz ( period = 12.934 ns )                    ; final_one_adc:inst|store1[2][1]   ; final_one_adc:inst|TxD_data[1]  ; clk        ; clk      ; None                        ; None                      ; 10.465 ns               ;
+; N/A                                     ; 77.40 MHz ( period = 12.920 ns )                    ; final_one_adc:inst|store1[128][9] ; final_one_adc:inst|TxD_data[1]  ; clk        ; clk      ; None                        ; None                      ; 10.450 ns               ;
+; N/A                                     ; 77.41 MHz ( period = 12.919 ns )                    ; final_one_adc:inst|store1[66][9]  ; final_one_adc:inst|TxD_data[1]  ; clk        ; clk      ; None                        ; None                      ; 10.451 ns               ;
+; N/A                                     ; 77.72 MHz ( period = 12.867 ns )                    ; final_one_adc:inst|store1[0][0]   ; final_one_adc:inst|TxD_data[0]  ; clk        ; clk      ; None                        ; None                      ; 10.398 ns               ;
+; N/A                                     ; 77.72 MHz ( period = 12.866 ns )                    ; final_one_adc:inst|kk[6]          ; final_one_adc:inst|TxD_data[0]  ; clk        ; clk      ; None                        ; None                      ; 12.632 ns               ;
+; N/A                                     ; 77.74 MHz ( period = 12.864 ns )                    ; final_one_adc:inst|kk[7]          ; final_one_adc:inst|TxD_data[0]  ; clk        ; clk      ; None                        ; None                      ; 12.630 ns               ;
+; N/A                                     ; 77.74 MHz ( period = 12.864 ns )                    ; final_one_adc:inst|kk[5]          ; final_one_adc:inst|TxD_data[1]  ; clk        ; clk      ; None                        ; None                      ; 12.630 ns               ;
+; N/A                                     ; 77.75 MHz ( period = 12.862 ns )                    ; final_one_adc:inst|store1[70][5]  ; final_one_adc:inst|TxD_data[5]  ; clk        ; clk      ; None                        ; None                      ; 10.387 ns               ;
+; N/A                                     ; 77.79 MHz ( period = 12.855 ns )                    ; final_one_adc:inst|store1[64][0]  ; final_one_adc:inst|TxD_data[0]  ; clk        ; clk      ; None                        ; None                      ; 10.386 ns               ;
+; N/A                                     ; 77.85 MHz ( period = 12.846 ns )                    ; final_one_adc:inst|store1[0][7]   ; final_one_adc:inst|TxD_shift[7] ; clk        ; clk      ; None                        ; None                      ; 10.369 ns               ;
+; N/A                                     ; 77.95 MHz ( period = 12.829 ns )                    ; final_one_adc:inst|store1[2][9]   ; final_one_adc:inst|TxD_data[1]  ; clk        ; clk      ; None                        ; None                      ; 10.360 ns               ;
+; N/A                                     ; 78.08 MHz ( period = 12.808 ns )                    ; final_one_adc:inst|store1[66][1]  ; final_one_adc:inst|TxD_data[1]  ; clk        ; clk      ; None                        ; None                      ; 10.340 ns               ;
+; N/A                                     ; 78.14 MHz ( period = 12.797 ns )                    ; final_one_adc:inst|store1[64][1]  ; final_one_adc:inst|TxD_data[1]  ; clk        ; clk      ; None                        ; None                      ; 10.328 ns               ;
+; N/A                                     ; 78.19 MHz ( period = 12.789 ns )                    ; final_one_adc:inst|store1[2][0]   ; final_one_adc:inst|TxD_data[0]  ; clk        ; clk      ; None                        ; None                      ; 10.320 ns               ;
+; N/A                                     ; 78.26 MHz ( period = 12.778 ns )                    ; final_one_adc:inst|store1[128][4] ; final_one_adc:inst|TxD_data[4]  ; clk        ; clk      ; None                        ; None                      ; 10.308 ns               ;
+; N/A                                     ; 78.27 MHz ( period = 12.777 ns )                    ; final_one_adc:inst|store1[128][4] ; final_one_adc:inst|TxD_shift[4] ; clk        ; clk      ; None                        ; None                      ; 10.307 ns               ;
+; N/A                                     ; 78.36 MHz ( period = 12.761 ns )                    ; final_one_adc:inst|kk[7]          ; final_one_adc:inst|TxD_data[1]  ; clk        ; clk      ; None                        ; None                      ; 12.527 ns               ;
+; N/A                                     ; 78.37 MHz ( period = 12.760 ns )                    ; final_one_adc:inst|store1[0][8]   ; final_one_adc:inst|TxD_data[0]  ; clk        ; clk      ; None                        ; None                      ; 10.291 ns               ;
+; N/A                                     ; 78.47 MHz ( period = 12.743 ns )                    ; final_one_adc:inst|store1[186][3] ; final_one_adc:inst|TxD_shift[3] ; clk        ; clk      ; None                        ; None                      ; 10.280 ns               ;
+; N/A                                     ; 78.70 MHz ( period = 12.707 ns )                    ; final_one_adc:inst|kk[5]          ; final_one_adc:inst|TxD_data[3]  ; clk        ; clk      ; None                        ; None                      ; 12.472 ns               ;
+; N/A                                     ; 78.90 MHz ( period = 12.674 ns )                    ; final_one_adc:inst|store1[128][0] ; final_one_adc:inst|TxD_shift[0] ; clk        ; clk      ; None                        ; None                      ; 10.199 ns               ;
+; N/A                                     ; 78.90 MHz ( period = 12.674 ns )                    ; final_one_adc:inst|kk[6]          ; final_one_adc:inst|TxD_shift[5] ; clk        ; clk      ; None                        ; None                      ; 12.435 ns               ;
+; N/A                                     ; 78.91 MHz ( period = 12.672 ns )                    ; final_one_adc:inst|store1[67][1]  ; final_one_adc:inst|TxD_data[1]  ; clk        ; clk      ; None                        ; None                      ; 10.204 ns               ;
+; N/A                                     ; 78.98 MHz ( period = 12.661 ns )                    ; final_one_adc:inst|store1[3][5]   ; final_one_adc:inst|TxD_shift[5] ; clk        ; clk      ; None                        ; None                      ; 10.188 ns               ;
+; N/A                                     ; 79.01 MHz ( period = 12.656 ns )                    ; final_one_adc:inst|store1[64][4]  ; final_one_adc:inst|TxD_data[4]  ; clk        ; clk      ; None                        ; None                      ; 10.185 ns               ;
+; N/A                                     ; 79.02 MHz ( period = 12.655 ns )                    ; final_one_adc:inst|store1[64][4]  ; final_one_adc:inst|TxD_shift[4] ; clk        ; clk      ; None                        ; None                      ; 10.184 ns               ;
+; N/A                                     ; 79.13 MHz ( period = 12.637 ns )                    ; final_one_adc:inst|store1[3][6]   ; final_one_adc:inst|TxD_data[6]  ; clk        ; clk      ; None                        ; None                      ; 10.160 ns               ;
+; N/A                                     ; 79.16 MHz ( period = 12.632 ns )                    ; final_one_adc:inst|kk[7]          ; final_one_adc:inst|TxD_data[3]  ; clk        ; clk      ; None                        ; None                      ; 12.397 ns               ;
+; N/A                                     ; 79.16 MHz ( period = 12.632 ns )                    ; final_one_adc:inst|store1[3][6]   ; final_one_adc:inst|TxD_shift[6] ; clk        ; clk      ; None                        ; None                      ; 10.155 ns               ;
+; N/A                                     ; 79.23 MHz ( period = 12.621 ns )                    ; final_one_adc:inst|store1[64][9]  ; final_one_adc:inst|TxD_data[1]  ; clk        ; clk      ; None                        ; None                      ; 10.152 ns               ;
+; N/A                                     ; 79.26 MHz ( period = 12.617 ns )                    ; final_one_adc:inst|store1[69][7]  ; final_one_adc:inst|TxD_shift[7] ; clk        ; clk      ; None                        ; None                      ; 10.142 ns               ;
+; N/A                                     ; 79.30 MHz ( period = 12.610 ns )                    ; final_one_adc:inst|store1[6][7]   ; final_one_adc:inst|TxD_shift[7] ; clk        ; clk      ; None                        ; None                      ; 10.132 ns               ;
+; N/A                                     ; 79.31 MHz ( period = 12.609 ns )                    ; final_one_adc:inst|store1[68][5]  ; final_one_adc:inst|TxD_shift[5] ; clk        ; clk      ; None                        ; None                      ; 10.135 ns               ;
+; N/A                                     ; 79.45 MHz ( period = 12.586 ns )                    ; final_one_adc:inst|store1[128][7] ; final_one_adc:inst|TxD_data[7]  ; clk        ; clk      ; None                        ; None                      ; 10.110 ns               ;
+; N/A                                     ; 79.50 MHz ( period = 12.579 ns )                    ; final_one_adc:inst|store1[69][8]  ; final_one_adc:inst|TxD_data[0]  ; clk        ; clk      ; None                        ; None                      ; 10.112 ns               ;
+; N/A                                     ; 79.50 MHz ( period = 12.579 ns )                    ; final_one_adc:inst|store1[71][1]  ; final_one_adc:inst|TxD_data[1]  ; clk        ; clk      ; None                        ; None                      ; 10.118 ns               ;
+; N/A                                     ; 79.52 MHz ( period = 12.576 ns )                    ; final_one_adc:inst|store1[3][1]   ; final_one_adc:inst|TxD_data[1]  ; clk        ; clk      ; None                        ; None                      ; 10.108 ns               ;
+; N/A                                     ; 79.52 MHz ( period = 12.575 ns )                    ; final_one_adc:inst|store1[128][8] ; final_one_adc:inst|TxD_shift[0] ; clk        ; clk      ; None                        ; None                      ; 10.100 ns               ;
+; N/A                                     ; 79.57 MHz ( period = 12.568 ns )                    ; final_one_adc:inst|store1[71][5]  ; final_one_adc:inst|TxD_shift[5] ; clk        ; clk      ; None                        ; None                      ; 10.103 ns               ;
+; N/A                                     ; 79.62 MHz ( period = 12.559 ns )                    ; final_one_adc:inst|store1[176][9] ; final_one_adc:inst|TxD_data[1]  ; clk        ; clk      ; None                        ; None                      ; 10.098 ns               ;
+; N/A                                     ; 79.67 MHz ( period = 12.551 ns )                    ; final_one_adc:inst|store1[160][0] ; final_one_adc:inst|TxD_data[0]  ; clk        ; clk      ; None                        ; None                      ; 10.089 ns               ;
+; N/A                                     ; 79.70 MHz ( period = 12.547 ns )                    ; final_one_adc:inst|store1[128][5] ; final_one_adc:inst|TxD_shift[5] ; clk        ; clk      ; None                        ; None                      ; 10.073 ns               ;
+; N/A                                     ; 79.78 MHz ( period = 12.535 ns )                    ; final_one_adc:inst|store1[134][7] ; final_one_adc:inst|TxD_data[7]  ; clk        ; clk      ; None                        ; None                      ; 10.059 ns               ;
+; N/A                                     ; 79.80 MHz ( period = 12.531 ns )                    ; final_one_adc:inst|store1[0][1]   ; final_one_adc:inst|TxD_data[1]  ; clk        ; clk      ; None                        ; None                      ; 10.062 ns               ;
+; N/A                                     ; 79.83 MHz ( period = 12.527 ns )                    ; final_one_adc:inst|store1[132][7] ; final_one_adc:inst|TxD_shift[7] ; clk        ; clk      ; None                        ; None                      ; 10.043 ns               ;
+; N/A                                     ; 79.86 MHz ( period = 12.522 ns )                    ; final_one_adc:inst|store1[128][2] ; final_one_adc:inst|TxD_shift[2] ; clk        ; clk      ; None                        ; None                      ; 10.051 ns               ;
+; N/A                                     ; 79.87 MHz ( period = 12.520 ns )                    ; final_one_adc:inst|store1[128][2] ; final_one_adc:inst|TxD_data[2]  ; clk        ; clk      ; None                        ; None                      ; 10.049 ns               ;
+; N/A                                     ; 79.90 MHz ( period = 12.515 ns )                    ; final_one_adc:inst|kk[7]          ; final_one_adc:inst|TxD_shift[5] ; clk        ; clk      ; None                        ; None                      ; 12.276 ns               ;
+; N/A                                     ; 79.94 MHz ( period = 12.510 ns )                    ; final_one_adc:inst|store1[134][5] ; final_one_adc:inst|TxD_data[5]  ; clk        ; clk      ; None                        ; None                      ; 10.036 ns               ;
+; N/A                                     ; 79.99 MHz ( period = 12.501 ns )                    ; final_one_adc:inst|store1[130][5] ; final_one_adc:inst|TxD_shift[5] ; clk        ; clk      ; None                        ; None                      ; 10.027 ns               ;
+; N/A                                     ; 80.00 MHz ( period = 12.500 ns )                    ; final_one_adc:inst|store1[66][5]  ; final_one_adc:inst|TxD_shift[5] ; clk        ; clk      ; None                        ; None                      ; 10.027 ns               ;
+; N/A                                     ; 80.01 MHz ( period = 12.498 ns )                    ; final_one_adc:inst|store1[70][1]  ; final_one_adc:inst|TxD_shift[1] ; clk        ; clk      ; None                        ; None                      ; 10.028 ns               ;
+; N/A                                     ; 80.06 MHz ( period = 12.491 ns )                    ; final_one_adc:inst|store1[130][1] ; final_one_adc:inst|TxD_shift[1] ; clk        ; clk      ; None                        ; None                      ; 10.022 ns               ;
+; N/A                                     ; 80.08 MHz ( period = 12.488 ns )                    ; final_one_adc:inst|kk[6]          ; final_one_adc:inst|TxD_data[3]  ; clk        ; clk      ; None                        ; None                      ; 12.253 ns               ;
+; N/A                                     ; 80.08 MHz ( period = 12.487 ns )                    ; final_one_adc:inst|store1[129][8] ; final_one_adc:inst|TxD_data[0]  ; clk        ; clk      ; None                        ; None                      ; 10.026 ns               ;
+; N/A                                     ; 80.08 MHz ( period = 12.487 ns )                    ; final_one_adc:inst|store1[131][3] ; final_one_adc:inst|TxD_shift[3] ; clk        ; clk      ; None                        ; None                      ; 10.018 ns               ;
+; N/A                                     ; 80.08 MHz ( period = 12.487 ns )                    ; final_one_adc:inst|store1[70][3]  ; final_one_adc:inst|TxD_shift[3] ; clk        ; clk      ; None                        ; None                      ; 10.016 ns               ;
+; N/A                                     ; 80.08 MHz ( period = 12.487 ns )                    ; final_one_adc:inst|store1[3][7]   ; final_one_adc:inst|TxD_shift[7] ; clk        ; clk      ; None                        ; None                      ; 10.009 ns               ;
+; N/A                                     ; 80.09 MHz ( period = 12.486 ns )                    ; final_one_adc:inst|store1[129][0] ; final_one_adc:inst|TxD_data[0]  ; clk        ; clk      ; None                        ; None                      ; 10.025 ns               ;
+; N/A                                     ; 80.24 MHz ( period = 12.463 ns )                    ; final_one_adc:inst|store1[4][0]   ; final_one_adc:inst|TxD_data[0]  ; clk        ; clk      ; None                        ; None                      ; 9.988 ns                ;
+; N/A                                     ; 80.30 MHz ( period = 12.454 ns )                    ; final_one_adc:inst|kk[7]          ; final_one_adc:inst|TxD_shift[7] ; clk        ; clk      ; None                        ; None                      ; 12.212 ns               ;
+; N/A                                     ; 80.30 MHz ( period = 12.453 ns )                    ; final_one_adc:inst|store1[71][0]  ; final_one_adc:inst|TxD_data[0]  ; clk        ; clk      ; None                        ; None                      ; 9.992 ns                ;
+; N/A                                     ; 80.35 MHz ( period = 12.446 ns )                    ; final_one_adc:inst|store1[64][7]  ; final_one_adc:inst|TxD_data[7]  ; clk        ; clk      ; None                        ; None                      ; 9.969 ns                ;
+; N/A                                     ; 80.35 MHz ( period = 12.445 ns )                    ; final_one_adc:inst|store1[131][5] ; final_one_adc:inst|TxD_data[5]  ; clk        ; clk      ; None                        ; None                      ; 9.972 ns                ;
+; N/A                                     ; 80.39 MHz ( period = 12.439 ns )                    ; final_one_adc:inst|store1[130][8] ; final_one_adc:inst|TxD_data[0]  ; clk        ; clk      ; None                        ; None                      ; 9.970 ns                ;
+; N/A                                     ; 80.44 MHz ( period = 12.432 ns )                    ; final_one_adc:inst|kk[6]          ; final_one_adc:inst|TxD_shift[7] ; clk        ; clk      ; None                        ; None                      ; 12.190 ns               ;
+; N/A                                     ; 80.44 MHz ( period = 12.432 ns )                    ; final_one_adc:inst|store1[130][7] ; final_one_adc:inst|TxD_data[7]  ; clk        ; clk      ; None                        ; None                      ; 9.956 ns                ;
+; N/A                                     ; 80.47 MHz ( period = 12.427 ns )                    ; final_one_adc:inst|store1[6][5]   ; final_one_adc:inst|TxD_shift[5] ; clk        ; clk      ; None                        ; None                      ; 9.953 ns                ;
+; N/A                                     ; 80.48 MHz ( period = 12.425 ns )                    ; final_one_adc:inst|store1[69][0]  ; final_one_adc:inst|TxD_data[0]  ; clk        ; clk      ; None                        ; None                      ; 9.958 ns                ;
+; N/A                                     ; 80.51 MHz ( period = 12.421 ns )                    ; final_one_adc:inst|store1[131][0] ; final_one_adc:inst|TxD_data[0]  ; clk        ; clk      ; None                        ; None                      ; 9.953 ns                ;
+; N/A                                     ; 80.59 MHz ( period = 12.409 ns )                    ; final_one_adc:inst|store1[128][3] ; final_one_adc:inst|TxD_shift[3] ; clk        ; clk      ; None                        ; None                      ; 9.938 ns                ;
+; N/A                                     ; 80.66 MHz ( period = 12.397 ns )                    ; final_one_adc:inst|store1[66][7]  ; final_one_adc:inst|TxD_data[7]  ; clk        ; clk      ; None                        ; None                      ; 9.922 ns                ;
+; N/A                                     ; 80.67 MHz ( period = 12.396 ns )                    ; final_one_adc:inst|store1[134][3] ; final_one_adc:inst|TxD_shift[3] ; clk        ; clk      ; None                        ; None                      ; 9.926 ns                ;
+; N/A                                     ; 80.74 MHz ( period = 12.385 ns )                    ; final_one_adc:inst|store1[130][9] ; final_one_adc:inst|TxD_shift[1] ; clk        ; clk      ; None                        ; None                      ; 9.916 ns                ;
+; N/A                                     ; 80.77 MHz ( period = 12.381 ns )                    ; final_one_adc:inst|store1[192][7] ; final_one_adc:inst|TxD_shift[7] ; clk        ; clk      ; None                        ; None                      ; 9.904 ns                ;
+; N/A                                     ; 80.78 MHz ( period = 12.379 ns )                    ; final_one_adc:inst|store1[186][5] ; final_one_adc:inst|TxD_shift[5] ; clk        ; clk      ; None                        ; None                      ; 9.912 ns                ;
+; N/A                                     ; 80.80 MHz ( period = 12.377 ns )                    ; final_one_adc:inst|store1[67][3]  ; final_one_adc:inst|TxD_shift[3] ; clk        ; clk      ; None                        ; None                      ; 9.908 ns                ;
+; N/A                                     ; 80.80 MHz ( period = 12.376 ns )                    ; final_one_adc:inst|store1[129][3] ; final_one_adc:inst|TxD_shift[3] ; clk        ; clk      ; None                        ; None                      ; 9.914 ns                ;
+; N/A                                     ; 80.80 MHz ( period = 12.376 ns )                    ; final_one_adc:inst|store1[2][7]   ; final_one_adc:inst|TxD_shift[7] ; clk        ; clk      ; None                        ; None                      ; 9.897 ns                ;
+; N/A                                     ; 80.81 MHz ( period = 12.374 ns )                    ; final_one_adc:inst|store1[0][4]   ; final_one_adc:inst|TxD_data[4]  ; clk        ; clk      ; None                        ; None                      ; 9.904 ns                ;
+; N/A                                     ; 80.82 MHz ( period = 12.373 ns )                    ; final_one_adc:inst|store1[0][4]   ; final_one_adc:inst|TxD_shift[4] ; clk        ; clk      ; None                        ; None                      ; 9.903 ns                ;
+; N/A                                     ; 80.87 MHz ( period = 12.366 ns )                    ; final_one_adc:inst|store1[128][1] ; final_one_adc:inst|TxD_shift[1] ; clk        ; clk      ; None                        ; None                      ; 9.896 ns                ;
+; N/A                                     ; 80.93 MHz ( period = 12.357 ns )                    ; final_one_adc:inst|store1[188][1] ; final_one_adc:inst|TxD_shift[1] ; clk        ; clk      ; None                        ; None                      ; 9.897 ns                ;
+; N/A                                     ; 80.96 MHz ( period = 12.352 ns )                    ; final_one_adc:inst|store1[164][7] ; final_one_adc:inst|TxD_shift[7] ; clk        ; clk      ; None                        ; None                      ; 9.888 ns                ;
+; N/A                                     ; 80.97 MHz ( period = 12.351 ns )                    ; final_one_adc:inst|store1[68][3]  ; final_one_adc:inst|TxD_shift[3] ; clk        ; clk      ; None                        ; None                      ; 9.881 ns                ;
+; N/A                                     ; 80.99 MHz ( period = 12.347 ns )                    ; final_one_adc:inst|store1[68][0]  ; final_one_adc:inst|TxD_shift[0] ; clk        ; clk      ; None                        ; None                      ; 9.873 ns                ;
+; N/A                                     ; 81.00 MHz ( period = 12.346 ns )                    ; final_one_adc:inst|store1[6][1]   ; final_one_adc:inst|TxD_data[1]  ; clk        ; clk      ; None                        ; None                      ; 9.877 ns                ;
+; N/A                                     ; 81.02 MHz ( period = 12.343 ns )                    ; final_one_adc:inst|kk[7]          ; final_one_adc:inst|TxD_shift[2] ; clk        ; clk      ; None                        ; None                      ; 12.108 ns               ;
+; N/A                                     ; 81.03 MHz ( period = 12.341 ns )                    ; final_one_adc:inst|kk[7]          ; final_one_adc:inst|TxD_data[2]  ; clk        ; clk      ; None                        ; None                      ; 12.106 ns               ;
+; N/A                                     ; 81.03 MHz ( period = 12.341 ns )                    ; final_one_adc:inst|store1[70][7]  ; final_one_adc:inst|TxD_data[7]  ; clk        ; clk      ; None                        ; None                      ; 9.864 ns                ;
+; N/A                                     ; 81.08 MHz ( period = 12.334 ns )                    ; final_one_adc:inst|kk[5]          ; final_one_adc:inst|TxD_data[5]  ; clk        ; clk      ; None                        ; None                      ; 12.095 ns               ;
+; N/A                                     ; 81.12 MHz ( period = 12.327 ns )                    ; final_one_adc:inst|store1[194][0] ; final_one_adc:inst|TxD_data[0]  ; clk        ; clk      ; None                        ; None                      ; 9.858 ns                ;
+; N/A                                     ; 81.14 MHz ( period = 12.325 ns )                    ; final_one_adc:inst|store1[130][0] ; final_one_adc:inst|TxD_shift[0] ; clk        ; clk      ; None                        ; None                      ; 9.851 ns                ;
+; N/A                                     ; 81.16 MHz ( period = 12.321 ns )                    ; final_one_adc:inst|store1[130][3] ; final_one_adc:inst|TxD_shift[3] ; clk        ; clk      ; None                        ; None                      ; 9.851 ns                ;
+; N/A                                     ; 81.17 MHz ( period = 12.320 ns )                    ; final_one_adc:inst|store1[132][0] ; final_one_adc:inst|TxD_data[0]  ; clk        ; clk      ; None                        ; None                      ; 9.844 ns                ;
+; N/A                                     ; 81.17 MHz ( period = 12.320 ns )                    ; final_one_adc:inst|store1[3][3]   ; final_one_adc:inst|TxD_shift[3] ; clk        ; clk      ; None                        ; None                      ; 9.851 ns                ;
+; N/A                                     ; 81.20 MHz ( period = 12.316 ns )                    ; final_one_adc:inst|store1[129][9] ; final_one_adc:inst|TxD_data[1]  ; clk        ; clk      ; None                        ; None                      ; 9.855 ns                ;
+; N/A                                     ; 81.28 MHz ( period = 12.303 ns )                    ; final_one_adc:inst|store1[129][5] ; final_one_adc:inst|TxD_shift[5] ; clk        ; clk      ; None                        ; None                      ; 9.837 ns                ;
+; N/A                                     ; 81.31 MHz ( period = 12.298 ns )                    ; final_one_adc:inst|store1[192][8] ; final_one_adc:inst|TxD_data[0]  ; clk        ; clk      ; None                        ; None                      ; 9.829 ns                ;
+; N/A                                     ; 81.35 MHz ( period = 12.292 ns )                    ; final_one_adc:inst|store1[130][2] ; final_one_adc:inst|TxD_shift[2] ; clk        ; clk      ; None                        ; None                      ; 9.822 ns                ;
+; N/A                                     ; 81.37 MHz ( period = 12.290 ns )                    ; final_one_adc:inst|store1[130][2] ; final_one_adc:inst|TxD_data[2]  ; clk        ; clk      ; None                        ; None                      ; 9.820 ns                ;
+; N/A                                     ; 81.41 MHz ( period = 12.283 ns )                    ; final_one_adc:inst|store1[183][1] ; final_one_adc:inst|TxD_data[1]  ; clk        ; clk      ; None                        ; None                      ; 9.813 ns                ;
+; N/A                                     ; 81.48 MHz ( period = 12.273 ns )                    ; final_one_adc:inst|store1[4][1]   ; final_one_adc:inst|TxD_data[1]  ; clk        ; clk      ; None                        ; None                      ; 9.798 ns                ;
+; N/A                                     ; 81.50 MHz ( period = 12.270 ns )                    ; final_one_adc:inst|store1[69][3]  ; final_one_adc:inst|TxD_shift[3] ; clk        ; clk      ; None                        ; None                      ; 9.802 ns                ;
+; N/A                                     ; 81.51 MHz ( period = 12.269 ns )                    ; final_one_adc:inst|store1[176][1] ; final_one_adc:inst|TxD_data[1]  ; clk        ; clk      ; None                        ; None                      ; 9.808 ns                ;
+; N/A                                     ; 81.51 MHz ( period = 12.269 ns )                    ; final_one_adc:inst|store1[131][4] ; final_one_adc:inst|TxD_data[4]  ; clk        ; clk      ; None                        ; None                      ; 9.800 ns                ;
+; N/A                                     ; 81.51 MHz ( period = 12.268 ns )                    ; final_one_adc:inst|store1[131][4] ; final_one_adc:inst|TxD_shift[4] ; clk        ; clk      ; None                        ; None                      ; 9.799 ns                ;
+; N/A                                     ; 81.52 MHz ( period = 12.267 ns )                    ; final_one_adc:inst|store1[186][3] ; final_one_adc:inst|TxD_data[3]  ; clk        ; clk      ; None                        ; None                      ; 9.804 ns                ;
+; N/A                                     ; 81.53 MHz ( period = 12.266 ns )                    ; final_one_adc:inst|store1[133][7] ; final_one_adc:inst|TxD_shift[7] ; clk        ; clk      ; None                        ; None                      ; 9.790 ns                ;
+; N/A                                     ; 81.53 MHz ( period = 12.265 ns )                    ; final_one_adc:inst|store1[5][1]   ; final_one_adc:inst|TxD_data[1]  ; clk        ; clk      ; None                        ; None                      ; 9.797 ns                ;
+; N/A                                     ; 81.53 MHz ( period = 12.265 ns )                    ; final_one_adc:inst|store1[68][7]  ; final_one_adc:inst|TxD_shift[7] ; clk        ; clk      ; None                        ; None                      ; 9.788 ns                ;
+; N/A                                     ; 81.54 MHz ( period = 12.264 ns )                    ; final_one_adc:inst|store1[133][1] ; final_one_adc:inst|TxD_data[1]  ; clk        ; clk      ; None                        ; None                      ; 9.796 ns                ;
+; N/A                                     ; 81.61 MHz ( period = 12.254 ns )                    ; final_one_adc:inst|store1[70][0]  ; final_one_adc:inst|TxD_shift[0] ; clk        ; clk      ; None                        ; None                      ; 9.779 ns                ;
+; N/A                                     ; 81.66 MHz ( period = 12.246 ns )                    ; final_one_adc:inst|store1[65][8]  ; final_one_adc:inst|TxD_data[0]  ; clk        ; clk      ; None                        ; None                      ; 9.785 ns                ;
+; N/A                                     ; 81.67 MHz ( period = 12.245 ns )                    ; final_one_adc:inst|store1[0][9]   ; final_one_adc:inst|TxD_data[1]  ; clk        ; clk      ; None                        ; None                      ; 9.776 ns                ;
+; N/A                                     ; 81.71 MHz ( period = 12.238 ns )                    ; final_one_adc:inst|store1[66][0]  ; final_one_adc:inst|TxD_shift[0] ; clk        ; clk      ; None                        ; None                      ; 9.765 ns                ;
+; N/A                                     ; 81.73 MHz ( period = 12.235 ns )                    ; final_one_adc:inst|kk[5]          ; final_one_adc:inst|TxD_shift[0] ; clk        ; clk      ; None                        ; None                      ; 11.996 ns               ;
+; N/A                                     ; 81.87 MHz ( period = 12.215 ns )                    ; final_one_adc:inst|store1[185][0] ; final_one_adc:inst|TxD_data[0]  ; clk        ; clk      ; None                        ; None                      ; 9.767 ns                ;
+; N/A                                     ; 81.87 MHz ( period = 12.214 ns )                    ; final_one_adc:inst|store1[5][7]   ; final_one_adc:inst|TxD_shift[7] ; clk        ; clk      ; None                        ; None                      ; 9.738 ns                ;
+; N/A                                     ; 81.96 MHz ( period = 12.201 ns )                    ; final_one_adc:inst|store1[186][9] ; final_one_adc:inst|TxD_data[1]  ; clk        ; clk      ; None                        ; None                      ; 9.739 ns                ;
+; N/A                                     ; 81.97 MHz ( period = 12.200 ns )                    ; final_one_adc:inst|store1[71][3]  ; final_one_adc:inst|TxD_shift[3] ; clk        ; clk      ; None                        ; None                      ; 9.738 ns                ;
+; N/A                                     ; 81.99 MHz ( period = 12.196 ns )                    ; final_one_adc:inst|store1[68][9]  ; final_one_adc:inst|TxD_shift[1] ; clk        ; clk      ; None                        ; None                      ; 9.727 ns                ;
+; N/A                                     ; 81.99 MHz ( period = 12.196 ns )                    ; final_one_adc:inst|store1[134][1] ; final_one_adc:inst|TxD_shift[1] ; clk        ; clk      ; None                        ; None                      ; 9.727 ns                ;
+; N/A                                     ; 82.01 MHz ( period = 12.193 ns )                    ; final_one_adc:inst|store1[68][1]  ; final_one_adc:inst|TxD_shift[1] ; clk        ; clk      ; None                        ; None                      ; 9.724 ns                ;
+; N/A                                     ; 82.02 MHz ( period = 12.192 ns )                    ; final_one_adc:inst|store1[179][5] ; final_one_adc:inst|TxD_shift[5] ; clk        ; clk      ; None                        ; None                      ; 9.731 ns                ;
+; N/A                                     ; 82.03 MHz ( period = 12.190 ns )                    ; final_one_adc:inst|store1[180][0] ; final_one_adc:inst|TxD_data[0]  ; clk        ; clk      ; None                        ; None                      ; 9.727 ns                ;
+; N/A                                     ; 82.05 MHz ( period = 12.187 ns )                    ; final_one_adc:inst|store1[64][5]  ; final_one_adc:inst|TxD_shift[5] ; clk        ; clk      ; None                        ; None                      ; 9.712 ns                ;
+; N/A                                     ; 82.10 MHz ( period = 12.181 ns )                    ; final_one_adc:inst|store1[133][5] ; final_one_adc:inst|TxD_shift[5] ; clk        ; clk      ; None                        ; None                      ; 9.708 ns                ;
+; N/A                                     ; 82.14 MHz ( period = 12.175 ns )                    ; final_one_adc:inst|store1[58][3]  ; final_one_adc:inst|TxD_shift[3] ; clk        ; clk      ; None                        ; None                      ; 9.712 ns                ;
+; N/A                                     ; 82.19 MHz ( period = 12.167 ns )                    ; final_one_adc:inst|store1[132][1] ; final_one_adc:inst|TxD_data[1]  ; clk        ; clk      ; None                        ; None                      ; 9.691 ns                ;
+; N/A                                     ; 82.20 MHz ( period = 12.166 ns )                    ; final_one_adc:inst|store1[0][7]   ; final_one_adc:inst|TxD_data[7]  ; clk        ; clk      ; None                        ; None                      ; 9.690 ns                ;
+; N/A                                     ; 82.20 MHz ( period = 12.165 ns )                    ; final_one_adc:inst|store1[64][8]  ; final_one_adc:inst|TxD_shift[0] ; clk        ; clk      ; None                        ; None                      ; 9.691 ns                ;
+; N/A                                     ; 82.22 MHz ( period = 12.162 ns )                    ; final_one_adc:inst|store1[5][8]   ; final_one_adc:inst|TxD_data[0]  ; clk        ; clk      ; None                        ; None                      ; 9.694 ns                ;
+; N/A                                     ; 82.24 MHz ( period = 12.159 ns )                    ; final_one_adc:inst|store1[133][3] ; final_one_adc:inst|TxD_shift[3] ; clk        ; clk      ; None                        ; None                      ; 9.690 ns                ;
+; N/A                                     ; 82.26 MHz ( period = 12.156 ns )                    ; final_one_adc:inst|store1[69][1]  ; final_one_adc:inst|TxD_shift[1] ; clk        ; clk      ; None                        ; None                      ; 9.689 ns                ;
+; N/A                                     ; 82.32 MHz ( period = 12.148 ns )                    ; final_one_adc:inst|store1[198][7] ; final_one_adc:inst|TxD_shift[7] ; clk        ; clk      ; None                        ; None                      ; 9.670 ns                ;
+; N/A                                     ; 82.33 MHz ( period = 12.146 ns )                    ; final_one_adc:inst|store1[195][6] ; final_one_adc:inst|TxD_data[6]  ; clk        ; clk      ; None                        ; None                      ; 9.669 ns                ;
+; N/A                                     ; 82.34 MHz ( period = 12.145 ns )                    ; final_one_adc:inst|store1[0][5]   ; final_one_adc:inst|TxD_shift[5] ; clk        ; clk      ; None                        ; None                      ; 9.671 ns                ;
+; N/A                                     ; 82.35 MHz ( period = 12.144 ns )                    ; final_one_adc:inst|store1[2][5]   ; final_one_adc:inst|TxD_shift[5] ; clk        ; clk      ; None                        ; None                      ; 9.670 ns                ;
+; N/A                                     ; 82.36 MHz ( period = 12.142 ns )                    ; final_one_adc:inst|store1[131][2] ; final_one_adc:inst|TxD_shift[2] ; clk        ; clk      ; None                        ; None                      ; 9.673 ns                ;
+; N/A                                     ; 82.37 MHz ( period = 12.141 ns )                    ; final_one_adc:inst|store1[195][6] ; final_one_adc:inst|TxD_shift[6] ; clk        ; clk      ; None                        ; None                      ; 9.664 ns                ;
+; N/A                                     ; 82.37 MHz ( period = 12.140 ns )                    ; final_one_adc:inst|store1[50][0]  ; final_one_adc:inst|TxD_data[0]  ; clk        ; clk      ; None                        ; None                      ; 9.665 ns                ;
+; N/A                                     ; 82.37 MHz ( period = 12.140 ns )                    ; final_one_adc:inst|store1[131][2] ; final_one_adc:inst|TxD_data[2]  ; clk        ; clk      ; None                        ; None                      ; 9.671 ns                ;
+; N/A                                     ; 82.37 MHz ( period = 12.140 ns )                    ; final_one_adc:inst|store1[132][3] ; final_one_adc:inst|TxD_shift[3] ; clk        ; clk      ; None                        ; None                      ; 9.663 ns                ;
+; N/A                                     ; 82.41 MHz ( period = 12.134 ns )                    ; final_one_adc:inst|store1[71][2]  ; final_one_adc:inst|TxD_shift[2] ; clk        ; clk      ; None                        ; None                      ; 9.672 ns                ;
+; N/A                                     ; 82.43 MHz ( period = 12.132 ns )                    ; final_one_adc:inst|store1[71][2]  ; final_one_adc:inst|TxD_data[2]  ; clk        ; clk      ; None                        ; None                      ; 9.670 ns                ;
+; N/A                                     ; 82.45 MHz ( period = 12.129 ns )                    ; final_one_adc:inst|kk[6]          ; final_one_adc:inst|TxD_shift[1] ; clk        ; clk      ; None                        ; None                      ; 11.895 ns               ;
+; N/A                                     ; 82.52 MHz ( period = 12.119 ns )                    ; final_one_adc:inst|store1[194][9] ; final_one_adc:inst|TxD_data[1]  ; clk        ; clk      ; None                        ; None                      ; 9.650 ns                ;
+; N/A                                     ; 82.52 MHz ( period = 12.118 ns )                    ; final_one_adc:inst|store1[131][1] ; final_one_adc:inst|TxD_shift[1] ; clk        ; clk      ; None                        ; None                      ; 9.650 ns                ;
+; N/A                                     ; 82.56 MHz ( period = 12.112 ns )                    ; final_one_adc:inst|store1[192][0] ; final_one_adc:inst|TxD_data[0]  ; clk        ; clk      ; None                        ; None                      ; 9.643 ns                ;
+; N/A                                     ; 82.71 MHz ( period = 12.091 ns )                    ; final_one_adc:inst|store1[129][1] ; final_one_adc:inst|TxD_data[1]  ; clk        ; clk      ; None                        ; None                      ; 9.630 ns                ;
+; N/A                                     ; 82.72 MHz ( period = 12.089 ns )                    ; final_one_adc:inst|store1[6][0]   ; final_one_adc:inst|TxD_data[0]  ; clk        ; clk      ; None                        ; None                      ; 9.620 ns                ;
+; N/A                                     ; 82.77 MHz ( period = 12.081 ns )                    ; final_one_adc:inst|store1[70][9]  ; final_one_adc:inst|TxD_data[1]  ; clk        ; clk      ; None                        ; None                      ; 9.611 ns                ;
+; N/A                                     ; 82.77 MHz ( period = 12.081 ns )                    ; final_one_adc:inst|store1[132][5] ; final_one_adc:inst|TxD_shift[5] ; clk        ; clk      ; None                        ; None                      ; 9.600 ns                ;
+; N/A                                     ; 82.80 MHz ( period = 12.077 ns )                    ; final_one_adc:inst|store1[2][1]   ; final_one_adc:inst|TxD_shift[1] ; clk        ; clk      ; None                        ; None                      ; 9.608 ns                ;
+; N/A                                     ; 82.82 MHz ( period = 12.075 ns )                    ; final_one_adc:inst|store1[194][1] ; final_one_adc:inst|TxD_data[1]  ; clk        ; clk      ; None                        ; None                      ; 9.606 ns                ;
+; N/A                                     ; 82.84 MHz ( period = 12.072 ns )                    ; final_one_adc:inst|store1[67][0]  ; final_one_adc:inst|TxD_data[0]  ; clk        ; clk      ; None                        ; None                      ; 9.604 ns                ;
+; N/A                                     ; 82.85 MHz ( period = 12.070 ns )                    ; final_one_adc:inst|store1[134][0] ; final_one_adc:inst|TxD_shift[0] ; clk        ; clk      ; None                        ; None                      ; 9.596 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                                   ;                                 ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+-----------------------------------+---------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++-------------------------------------------------------------------------------------+
+; tsu                                                                                 ;
++-------+--------------+------------+------+-------------------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From ; To                            ; To Clock ;
++-------+--------------+------------+------+-------------------------------+----------+
+; N/A   ; None         ; 2.767 ns   ; MISO ; final_one_adc:inst|memory1[8] ; clk      ;
+; N/A   ; None         ; 2.767 ns   ; MISO ; final_one_adc:inst|memory1[9] ; clk      ;
+; N/A   ; None         ; 2.483 ns   ; MISO ; final_one_adc:inst|memory1[5] ; clk      ;
+; N/A   ; None         ; 2.481 ns   ; MISO ; final_one_adc:inst|memory1[0] ; clk      ;
+; N/A   ; None         ; 2.481 ns   ; MISO ; final_one_adc:inst|memory1[1] ; clk      ;
+; N/A   ; None         ; 2.110 ns   ; MISO ; final_one_adc:inst|memory1[7] ; clk      ;
+; N/A   ; None         ; 2.108 ns   ; MISO ; final_one_adc:inst|memory1[3] ; clk      ;
+; N/A   ; None         ; 2.108 ns   ; MISO ; final_one_adc:inst|memory1[4] ; clk      ;
+; N/A   ; None         ; 2.108 ns   ; MISO ; final_one_adc:inst|memory1[6] ; clk      ;
+; N/A   ; None         ; 2.107 ns   ; MISO ; final_one_adc:inst|memory1[2] ; clk      ;
++-------+--------------+------------+------+-------------------------------+----------+
+
+
++-----------------------------------------------------------------------------------------+
+; tco                                                                                     ;
++-------+--------------+------------+---------------------------------+------+------------+
+; Slack ; Required tco ; Actual tco ; From                            ; To   ; From Clock ;
++-------+--------------+------------+---------------------------------+------+------------+
+; N/A   ; None         ; 11.048 ns  ; final_one_adc:inst|MOSI         ; MOSI ; clk        ;
+; N/A   ; None         ; 10.314 ns  ; final_one_adc:inst|SS1          ; SS1  ; clk        ;
+; N/A   ; None         ; 10.287 ns  ; final_one_adc:inst|TxD_state[2] ; TxD  ; clk        ;
+; N/A   ; None         ; 9.514 ns   ; final_one_adc:inst|TxD_state[3] ; TxD  ; clk        ;
+; N/A   ; None         ; 9.111 ns   ; final_one_adc:inst|TxD_shift[0] ; TxD  ; clk        ;
+; N/A   ; None         ; 8.744 ns   ; BaudTickGen:inst1|Acc[16]       ; tick ; clk        ;
+; N/A   ; None         ; 6.936 ns   ; final_one_adc:inst|m[2]         ; SCK  ; clk        ;
++-------+--------------+------------+---------------------------------+------+------------+
+
+
++-------------------------------------------------------------------------------------------+
+; th                                                                                        ;
++---------------+-------------+-----------+------+-------------------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From ; To                            ; To Clock ;
++---------------+-------------+-----------+------+-------------------------------+----------+
+; N/A           ; None        ; -1.859 ns ; MISO ; final_one_adc:inst|memory1[2] ; clk      ;
+; N/A           ; None        ; -1.860 ns ; MISO ; final_one_adc:inst|memory1[3] ; clk      ;
+; N/A           ; None        ; -1.860 ns ; MISO ; final_one_adc:inst|memory1[4] ; clk      ;
+; N/A           ; None        ; -1.860 ns ; MISO ; final_one_adc:inst|memory1[6] ; clk      ;
+; N/A           ; None        ; -1.862 ns ; MISO ; final_one_adc:inst|memory1[7] ; clk      ;
+; N/A           ; None        ; -2.233 ns ; MISO ; final_one_adc:inst|memory1[0] ; clk      ;
+; N/A           ; None        ; -2.233 ns ; MISO ; final_one_adc:inst|memory1[1] ; clk      ;
+; N/A           ; None        ; -2.235 ns ; MISO ; final_one_adc:inst|memory1[5] ; clk      ;
+; N/A           ; None        ; -2.519 ns ; MISO ; final_one_adc:inst|memory1[8] ; clk      ;
+; N/A           ; None        ; -2.519 ns ; MISO ; final_one_adc:inst|memory1[9] ; clk      ;
++---------------+-------------+-----------+------+-------------------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.1 Build 222 10/21/2009 SJ Web Edition
+    Info: Processing started: Wed Mar 27 11:07:08 2019
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off final_one_adc -c final_one_adc --timing_analysis_only
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clk" is an undefined clock
+Warning: Found 1 node(s) in clock paths which may be acting as ripple and/or gated clocks -- node(s) analyzed as buffer(s) resulting in clock skew
+    Info: Detected ripple clock "final_one_adc:inst|m[2]" as buffer
+Info: Clock "clk" has Internal fmax of 73.78 MHz between source register "final_one_adc:inst|store1[128][0]" and destination register "final_one_adc:inst|TxD_data[0]" (period= 13.554 ns)
+    Info: + Longest register to register delay is 11.084 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X24_Y15_N21; Fanout = 1; REG Node = 'final_one_adc:inst|store1[128][0]'
+        Info: 2: + IC(0.866 ns) + CELL(0.178 ns) = 1.044 ns; Loc. = LCCOMB_X20_Y15_N8; Fanout = 1; COMB Node = 'final_one_adc:inst|TxD_data~94'
+        Info: 3: + IC(0.577 ns) + CELL(0.178 ns) = 1.799 ns; Loc. = LCCOMB_X20_Y15_N18; Fanout = 1; COMB Node = 'final_one_adc:inst|TxD_data~95'
+        Info: 4: + IC(0.892 ns) + CELL(0.178 ns) = 2.869 ns; Loc. = LCCOMB_X19_Y12_N20; Fanout = 1; COMB Node = 'final_one_adc:inst|TxD_data~96'
+        Info: 5: + IC(0.531 ns) + CELL(0.178 ns) = 3.578 ns; Loc. = LCCOMB_X19_Y12_N30; Fanout = 1; COMB Node = 'final_one_adc:inst|TxD_data~97'
+        Info: 6: + IC(1.099 ns) + CELL(0.178 ns) = 4.855 ns; Loc. = LCCOMB_X26_Y12_N28; Fanout = 1; COMB Node = 'final_one_adc:inst|TxD_data~98'
+        Info: 7: + IC(0.296 ns) + CELL(0.178 ns) = 5.329 ns; Loc. = LCCOMB_X26_Y12_N2; Fanout = 1; COMB Node = 'final_one_adc:inst|TxD_data~101'
+        Info: 8: + IC(0.301 ns) + CELL(0.521 ns) = 6.151 ns; Loc. = LCCOMB_X26_Y12_N22; Fanout = 1; COMB Node = 'final_one_adc:inst|TxD_data~102'
+        Info: 9: + IC(0.293 ns) + CELL(0.178 ns) = 6.622 ns; Loc. = LCCOMB_X26_Y12_N24; Fanout = 1; COMB Node = 'final_one_adc:inst|TxD_data~111'
+        Info: 10: + IC(0.296 ns) + CELL(0.322 ns) = 7.240 ns; Loc. = LCCOMB_X26_Y12_N18; Fanout = 1; COMB Node = 'final_one_adc:inst|TxD_data~114'
+        Info: 11: + IC(0.297 ns) + CELL(0.178 ns) = 7.715 ns; Loc. = LCCOMB_X26_Y12_N0; Fanout = 1; COMB Node = 'final_one_adc:inst|TxD_data~141'
+        Info: 12: + IC(0.842 ns) + CELL(0.178 ns) = 8.735 ns; Loc. = LCCOMB_X25_Y13_N4; Fanout = 1; COMB Node = 'final_one_adc:inst|TxD_data~142'
+        Info: 13: + IC(0.572 ns) + CELL(0.322 ns) = 9.629 ns; Loc. = LCCOMB_X26_Y13_N22; Fanout = 1; COMB Node = 'final_one_adc:inst|TxD_data~209'
+        Info: 14: + IC(0.296 ns) + CELL(0.178 ns) = 10.103 ns; Loc. = LCCOMB_X26_Y13_N8; Fanout = 2; COMB Node = 'final_one_adc:inst|TxD_shift[0]~0'
+        Info: 15: + IC(0.568 ns) + CELL(0.413 ns) = 11.084 ns; Loc. = LCFF_X25_Y13_N5; Fanout = 1; REG Node = 'final_one_adc:inst|TxD_data[0]'
+        Info: Total cell delay = 3.358 ns ( 30.30 % )
+        Info: Total interconnect delay = 7.726 ns ( 69.70 % )
+    Info: - Smallest clock skew is -2.231 ns
+        Info: + Shortest clock path from clock "clk" to destination register is 2.837 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.006 ns) = 1.006 ns; Loc. = PIN_D12; Fanout = 2; CLK Node = 'clk'
+            Info: 2: + IC(0.238 ns) + CELL(0.000 ns) = 1.244 ns; Loc. = CLKCTRL_G11; Fanout = 124; COMB Node = 'clk~clkctrl'
+            Info: 3: + IC(0.991 ns) + CELL(0.602 ns) = 2.837 ns; Loc. = LCFF_X25_Y13_N5; Fanout = 1; REG Node = 'final_one_adc:inst|TxD_data[0]'
+            Info: Total cell delay = 1.608 ns ( 56.68 % )
+            Info: Total interconnect delay = 1.229 ns ( 43.32 % )
+        Info: - Longest clock path from clock "clk" to source register is 5.068 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.006 ns) = 1.006 ns; Loc. = PIN_D12; Fanout = 2; CLK Node = 'clk'
+            Info: 2: + IC(0.736 ns) + CELL(0.879 ns) = 2.621 ns; Loc. = LCFF_X24_Y26_N5; Fanout = 3; REG Node = 'final_one_adc:inst|m[2]'
+            Info: 3: + IC(0.858 ns) + CELL(0.000 ns) = 3.479 ns; Loc. = CLKCTRL_G9; Fanout = 2159; COMB Node = 'final_one_adc:inst|m[2]~clkctrl'
+            Info: 4: + IC(0.987 ns) + CELL(0.602 ns) = 5.068 ns; Loc. = LCFF_X24_Y15_N21; Fanout = 1; REG Node = 'final_one_adc:inst|store1[128][0]'
+            Info: Total cell delay = 2.487 ns ( 49.07 % )
+            Info: Total interconnect delay = 2.581 ns ( 50.93 % )
+    Info: + Micro clock to output delay of source is 0.277 ns
+    Info: + Micro setup delay of destination is -0.038 ns
+Info: tsu for register "final_one_adc:inst|memory1[8]" (data pin = "MISO", clock pin = "clk") is 2.767 ns
+    Info: + Longest pin to register delay is 7.866 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.863 ns) = 0.863 ns; Loc. = PIN_A13; Fanout = 10; PIN Node = 'MISO'
+        Info: 2: + IC(6.729 ns) + CELL(0.178 ns) = 7.770 ns; Loc. = LCCOMB_X20_Y17_N24; Fanout = 1; COMB Node = 'final_one_adc:inst|memory1[8]~0'
+        Info: 3: + IC(0.000 ns) + CELL(0.096 ns) = 7.866 ns; Loc. = LCFF_X20_Y17_N25; Fanout = 201; REG Node = 'final_one_adc:inst|memory1[8]'
+        Info: Total cell delay = 1.137 ns ( 14.45 % )
+        Info: Total interconnect delay = 6.729 ns ( 85.55 % )
+    Info: + Micro setup delay of destination is -0.038 ns
+    Info: - Shortest clock path from clock "clk" to destination register is 5.061 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.006 ns) = 1.006 ns; Loc. = PIN_D12; Fanout = 2; CLK Node = 'clk'
+        Info: 2: + IC(0.736 ns) + CELL(0.879 ns) = 2.621 ns; Loc. = LCFF_X24_Y26_N5; Fanout = 3; REG Node = 'final_one_adc:inst|m[2]'
+        Info: 3: + IC(0.858 ns) + CELL(0.000 ns) = 3.479 ns; Loc. = CLKCTRL_G9; Fanout = 2159; COMB Node = 'final_one_adc:inst|m[2]~clkctrl'
+        Info: 4: + IC(0.980 ns) + CELL(0.602 ns) = 5.061 ns; Loc. = LCFF_X20_Y17_N25; Fanout = 201; REG Node = 'final_one_adc:inst|memory1[8]'
+        Info: Total cell delay = 2.487 ns ( 49.14 % )
+        Info: Total interconnect delay = 2.574 ns ( 50.86 % )
+Info: tco from clock "clk" to destination pin "MOSI" through register "final_one_adc:inst|MOSI" is 11.048 ns
+    Info: + Longest clock path from clock "clk" to source register is 5.070 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.006 ns) = 1.006 ns; Loc. = PIN_D12; Fanout = 2; CLK Node = 'clk'
+        Info: 2: + IC(0.736 ns) + CELL(0.879 ns) = 2.621 ns; Loc. = LCFF_X24_Y26_N5; Fanout = 3; REG Node = 'final_one_adc:inst|m[2]'
+        Info: 3: + IC(0.858 ns) + CELL(0.000 ns) = 3.479 ns; Loc. = CLKCTRL_G9; Fanout = 2159; COMB Node = 'final_one_adc:inst|m[2]~clkctrl'
+        Info: 4: + IC(0.989 ns) + CELL(0.602 ns) = 5.070 ns; Loc. = LCFF_X13_Y14_N1; Fanout = 1; REG Node = 'final_one_adc:inst|MOSI'
+        Info: Total cell delay = 2.487 ns ( 49.05 % )
+        Info: Total interconnect delay = 2.583 ns ( 50.95 % )
+    Info: + Micro clock to output delay of source is 0.277 ns
+    Info: + Longest register to pin delay is 5.701 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X13_Y14_N1; Fanout = 1; REG Node = 'final_one_adc:inst|MOSI'
+        Info: 2: + IC(2.695 ns) + CELL(3.006 ns) = 5.701 ns; Loc. = PIN_B13; Fanout = 0; PIN Node = 'MOSI'
+        Info: Total cell delay = 3.006 ns ( 52.73 % )
+        Info: Total interconnect delay = 2.695 ns ( 47.27 % )
+Info: th for register "final_one_adc:inst|memory1[2]" (data pin = "MISO", clock pin = "clk") is -1.859 ns
+    Info: + Longest clock path from clock "clk" to destination register is 5.058 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.006 ns) = 1.006 ns; Loc. = PIN_D12; Fanout = 2; CLK Node = 'clk'
+        Info: 2: + IC(0.736 ns) + CELL(0.879 ns) = 2.621 ns; Loc. = LCFF_X24_Y26_N5; Fanout = 3; REG Node = 'final_one_adc:inst|m[2]'
+        Info: 3: + IC(0.858 ns) + CELL(0.000 ns) = 3.479 ns; Loc. = CLKCTRL_G9; Fanout = 2159; COMB Node = 'final_one_adc:inst|m[2]~clkctrl'
+        Info: 4: + IC(0.977 ns) + CELL(0.602 ns) = 5.058 ns; Loc. = LCFF_X24_Y18_N23; Fanout = 201; REG Node = 'final_one_adc:inst|memory1[2]'
+        Info: Total cell delay = 2.487 ns ( 49.17 % )
+        Info: Total interconnect delay = 2.571 ns ( 50.83 % )
+    Info: + Micro hold delay of destination is 0.286 ns
+    Info: - Shortest pin to register delay is 7.203 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.863 ns) = 0.863 ns; Loc. = PIN_A13; Fanout = 10; PIN Node = 'MISO'
+        Info: 2: + IC(6.066 ns) + CELL(0.178 ns) = 7.107 ns; Loc. = LCCOMB_X24_Y18_N22; Fanout = 1; COMB Node = 'final_one_adc:inst|memory1[2]~4'
+        Info: 3: + IC(0.000 ns) + CELL(0.096 ns) = 7.203 ns; Loc. = LCFF_X24_Y18_N23; Fanout = 201; REG Node = 'final_one_adc:inst|memory1[2]'
+        Info: Total cell delay = 1.137 ns ( 15.79 % )
+        Info: Total interconnect delay = 6.066 ns ( 84.21 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 169 megabytes
+    Info: Processing ended: Wed Mar 27 11:07:11 2019
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
+
+
